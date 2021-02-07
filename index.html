@@ -2,10 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; URL='https://Weichwarenprojekt.github.io/Assembus'" />
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+
     <title>Weichwarenprojekt</title>
+
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="css/bootstrap-adjust.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
+<nav class="navbar navbar-expand-sm fixed-top header">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img alt="" class="weichwarenprojekt-logo" src="img/logo.svg">
+        </a>
+
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggle toggle-x collapsed"
+                data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link" href="#first-glance">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#showcase">Showcase</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="first-glance">
+    <div class="abstract-container">
+        <div class="abstract-intro">
+            <span class="we-are">We are</span>
+            <span class="name">Weichwarenprojekt</span>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="btn btn-primary">
+            <svg>
+                <use xlink:href="img/icons.svg#si-oct-mark-github"></use>
+            </svg>
+            <span>Github</span>
+        </button>
+    </div>
+
+</section>
+
+<section id="about-us">
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="row">
+            <div class="col-md-6 about-us-text">
+                <p>
+                    We are a group of eight ambitious computer science students from the University of Applied Sciences
+                    Ulm.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img class="about-us" src="img/undraw_feeling_proud_qne1.svg" alt="About Us">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="showcase">
+    <div class="container">
+        <h1>Showcase</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="showcase-preview" src="img/assembus.png" alt="Assembus">
+            </div>
+
+            <div class="col-md-6">
+                <h2>Assembus</h2>
+                <p>
+                    Optimize and plan your manufacturing line
+                </p>
+                <button class="btn btn-primary">Check it out</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="stay-tuned">
+    <div class="container">
+        <!-- If you're searching for them damn sexy illustrations checkout https://undraw.co/ -->
+        <img src="img/undraw_programmer_imem.svg" alt="Stay tuned">
+        <div>Stay tuned for more...</div>
+    </div>
+</section>
 
 </body>
 </html>

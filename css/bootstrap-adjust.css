@@ -1,0 +1,40 @@
+:root {
+    --prime-1: #F77F00;
+    --prime-2: #D62828;
+    --text: #333;
+    --header-height: 100px;
+}
+
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-primary {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active:focus {
+    color: var(--text);
+    background-color: var(--prime-1);
+    border-color: var(--prime-1);
+    box-shadow: none;
+}
+
+.text-muted {
+    color: #cdcdcd !important;
+}
+
+.navbar-toggler {
+    border-radius: 0;
+    border: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0;
+}
