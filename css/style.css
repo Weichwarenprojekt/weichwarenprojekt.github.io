@@ -114,6 +114,17 @@ section {
     }
 }
 
+#first-glance .abstract-container .name-container {
+    overflow: hidden;
+    height: 96px;
+}
+
+#first-glance .abstract-container span.name,
+#first-glance .abstract-container span.random-slogan{
+    transform: translateY(100%);
+    display: inline-block;
+}
+
 
 /**
  *
