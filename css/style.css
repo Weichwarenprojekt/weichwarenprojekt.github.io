@@ -22,7 +22,7 @@ a {
 h1 {
     border-bottom: 4px solid;
     border-image-source: linear-gradient(45deg, var(--prime-1), var(--prime-2));
-    border-image-slice: 1;
+    border-image-slice: 0 0 1 0;
     display: inline-block;
     margin-bottom: 24px;
 }
