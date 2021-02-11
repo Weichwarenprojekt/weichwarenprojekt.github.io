@@ -195,7 +195,7 @@ img.showcase-preview {
 
 @media screen and (max-width: 576px) {
     .navbar-collapse {
-        top: 58px;
+        top: var(--header-height);
         left: 0;
         right: 0;
         bottom: 0;
