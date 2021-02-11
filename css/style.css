@@ -82,7 +82,7 @@ section {
     margin-top: 24px;
 }
 
-#first-glance .button-container button {
+#first-glance .button-container a.btn {
     background-color: black;
     color: white;
     border: 0;
@@ -90,11 +90,11 @@ section {
     font-size: 1.4rem;
 }
 
-#first-glance .button-container button span {
+#first-glance .button-container a.btn span {
     height: 1.4rem;
 }
 
-#first-glance .button-container button svg {
+#first-glance .button-container a.btn svg {
     height: 1.4rem;
     width: 1.4rem;
     fill: white;
