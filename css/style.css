@@ -77,7 +77,7 @@ section:first-of-type {
     padding: 24px;
     width: 680px;
     margin-top: 48px;
-    font-size: 64px;
+    font-size: 2rem;
 }
 
 #first-glance .button-container {
@@ -110,13 +110,6 @@ section:first-of-type {
     position: absolute;
 }
 
-@media screen and (max-width: 1199px) {
-    #first-glance {
-        padding-top: 72px;
-        height: auto;
-    }
-}
-
 #first-glance .abstract-container .name-container {
     overflow: hidden;
     height: 96px;
@@ -126,6 +119,27 @@ section:first-of-type {
 #first-glance .abstract-container span.random-slogan{
     transform: translateY(100%);
     display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    #first-glance {
+        height: 60vh;
+    }
+
+    #first-glance .abstract-intro {
+        width: 95vw;
+    }
+
+    #first-glance .abstract-container span.we-are {
+        top: -64px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    #first-glance .abstract-container .name-container {
+        height: 48px;
+    }
 }
 
 
@@ -186,7 +200,7 @@ img.showcase-preview {
         right: 0;
         bottom: 0;
         position: fixed;
-        background-color: var(--prime-1);
+        background-color: white;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -195,7 +209,7 @@ img.showcase-preview {
     .navbar-nav .nav-link {
         text-align: center;
         font-size: 3rem;
-        color: white !important;
+        color: var(--text);
         background-image: linear-gradient(white 50%, white 50%);
         background-size: 10000px 4px;
         background-repeat: no-repeat;
@@ -232,7 +246,7 @@ img.showcase-preview {
         display: block;
         -webkit-transition: all 0.2s;
         transition: all 0.2s;
-        background-color: #fff;
+        background-color: var(--prime-1);
     }
 
     .navbar-toggle.toggle-x .icon-bar:nth-of-type(1) {
