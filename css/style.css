@@ -77,7 +77,7 @@ section:first-of-type {
     padding: 24px;
     width: 680px;
     margin-top: 48px;
-    font-size: 2rem;
+    font-size: 64px;
 }
 
 #first-glance .button-container {
@@ -121,13 +121,14 @@ section:first-of-type {
     display: inline-block;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
     #first-glance {
         height: 60vh;
     }
 
     #first-glance .abstract-intro {
         width: 95vw;
+        font-size: 2rem;
     }
 
     #first-glance .abstract-container span.we-are {
