@@ -159,9 +159,19 @@ img.about-us {
  * Showcase
  *
  */
+#showcase .row {
+    margin-top: 8px;
+    margin-bottom: 72px;
+}
+
+#showcase .row p {
+    padding: 16px 0;
+}
+
 img.showcase-preview {
     width: 100%;
     height: auto;
+    border: 1px solid #bbb;
 }
 
 

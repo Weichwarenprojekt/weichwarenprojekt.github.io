@@ -1,4 +1,4 @@
-let randomStrings = ["a bunch of coders", "progresstinating", "in coderausch"];
+let randomStrings = ["a bunch of coders", "progresstinating", "in coderausch", "rewriting history", "home officers", "two commits ahead"];
 
 window.onload = () => {
     let randomIndex = Math.floor(Math.random() * randomStrings.length);
