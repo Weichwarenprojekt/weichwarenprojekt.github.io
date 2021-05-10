@@ -8,16 +8,22 @@ jobs:
     name: Deploying to gh-pages
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js for use with actions
-        uses: actions/setup-node@v1.1.0
+
+      # Install NodeJS
+      - name: Install NodeJS
+        uses: actions/setup-node@v1
         with:
-          version:  12.x
+          node-version: '14.16.0'
+
+      # Checkout branch
       - name: Checkout branch
         uses: actions/checkout@v2
 
+      # Install dependencies
       - name: Clean install dependencies
         run: npm ci
 
+      # Deploy the vue app
       - name: Run deploy script
         run: |
           git config user.name "Timbogen" && git config user.email "niederer.tim@gmail.com"
