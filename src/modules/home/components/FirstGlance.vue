@@ -4,7 +4,7 @@
             <span class="we-are">We are</span>
             <div class="name-container">
                 <span ref="randomSlogan" class="random-slogan">a bunch of coders</span>
-                <span class="name">Weichwarenprojekt</span>
+                <span ref="name" class="name">Weichwarenprojekt</span>
             </div>
         </div>
         <a class="btn btn-icon btn-primary" href="https://github.com/Weichwarenprojekt">
@@ -32,6 +32,9 @@ let randomStrings = [
 export default defineComponent({
     name: "FirstGlance",
     mounted() {
+        // Clear the previous translation
+        (this.$refs.name as HTMLElement).removeAttribute("style");
+
         // Show random string
         let randomIndex = Math.floor(Math.random() * randomStrings.length);
         (this.$refs.randomSlogan as HTMLElement).innerHTML = randomStrings[randomIndex];
