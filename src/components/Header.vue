@@ -85,7 +85,7 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: calc(100% - 2 * @mobile-outer-padding);
     height: calc(100vh - 2 * @header-height);
 
     * {

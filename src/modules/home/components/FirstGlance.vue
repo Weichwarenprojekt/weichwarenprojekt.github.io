@@ -133,4 +133,10 @@ export default defineComponent({
         line-height: @content-height-small;
     }
 }
+
+@media screen and (max-width: 380px) {
+    .abstract-intro * {
+        font-size: 24px;
+    }
+}
 </style>

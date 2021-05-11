@@ -36,11 +36,11 @@ export default defineComponent({
 
 @media screen and (max-width: @mobile-breakpoint) {
     .content {
-        padding: @header-height 16px;
+        padding: @header-height @mobile-outer-padding;
     }
 
     .header {
-        padding: 0 16px;
+        padding: 0 @mobile-outer-padding;
     }
 }
 </style>
