@@ -21,12 +21,10 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        working-directory: ./vue
         run: npm i
 
       # Deploy the vue app
       - name: Run deploy script
-        working-directory: ./vue
         run: |
           git config user.name "Timbogen" && git config user.email "niederer.tim@gmail.com"
           npm run deploy
