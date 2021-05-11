@@ -21,6 +21,15 @@
             url="https://weichwarenprojekt.github.io/granalyzer/"
             :image-src="require('@/assets/img/assembus.png')"
         />
+        <Showcase
+            :left="true"
+            title="Multi-Bomb"
+            description="This project is a multiplayer version of the classic game Bomberman.
+              In Multi-Bomb up to 8 players can compete on a map consisting of quadratic fields.
+              Within different game modes they can try to eliminate each other using a variety of deadly weapons."
+            url="https://weichwarenprojekt.github.io/multi-bomb/"
+            :image-src="require('@/assets/img/multi_bomb.png')"
+        />
         <div class="stay-tuned">
             <img src="@/assets/img/undraw_programmer_imem.svg" alt="Stay tuned" />
             <h3>Stay tuned for more...</h3>
