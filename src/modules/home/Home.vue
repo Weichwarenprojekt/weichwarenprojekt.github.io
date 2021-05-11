@@ -18,7 +18,7 @@
             description="Optimize and plan your manufacturing line. With Assembus you get an extensive tool to visualize the
                     assembly process of complex products in 3D. Therefore, you can spread the individual steps over
                     different stations and in the end, pass the whole process in review with the Cinema Mode."
-            url="https://weichwarenprojekt.github.io/granalyzer/"
+            url="https://weichwarenprojekt.github.io/assembus/"
             :image-src="require('@/assets/img/assembus.png')"
         />
         <Showcase
