@@ -6,7 +6,7 @@
 
             <!-- The nav links -->
             <div class="links">
-                <router-link to="/">Home</router-link>
+                <router-link to="/home">Home</router-link>
                 <router-link to="/contact">Contact</router-link>
             </div>
 
@@ -26,7 +26,7 @@
 
         <!-- The links expanded -->
         <div class="links-toggled">
-            <router-link to="/" @click="toggled = false">Home</router-link>
+            <router-link to="/home" @click="toggled = false">Home</router-link>
             <router-link to="/contact" @click="toggled = false">Contact</router-link>
         </div>
     </div>

@@ -5,10 +5,10 @@ import Contact from "./modules/contact/Contact.vue";
 const routes: Array<RouteRecordRaw> = [
     {
         path: "/:catchAll(.*)",
-        redirect: "/",
+        redirect: "/home",
     },
     {
-        path: "/",
+        path: "/home",
         name: "Home",
         component: Home,
     },
