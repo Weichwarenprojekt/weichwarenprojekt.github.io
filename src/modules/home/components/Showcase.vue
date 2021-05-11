@@ -35,7 +35,7 @@ export default defineComponent({
 .showcase {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 64px;
+    margin-bottom: 128px;
 
     div {
         margin-right: 64px;

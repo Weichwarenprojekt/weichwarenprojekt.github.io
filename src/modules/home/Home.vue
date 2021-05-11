@@ -52,10 +52,11 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 128px;
+    margin-top: 192px;
 
     img {
         max-width: 600px;
+        width: 100%;
     }
 
     h3 {

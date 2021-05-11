@@ -34,7 +34,7 @@ export default defineComponent({
     padding: @header-height @outer-padding;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: @mobile-breakpoint) {
     .content {
         padding: @header-height 16px;
     }
