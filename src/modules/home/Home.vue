@@ -10,7 +10,7 @@
             other. As you can reuse elements in multiple diagrams, creating those visualizations becomes remarkably
             fast."
             url="https://weichwarenprojekt.github.io/granalyzer/"
-            :image-src="require('@/assets/img/granalyzer.png')"
+            :image-src="require('@/assets/img/home/granalyzer.png')"
         />
         <Showcase
             :left="false"
@@ -19,7 +19,7 @@
                     assembly process of complex products in 3D. Therefore, you can spread the individual steps over
                     different stations and in the end, pass the whole process in review with the Cinema Mode."
             url="https://weichwarenprojekt.github.io/assembus/"
-            :image-src="require('@/assets/img/assembus.png')"
+            :image-src="require('@/assets/img/home/assembus.png')"
         />
         <Showcase
             :left="true"
@@ -28,10 +28,10 @@
               In Multi-Bomb up to 8 players can compete on a map consisting of quadratic fields.
               Within different game modes they can try to eliminate each other using a variety of deadly weapons."
             url="https://weichwarenprojekt.github.io/multi-bomb/"
-            :image-src="require('@/assets/img/multi_bomb.png')"
+            :image-src="require('@/assets/img/home/multi_bomb.png')"
         />
         <div class="stay-tuned">
-            <img src="@/assets/img/undraw_programmer_imem.svg" alt="Stay tuned" />
+            <img src="@/assets/img/home/undraw_programmer_imem.svg" alt="Stay tuned" />
             <h3>Stay tuned for more...</h3>
         </div>
     </div>

@@ -22,3 +22,4 @@ pnpm-debug.log*
 vue/node_modules
 /dist
 /package-lock.json
+/node_modules/

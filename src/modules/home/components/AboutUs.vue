@@ -15,7 +15,7 @@
                 UIs and intuitive controls. You don't trust us? Then try our showcase projects below!
             </p>
         </div>
-        <img src="@/assets/img/undraw_feeling_proud_qne1.svg" alt="About Us" />
+        <img src="@/assets/img/home/undraw_feeling_proud_qne1.svg" alt="About Us" />
     </div>
 </template>
 
