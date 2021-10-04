@@ -30,7 +30,7 @@ export const messages = {
 
 export default createI18n({
     legacy: false,
-    locale: Locales.DE,
+    locale: navigator.language.split("-")[0],
     fallbackLocale: Locales.EN,
     messages: messages,
     globalInjection: true,
