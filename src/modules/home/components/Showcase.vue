@@ -1,11 +1,20 @@
 <template>
-    <div :class="['showcase', { 'showcase-left': left }]">
-        <div class="showcase-description">
-            <h2>{{ title }}</h2>
-            <p>{{ description }}</p>
-            <a :href="url" class="btn btn-primary">Check it out</a>
+    <div class="showcase">
+        <div class="showcase-info">
+            <div class="showcase-title">
+                <svg>
+                    <use :href="`${require('@/assets/img/icons.svg')}#academy`"></use>
+                </svg>
+                <h2>{{ title }}</h2>
+            </div>
+            <div class="showcase-description">{{ description }}</div>
+            <div>
+                <a :href="url" class="btn btn-primary">
+                    {{ $t("home.examples.visit") }}
+                </a>
+            </div>
         </div>
-        <img :src="imageSrc" :alt="title" />
+        <img :alt="title" :src="image" />
     </div>
 </template>
 
@@ -15,16 +24,22 @@ import { defineComponent } from "vue";
 export default defineComponent({
     name: "Showcase",
     props: {
-        // True if the image is left
-        left: Boolean,
-        // The title
-        title: String,
-        // The description
-        description: String,
-        // The image source for the preview
-        imageSrc: String,
-        // The url for the check it out button
-        url: String,
+        title: {
+            type: String,
+            default: "Title",
+        },
+        description: {
+            type: String,
+            default: "Description",
+        },
+        image: {
+            type: String,
+            default: "",
+        },
+        url: {
+            type: String,
+            default: "https://google.com",
+        },
     },
 });
 </script>
@@ -35,31 +50,40 @@ export default defineComponent({
 .showcase {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 128px;
-
-    div {
-        margin-right: 64px;
-    }
+    margin-bottom: @big-padding;
+    background: @grey;
+    border-radius: @border-radius;
+    padding: @normal-padding @big-padding;
 
     img {
         flex: 0 0 auto;
-        width: 60%;
+        width: 50%;
         border: 1px solid black;
+        border-radius: @border-radius;
     }
 }
 
-.showcase-left {
-    div {
-        order: 1;
-        margin-left: 64px;
-        margin-right: 0;
+.showcase-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h2 {
+        margin: 0;
+    }
+
+    svg {
+        margin-right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
 
 .showcase-description {
-    h2 {
-        margin-bottom: 12px;
-    }
+    font-weight: 300;
+    font-size: @h3;
+    margin-right: @normal-padding;
+    margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 1000px) {
@@ -71,15 +95,8 @@ export default defineComponent({
         }
 
         img {
-            margin-top: 32px;
+            margin-top: @normal-padding;
             width: 100%;
-        }
-    }
-
-    .showcase-left {
-        div {
-            order: 0;
-            margin-left: 0;
         }
     }
 }

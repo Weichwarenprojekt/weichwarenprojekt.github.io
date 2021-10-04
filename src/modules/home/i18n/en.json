@@ -1,0 +1,39 @@
+{
+  "intro": {
+    "title": "Problems with your Software?",
+    "question1": "Are you in need of capacity?",
+    "question2": "Do you have problems with new technologies?",
+    "question3": "Does the project contain too much risk?"
+  },
+  "answer": {
+    "title":"Then we are you solution!",
+    "description": "Whether it is a web client or a database adapter, our young team will help you too solve those problems."
+  },
+  "focus": {
+    "title": "Our Focus",
+    "user": {
+      "title": "Customer",
+      "description": "During the development we count on continuous communication with our customer."
+    },
+    "design": {
+      "title": "Design",
+      "description": "We are always looking for new design trends and the best possible user experience."
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "description": "We are not afraid to learn new technologies for a client."
+    }
+  },
+  "examples": {
+    "title": "Example Projects",
+    "visit": "Visit Website",
+    "granalyzer": {
+      "title": "Granalyzer",
+      "description": "This diagramming tool allows you to create and visualize graphs of elements and their relations to each other. As you can reuse elements in multiple diagrams, creating those visualizations becomes remarkably fast."
+    },
+    "assembus": {
+      "title": "Assembus",
+      "description": "Optimize and plan your manufacturing line. With Assembus you get an extensive tool to visualize the assembly process of complex products in 3D. Therefore, you can spread the individual steps over different stations and in the end, pass the whole process in review with the Cinema Mode."
+    }
+  }
+}

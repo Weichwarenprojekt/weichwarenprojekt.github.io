@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "target": "esnext",
     "module": "esnext",
     "strict": true,
@@ -10,9 +11,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "./vue",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "jest"
     ],
     "paths": {
       "@/*": [
@@ -34,6 +37,6 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "vue/node_modules"
+    "node_modules"
   ]
 }

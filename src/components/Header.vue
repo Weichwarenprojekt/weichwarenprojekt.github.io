@@ -2,32 +2,35 @@
     <div :class="['header', { 'header-toggled': toggled }]">
         <div class="header-content">
             <!-- The logo -->
-            <img src="../assets/img/logo.svg" alt="" />
+            <img alt="" src="../assets/img/logo.svg" />
 
             <!-- The nav links -->
             <div class="links">
-                <router-link to="/home">Home</router-link>
-                <router-link to="/contact">Contact</router-link>
+                <router-link to="/home">{{ $t("global.home") }}</router-link>
+                <router-link to="/team">{{ $t("global.team") }}</router-link>
+                <router-link to="/contact">{{ $t("global.contact") }}</router-link>
             </div>
 
             <!-- The toggle button -->
             <button
+                :class="['navbar-toggle', { 'navbar-toggled': toggled }]"
                 aria-controls="navbarNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-                :class="['navbar-toggle', { 'navbar-toggled': toggled }]"
                 @click="toggled = !toggled"
             >
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="info-mail" href="mailto:info@weichwarenprojekt.de">info@weichwarenprojekt.de</a>
         </div>
 
         <!-- The links expanded -->
         <div class="links-toggled">
-            <router-link to="/home" @click="toggled = false">Home</router-link>
-            <router-link to="/contact" @click="toggled = false">Contact</router-link>
+            <router-link to="/home" @click="toggled = false">{{ $t("global.home") }}</router-link>
+            <router-link to="/team" @click="toggled = false">{{ $t("global.team") }}</router-link>
+            <router-link to="/contact" @click="toggled = false">{{ $t("global.contact") }}</router-link>
         </div>
     </div>
 </template>
@@ -50,20 +53,27 @@ export default defineComponent({
 
 .header {
     height: @header-height;
-    max-width: @max-width;
+    border-top: 4px solid;
+    border-image-source: @gradient;
+    border-image-slice: 1;
     width: 100%;
     background: white;
     transition: all 300ms;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 
     img {
-        height: 48px;
+        height: 3rem;
         margin-right: 64px;
     }
 }
 
 .header-content {
+    padding: 0 @outer-padding;
     height: @header-height;
+    max-width: @max-width;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -74,7 +84,7 @@ export default defineComponent({
 
     * {
         font-size: @h3;
-        margin-right: 16px;
+        margin-right: 32px;
     }
 }
 
@@ -85,7 +95,7 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 2 * @mobile-outer-padding);
+    width: calc(100% - 2 * @outer-padding);
     height: calc(100vh - 2 * @header-height);
 
     * {
@@ -94,23 +104,34 @@ export default defineComponent({
     }
 }
 
+// The info field
+.info-mail {
+    margin-left: auto;
+}
+
 // The toggle
 .navbar-toggle {
     border: none;
     background: transparent !important;
+    margin-left: auto;
     outline: none;
-    position: absolute;
-    right: 16px;
     display: none;
     cursor: pointer;
 }
+
 @media screen and (max-width: @mobile-breakpoint) {
     .navbar-toggle {
         display: block;
     }
+
+    .info-mail {
+        display: none;
+    }
+
     .links {
         display: none;
     }
+
     .header-toggled {
         height: 100vh;
     }
@@ -130,6 +151,7 @@ export default defineComponent({
     background-repeat: no-repeat;
     background-position: -10000px 4.5rem;
 }
+
 .icon-bar:nth-of-type(1) {
     margin-top: 0;
     -webkit-transform: rotate(0);
@@ -139,10 +161,12 @@ export default defineComponent({
     -ms-transform-origin: 10% 10%;
     transform-origin: 10% 10%;
 }
+
 .icon-bar:nth-of-type(2) {
     opacity: 1;
     filter: alpha(opacity=100);
 }
+
 .icon-bar:nth-of-type(3) {
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
@@ -151,17 +175,20 @@ export default defineComponent({
     -ms-transform-origin: 10% 90%;
     transform-origin: 10% 90%;
 }
+
 .navbar-toggled {
     .icon-bar:nth-of-type(1) {
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(45deg);
     }
+
     .icon-bar:nth-of-type(2) {
         margin-top: 4px;
         opacity: 0;
         filter: alpha(opacity=0);
     }
+
     .icon-bar:nth-of-type(3) {
         margin-top: 4px;
         -webkit-transform: rotate(-45deg);

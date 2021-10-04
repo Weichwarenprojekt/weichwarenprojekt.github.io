@@ -1,0 +1,39 @@
+{
+  "intro": {
+    "title": "Probleme bei ihrer Software?",
+    "question1": "Haben Sie aktuell Kapazitätsprobleme?",
+    "question2": "Gibt es Schwierigkeiten mit unbekannten Technologien?",
+    "question3": "Bringt ein Projekt viel Risiko mit sich?"
+  },
+  "answer": {
+    "title":"Dann sind wir Ihre Lösung!",
+    "description": "Ob Webanwendung oder Datenbankanbindung, unser junges Team hilft gerne mit Ihnen zusammen eine Lösung zu finden."
+  },
+  "focus": {
+    "title": "Unser Fokus",
+    "user": {
+      "title": "Kunde",
+      "description": "Bei dem Entwicklungsprozess wird auf ständigen Kundenkontakt gesetzt."
+    },
+    "design": {
+      "title": "Design",
+      "description": "Wir sind immer auf der Suche nach neuen Design-Trends und bester User Experience."
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "description": "Wir haben keine Angst vor neuen Technologien, sondern freuen uns über neue Challenges."
+    }
+  },
+  "examples": {
+    "title": "Beispielprojekte",
+    "visit": "Website besuchen",
+    "granalyzer": {
+      "title": "Granalyzer",
+      "description": "Unser Diagrammtool erlaubt es Ihnen auf bestehenden Datensätzen aufzusetzen und daraus Diagramme zu machen. Beziehungen zwischen den Daten helfen hierbei den Gestaltungsprozess erheblich zu beschleunigen."
+    },
+    "assembus": {
+      "title": "Assembus",
+      "description": "Optimieren Sie Ihren Fertigungprozess. Mit Assembus können Sie komplexe Produkte und deren Fertigungsreihenfolge in 3D darstellen. Dafür bietet Ihnen das Tool die Möglichkeit, die Einzelteile in Stationen aufzuteilen, um diese dann über den Cinema-Mode bewerten zu lassen."
+    }
+  }
+}

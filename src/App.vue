@@ -27,20 +27,9 @@ export default defineComponent({
     position: fixed;
     top: 0;
     z-index: 100;
-    padding: 0 @outer-padding;
 }
 
 .content {
-    padding: @header-height @outer-padding;
-}
-
-@media screen and (max-width: @mobile-breakpoint) {
-    .content {
-        padding: @header-height @mobile-outer-padding;
-    }
-
-    .header {
-        padding: 0 @mobile-outer-padding;
-    }
+    padding: @big-padding @outer-padding;
 }
 </style>
