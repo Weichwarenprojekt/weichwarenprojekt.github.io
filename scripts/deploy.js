@@ -11,15 +11,18 @@ const fs = require("fs");
         console.log("Building...");
         await execa("npm", ["run", "build"]);
         const folderName = fs.existsSync("dist") ? "dist" : "build";
-        await execa("echo", ["weichwarenprojekt.de", ">", `${folderName}/CNAME`]);
-        await execa("git", ["--work-tree", folderName, "add", "--all"]);
-        await execa("git", ["--work-tree", folderName, "commit", "-m", "gh-pages"]);
-        console.log("Pushing to gh-pages...");
-        await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
-        await execa("rm", ["-r", folderName]);
-        await execa("git", ["checkout", "-f", "main"]);
-        await execa("git", ["branch", "-D", "gh-pages"]);
-        console.log("Successfully deployed");
+
+        // Add CNAME file
+        fs.writeFile(`${folderName}/CNAME`, "weichwarenprojekt.de", async () => {
+            await execa("git", ["--work-tree", folderName, "add", "--all"]);
+            await execa("git", ["--work-tree", folderName, "commit", "-m", "gh-pages"]);
+            console.log("Pushing to gh-pages...");
+            await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
+            await execa("rm", ["-r", folderName]);
+            await execa("git", ["checkout", "-f", "main"]);
+            await execa("git", ["branch", "-D", "gh-pages"]);
+            console.log("Successfully deployed");
+        });
     } catch (e) {
         console.log(e.message);
         process.exit(1);
