@@ -50,7 +50,6 @@ export default defineComponent({
 .showcase {
     display: flex;
     align-items: flex-start;
-    margin-bottom: @big-padding;
     background: @grey;
     border-radius: @border-radius;
     padding: @normal-padding @big-padding;
@@ -89,6 +88,7 @@ export default defineComponent({
 @media screen and (max-width: 1000px) {
     .showcase {
         flex-direction: column;
+        padding: @normal-padding;
 
         div {
             margin-right: 0;

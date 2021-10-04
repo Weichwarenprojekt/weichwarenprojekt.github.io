@@ -50,6 +50,7 @@
         <!-- Examples -->
         <h1 class="title">{{ $t("home.examples.title") }}</h1>
         <Showcase
+            class="home-granalyzer"
             :description="$t('home.examples.granalyzer.description')"
             :image="require('@/assets/img/home/examples/granalyzer.png')"
             :title="$t('home.examples.granalyzer.title')"
@@ -261,5 +262,9 @@ export default defineComponent({
         margin-top: 3rem;
         width: 100%;
     }
+}
+
+.home-granalyzer {
+    margin-bottom: @normal-padding;
 }
 </style>

@@ -74,7 +74,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: @header-height;
+    margin-top: @normal-padding;
 
     img {
         max-width: 600px;

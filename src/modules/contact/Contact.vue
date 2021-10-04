@@ -57,7 +57,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: @header-height;
+    margin-top: @normal-padding;
 }
 
 .contact-form {
