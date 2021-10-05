@@ -6,13 +6,8 @@ export class EmailController {
     constructor(private readonly emailService: EmailService) {}
 
     @Post("send")
-    async sendEmail(
-        @Body("name") name,
-        @Body("email") email,
-        @Body("message") message,
-        @Body("phone") phone,
-    ): Promise<void> {
+    async sendEmail(@Body("name") name, @Body("email") email, @Body("message") message): Promise<void> {
         await this.emailService.sendToCustomer(name, email);
-        await this.emailService.sendContactRequest(name, email, message, phone);
+        await this.emailService.sendContactRequest(name, email, message);
     }
 }

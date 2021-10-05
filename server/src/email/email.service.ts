@@ -20,7 +20,7 @@ export class EmailService {
         });
     }
 
-    public async sendContactRequest(name: string, address: string, message: string, phone: string) {
+    public async sendContactRequest(name: string, address: string, message: string) {
         await this.mailerService.sendMail({
             to: process.env.CONTACT_ADRESS || "social@weichwarenprojekt.de",
             subject: `Neue Kontaktanfrage - ${name}`,
@@ -29,7 +29,6 @@ export class EmailService {
                 name,
                 email: address,
                 message,
-                phone,
             },
             attachments: [
                 { filename: "logo.png", path: `${__dirname}/assets/img/logo.png`, cid: "logo1" },
