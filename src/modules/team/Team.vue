@@ -12,7 +12,7 @@
             :degree="$t('team.eeDegree')"
             linkedin="https://www.linkedin.com/in/karlwiesmayer/"
             name="Karl Wiesmayer"
-            quote="Das fetzt ordentlich!"
+            :quote="$t('team.karl')"
         />
 
         <!-- Computer Scientists -->
@@ -23,7 +23,7 @@
             github="https://github.com/failipp"
             linkedin="https://www.linkedin.com/in/philippscheede/"
             name="Philipp Scheede"
-            quote="Python ist die beste Sprache, aber nicht immer."
+            :quote="$t('team.philipp')"
         />
         <MemberCard
             :degree="$t('team.csDegree')"
@@ -31,7 +31,7 @@
             github="https://github.com/samuelhuebner"
             linkedin="https://www.linkedin.com/in/samuel-h%C3%BCbner-54630a1a1/"
             name="Samuel Hübner"
-            quote="Dicker Beamer."
+            :quote="$t('team.samu')"
         />
         <MemberCard
             :degree="$t('team.csDegree')"
@@ -39,14 +39,14 @@
             github="https://github.com/stefan-rink"
             linkedin="https://www.linkedin.com/in/stefanrink/"
             name="Stefan Rink"
-            quote="Ist der Bug von dir? - Nein ich hab nur refactored"
+            :quote="$t('team.stefan')"
         />
         <MemberCard
             :degree="$t('team.csDegree')"
             github="https://github.com/Timbogen"
             linkedin="https://www.linkedin.com/in/tim-niederer-44992420b/"
             name="Tim Niederer"
-            quote="Das ist schnell fertig!"
+            :quote="$t('team.tim')"
         />
     </div>
 </template>

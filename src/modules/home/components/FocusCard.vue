@@ -42,7 +42,7 @@ export default defineComponent({
     img {
         flex: 0 0 auto;
         height: 10rem;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
     div {

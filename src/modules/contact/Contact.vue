@@ -29,7 +29,11 @@
                     <div>{{ error }}</div>
                 </div>
                 <a class="btn btn-primary btn-icon" @click="sendEmail()">
-                    <svg>
+                    <div class="spinner" v-if="loading">
+                        <div class="spinner-bounce1"></div>
+                        <div class="spinner-bounce2"></div>
+                    </div>
+                    <svg v-else>
                         <use :href="`${require('@/assets/img/icons.svg')}#email`"></use>
                     </svg>
                     {{ $t("contact.send") }}
@@ -54,6 +58,7 @@ export default defineComponent({
             email: "",
             message: "",
             error: "",
+            loading: false,
         };
     },
     methods: {
@@ -61,6 +66,8 @@ export default defineComponent({
          * Try to send an e-mail
          */
         sendEmail(): void {
+            if (this.loading) return;
+
             // Check name
             if (!this.name) {
                 this.error = this.$t("contact.nameRequired");
@@ -81,6 +88,7 @@ export default defineComponent({
 
             // Send the email
             this.error = "";
+            this.loading = true;
             fetch("https://api.weichwarenprojekt.de/v1/email/send", {
                 headers: {
                     Accept: "application/json",
@@ -99,9 +107,11 @@ export default defineComponent({
                     } else {
                         this.message = "";
                     }
+                    this.loading = false;
                 })
                 .catch(() => {
                     this.error = this.$t("contact.couldNotSend");
+                    this.loading = false;
                 });
         },
     },

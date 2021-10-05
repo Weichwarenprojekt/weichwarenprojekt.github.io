@@ -127,8 +127,9 @@ export default defineComponent({
     margin-bottom: @big-padding;
 
     img {
-        width: 60%;
+        width: 55%;
         margin-left: 6rem;
+        flex: 0 0 auto;
     }
 }
 
@@ -158,8 +159,9 @@ export default defineComponent({
     margin-bottom: @big-padding;
 
     img {
-        width: 60%;
+        width: 55%;
         margin-right: 6rem;
+        flex: 0 0 auto;
     }
 }
 
