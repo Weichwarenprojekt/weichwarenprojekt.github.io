@@ -2,9 +2,12 @@
   "title": "Kontakt",
   "description": "Interesse? Kontaktieren Sie uns einfach per E-Mail. Die Technologie ist egal. Wir freuen uns immer neues zu lernen!",
   "submit": "E-Mail verfassen",
-  "firstName": "Vorname",
-  "lastName": "Nachname",
+  "name": "Name",
   "email": "E-Mail",
   "message": "Nachricht",
-  "send": "E-Mail senden"
+  "send": "E-Mail senden",
+  "nameRequired": "Geben Sie Ihren Namen ein!",
+  "emailRequired": "Geben Sie eine gültige E-Mail ein!",
+  "messageRequired": "Geben Sie eine Nachricht ein!",
+  "couldNotSend": "Nachricht konnte nicht geschickt werden!"
 }

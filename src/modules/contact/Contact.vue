@@ -11,21 +11,24 @@
         <h1 class="title">{{ $t("contact.submit") }}</h1>
         <form autocomplete="on" class="contact-form">
             <!-- First Name -->
-            <label for="firstname">{{ $t("contact.firstName") }}</label>
-            <input id="firstname" name="firstname" type="text" />
-            <!-- Last Name -->
-            <label for="lastname">{{ $t("contact.lastName") }}</label>
-            <input id="lastname" name="lastname" type="text" />
+            <label for="name">{{ $t("contact.name") }}</label>
+            <input id="name" v-model="name" name="name" type="text" />
             <!-- Email -->
-            <label for="name">{{ $t("contact.email") }}</label>
-            <input id="name" name="name" type="text" />
+            <label for="email">{{ $t("contact.email") }}</label>
+            <input id="email" v-model="email" name="email" type="text" />
             <!-- Message -->
             <label>{{ $t("contact.message") }}</label>
-            <textarea id="message" />
+            <textarea id="message" v-model="message" />
 
             <!-- Footer -->
             <div class="footer">
-                <a class="btn btn-primary btn-icon">
+                <div class="contact-warning">
+                    <svg v-if="error">
+                        <use :href="`${require('@/assets/img/icons.svg')}#error`"></use>
+                    </svg>
+                    <div>{{ error }}</div>
+                </div>
+                <a class="btn btn-primary btn-icon" @click="sendEmail()">
                     <svg>
                         <use :href="`${require('@/assets/img/icons.svg')}#email`"></use>
                     </svg>
@@ -44,6 +47,63 @@ export default defineComponent({
     name: "Contact",
     components: {
         IntroCard,
+    },
+    data() {
+        return {
+            name: "",
+            email: "",
+            message: "",
+            error: "",
+        };
+    },
+    methods: {
+        /**
+         * Try to send an e-mail
+         */
+        sendEmail(): void {
+            // Check name
+            if (!this.name) {
+                this.error = this.$t("contact.nameRequired");
+                return;
+            }
+
+            // Check email
+            if (!(this.email.includes("@") && this.email.includes("."))) {
+                this.error = this.$t("contact.emailRequired");
+                return;
+            }
+
+            // Check first name
+            if (!this.message) {
+                this.error = this.$t("contact.messageRequired");
+                return;
+            }
+
+            // Send the email
+            this.error = "";
+            fetch("https://api.weichwarenprojekt.de/v1/email/send", {
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    name: this.name,
+                    email: this.email,
+                    message: this.message,
+                }),
+            })
+                .then((res) => {
+                    if (res.status >= 300) {
+                        this.error = this.$t("contact.couldNotSend");
+                    } else {
+                        this.message = "";
+                    }
+                })
+                .catch(() => {
+                    this.error = this.$t("contact.couldNotSend");
+                });
+        },
     },
 });
 </script>
@@ -82,9 +142,27 @@ export default defineComponent({
     }
 }
 
+.contact-warning {
+    display: flex;
+    margin-right: 2rem;
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+        fill: @prime-2;
+    }
+
+    div {
+        margin-left: 1rem;
+        color: @prime-2;
+        font-size: @h3;
+    }
+}
+
 .footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @media screen and (max-width: @mobile-breakpoint) {
