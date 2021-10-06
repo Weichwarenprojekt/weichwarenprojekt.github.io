@@ -75,15 +75,6 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
     margin-top: @normal-padding;
-
-    img {
-        max-width: 600px;
-        width: 100%;
-    }
-
-    h3 {
-        margin-top: 24px;
-    }
 }
 
 .inner-card {

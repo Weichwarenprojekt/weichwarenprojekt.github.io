@@ -90,7 +90,7 @@ export default defineComponent({
 }
 
 .member-image {
-    border: 4px solid @prime-1;
+    border: 0.2rem solid @prime-1;
     border-radius: @image-width;
     width: @image-width;
     height: @image-width;
@@ -114,7 +114,7 @@ export default defineComponent({
     margin-right: 2rem;
 
     div {
-        margin-top: 4px;
+        margin-top: 0.2rem;
     }
 
     svg {

@@ -51,21 +51,27 @@ export default defineComponent({
 <style lang="less" scoped>
 @import "~@/styles/vars.less";
 
+.header::before {
+    content: "";
+    height: 0.3rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: @gradient;
+}
 .header {
     height: @header-height;
-    border-top: 4px solid;
-    border-image-source: @gradient;
-    border-image-slice: 1;
     width: 100%;
     background: white;
     transition: all 300ms;
     overflow: hidden;
     display: flex;
     justify-content: center;
+    padding-top: 0.3rem;
 
     img {
         height: 3rem;
-        margin-right: 64px;
+        margin-right: 4rem;
     }
 }
 
