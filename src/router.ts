@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "./modules/home/Home.vue";
 import Contact from "./modules/contact/Contact.vue";
 import Team from "@/modules/team/Team.vue";
+import DataProtection from "@/modules/data-protection/DataProtection.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -22,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
         path: "/contact",
         name: "Contact",
         component: Contact,
+    },
+    {
+        path: "/data-protection",
+        name: "Data Protection",
+        component: DataProtection,
     },
 ];
 

@@ -21,7 +21,7 @@
             :degree="$t('team.csDegree')"
             class="inner-card"
             github="https://github.com/failipp"
-            linkedin="https://www.linkedin.com/in/philippscheede/"
+            linkedin="https://www.linkedin.com"
             name="Philipp Scheede"
             :quote="$t('team.philipp')"
         />
@@ -37,7 +37,7 @@
             :degree="$t('team.csDegree')"
             class="inner-card"
             github="https://github.com/stefan-rink"
-            linkedin="https://www.linkedin.com/in/stefanrink/"
+            linkedin="https://www.linkedin.com"
             name="Stefan Rink"
             :quote="$t('team.stefan')"
         />

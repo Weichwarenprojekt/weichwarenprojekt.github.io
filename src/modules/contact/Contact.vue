@@ -29,7 +29,7 @@
                     <div>{{ error }}</div>
                 </div>
                 <a class="btn btn-primary btn-icon" @click="sendEmail()">
-                    <div class="spinner" v-if="loading">
+                    <div v-if="loading" class="spinner">
                         <div class="spinner-bounce1"></div>
                         <div class="spinner-bounce2"></div>
                     </div>
@@ -88,7 +88,7 @@ export default defineComponent({
 
             // Send the email
             this.error = "";
-            this.loading = true;
+            /*this.loading = true;
             fetch("https://api.weichwarenprojekt.de/v1/email/send", {
                 headers: {
                     Accept: "application/json",
@@ -112,7 +112,7 @@ export default defineComponent({
                 .catch(() => {
                     this.error = this.$t("contact.couldNotSend");
                     this.loading = false;
-                });
+                });*/
         },
     },
 });

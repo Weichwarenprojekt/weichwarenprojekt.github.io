@@ -7,6 +7,8 @@ import team_en from "@/modules/team/i18n/en.json";
 import team_de from "@/modules/team/i18n/de.json";
 import contact_en from "@/modules/contact/i18n/en.json";
 import contact_de from "@/modules/contact/i18n/de.json";
+import dataProtection_en from "@/modules/data-protection/i18n/en.json";
+import dataProtection_de from "@/modules/data-protection/i18n/de.json";
 
 export enum Locales {
     EN = "en",
@@ -19,12 +21,14 @@ export const messages = {
         home: home_en,
         team: team_en,
         contact: contact_en,
+        dataProtection: dataProtection_en,
     },
     [Locales.DE]: {
         global: app_de,
         home: home_de,
         team: team_de,
         contact: contact_de,
+        dataProtection: dataProtection_de,
     },
 };
 
