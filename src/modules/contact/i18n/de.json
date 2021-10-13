@@ -9,5 +9,12 @@
   "nameRequired": "Geben Sie Ihren Namen ein!",
   "emailRequired": "Geben Sie eine gültige E-Mail ein!",
   "messageRequired": "Geben Sie eine Nachricht ein!",
-  "couldNotSend": "Nachricht konnte nicht geschickt werden!"
+  "couldNotSend": "Nachricht konnte nicht geschickt werden!",
+  "privacyChecked": "Sie müssen der Datenschutzerklärung zustimmen!",
+  "serviceNotAvailable": "Dieser Service ist aktuell nicht verfügbar!",
+  "privacy": {
+    "first": "Ich stimme der",
+    "second": "Datenschutzerklärung",
+    "third": "zu"
+  }
 }

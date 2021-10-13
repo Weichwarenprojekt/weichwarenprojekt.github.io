@@ -9,5 +9,12 @@
   "nameRequired": "Enter your name!",
   "emailRequired": "Enter a valid e-mail!",
   "messageRequired": "Enter a message!",
-  "couldNotSend": "Could not send message!"
+  "couldNotSend": "Could not send message!",
+  "privacyChecked": "You have to agree to the privacy policy!",
+  "serviceNotAvailable": "This service is currently not available!",
+  "privacy": {
+    "first": "I agree to the",
+    "second": "privacy policy",
+    "third": ""
+  }
 }

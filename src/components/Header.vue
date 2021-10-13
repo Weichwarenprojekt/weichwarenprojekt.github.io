@@ -6,9 +6,9 @@
 
             <!-- The nav links -->
             <div class="links">
-                <router-link to="/home">{{ $t("global.home") }}</router-link>
-                <router-link to="/team">{{ $t("global.team") }}</router-link>
-                <router-link to="/contact">{{ $t("global.contact") }}</router-link>
+                <router-link to="/home" @click="scrollToTop">{{ $t("global.home") }}</router-link>
+                <router-link to="/team" @click="scrollToTop">{{ $t("global.team") }}</router-link>
+                <router-link to="/contact" @click="scrollToTop">{{ $t("global.contact") }}</router-link>
             </div>
 
             <!-- The toggle button -->
@@ -45,6 +45,14 @@ export default defineComponent({
             toggled: false,
         };
     },
+    methods: {
+        /**
+         * Scroll the window to the top
+         */
+        scrollToTop() {
+            window.scrollTo(0, 0);
+        },
+    },
 });
 </script>
 
@@ -59,6 +67,7 @@ export default defineComponent({
     top: 0;
     background: @gradient;
 }
+
 .header {
     height: @header-height;
     width: 100%;

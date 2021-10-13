@@ -1121,6 +1121,9 @@ export default defineComponent({
             locales: Locales,
         };
     },
+    mounted() {
+        window.scrollTo(0, 0);
+    },
 });
 </script>
 

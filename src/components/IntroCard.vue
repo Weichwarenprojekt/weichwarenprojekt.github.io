@@ -12,7 +12,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-    name: "Header",
+    name: "IntroCard",
     props: {
         title: {
             type: String,
@@ -68,6 +68,7 @@ export default defineComponent({
         align-items: center;
         text-align: center;
     }
+
     .intro-image {
         width: 100%;
         margin-left: 0;

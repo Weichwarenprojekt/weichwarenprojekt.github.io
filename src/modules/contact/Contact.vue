@@ -20,14 +20,19 @@
             <label>{{ $t("contact.message") }}</label>
             <textarea id="message" v-model="message" />
 
+            <!-- Privacy Policy -->
+            <div class="checkbox-field">
+                <Checkbox v-model="privacyPolicyChecked"></Checkbox>
+                <div>
+                    {{ $t("contact.privacy.first") }}
+                    <router-link to="/data-protection"> {{ $t("contact.privacy.second") }} </router-link>
+                    {{ $t("contact.privacy.third") }}
+                </div>
+            </div>
+
             <!-- Footer -->
             <div class="footer">
-                <div class="contact-warning">
-                    <svg v-if="error">
-                        <use :href="`${require('@/assets/img/icons.svg')}#error`"></use>
-                    </svg>
-                    <div>{{ error }}</div>
-                </div>
+                <!-- Send Button -->
                 <a class="btn btn-primary btn-icon" @click="sendEmail()">
                     <div v-if="loading" class="spinner">
                         <div class="spinner-bounce1"></div>
@@ -38,6 +43,14 @@
                     </svg>
                     {{ $t("contact.send") }}
                 </a>
+
+                <!-- Error Text -->
+                <div class="contact-warning">
+                    <svg v-if="error">
+                        <use :href="`${require('@/assets/img/icons.svg')}#error`"></use>
+                    </svg>
+                    <div>{{ error }}</div>
+                </div>
             </div>
         </form>
     </div>
@@ -46,19 +59,22 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import IntroCard from "@/components/IntroCard.vue";
+import Checkbox from "@/components/Checkbox.vue";
 
 export default defineComponent({
     name: "Contact",
     components: {
         IntroCard,
+        Checkbox,
     },
     data() {
         return {
             name: "",
             email: "",
             message: "",
-            error: "",
+            error: this.$t("contact.serviceNotAvailable"),
             loading: false,
+            privacyPolicyChecked: true,
         };
     },
     methods: {
@@ -69,7 +85,7 @@ export default defineComponent({
             if (this.loading) return;
 
             // Check name
-            if (!this.name) {
+            /*if (!this.name) {
                 this.error = this.$t("contact.nameRequired");
                 return;
             }
@@ -86,9 +102,15 @@ export default defineComponent({
                 return;
             }
 
+            // Check privacy policy
+            if (!this.privacyPolicyChecked) {
+                this.error = this.$t("contact.privacyChecked");
+                return;
+            }
+
             // Send the email
             this.error = "";
-            /*this.loading = true;
+            this.loading = true;
             fetch("https://api.weichwarenprojekt.de/v1/email/send", {
                 headers: {
                     Accept: "application/json",
@@ -152,14 +174,31 @@ export default defineComponent({
     }
 }
 
+.checkbox-field {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    div {
+        font-size: @h3;
+        text-align: start;
+    }
+
+    a {
+        font-size: @h3;
+        color: @prime-1;
+    }
+}
+
 .contact-warning {
     display: flex;
-    margin-right: 2rem;
+    margin-left: 2rem;
 
     svg {
         width: 2rem;
         height: 2rem;
         fill: @prime-2;
+        flex: 0 0 auto;
     }
 
     div {
@@ -171,7 +210,6 @@ export default defineComponent({
 
 .footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
