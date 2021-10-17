@@ -27,6 +27,7 @@
   "examples": {
     "title": "Beispielprojekte",
     "visit": "Website besuchen",
+    "student": "Studentenprojekt",
     "granalyzer": {
       "title": "Granalyzer",
       "description": "Das Diagrammtool erlaubt es auf bestehenden Datensätzen aufzusetzen und daraus Diagramme zu machen. Beziehungen zwischen den Daten helfen hierbei den Gestaltungsprozess erheblich zu beschleunigen."

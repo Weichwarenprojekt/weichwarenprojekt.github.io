@@ -5,7 +5,10 @@
                 <svg>
                     <use :href="`${require('@/assets/img/icons.svg')}#academy`"></use>
                 </svg>
-                <h2>{{ title }}</h2>
+                <div style="position: relative">
+                    <div class="showcase-title-tooltip">{{ $t("home.examples.student") }}</div>
+                    <h2>{{ title }}</h2>
+                </div>
             </div>
             <div class="showcase-description">{{ description }}</div>
             <div>
@@ -66,6 +69,8 @@ export default defineComponent({
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    position: relative;
+    cursor: default;
 
     h2 {
         margin: 0;
@@ -76,6 +81,33 @@ export default defineComponent({
         width: 2.5rem;
         height: 2.5rem;
     }
+
+    &:hover {
+        .showcase-title-tooltip {
+            opacity: 1;
+        }
+    }
+}
+
+.showcase-title-tooltip {
+    transition: all 200ms;
+    opacity: 0;
+    padding: 0 1rem;
+    background: black;
+    border-radius: @border-radius;
+    white-space: nowrap;
+    position: absolute;
+    left: calc(100% + 1rem);
+    top: 0;
+    bottom: 0;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    z-index: 1000;
+    font-size: @small;
 }
 
 .showcase-description {

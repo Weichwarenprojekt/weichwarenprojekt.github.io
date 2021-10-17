@@ -1,11 +1,11 @@
 {
   "title": "Contact",
-  "description": "Interested? You can just start by contacting as via E-Mail. The technology doesn't matter. We are always looking forward to learning new technologies!",
+  "description": "Interested? You can just start by contacting as via E-Mail. The technology doesn't matter. We are always looking forward to learn new technologies!",
   "submit": "Submit E-Mail",
   "name": "Name",
   "email": "E-Mail",
   "message": "Message",
-  "send": "Send E-Mail",
+  "send": "Send",
   "nameRequired": "Enter your name!",
   "emailRequired": "Enter a valid e-mail!",
   "messageRequired": "Enter a message!",

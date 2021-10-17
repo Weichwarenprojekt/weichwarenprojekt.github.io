@@ -5,7 +5,7 @@
   "name": "Name",
   "email": "E-Mail",
   "message": "Nachricht",
-  "send": "E-Mail senden",
+  "send": "Senden",
   "nameRequired": "Geben Sie Ihren Namen ein!",
   "emailRequired": "Geben Sie eine gültige E-Mail ein!",
   "messageRequired": "Geben Sie eine Nachricht ein!",

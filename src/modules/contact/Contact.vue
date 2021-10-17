@@ -74,7 +74,7 @@ export default defineComponent({
             message: "",
             error: this.$t("contact.serviceNotAvailable"),
             loading: false,
-            privacyPolicyChecked: true,
+            privacyPolicyChecked: false,
         };
     },
     methods: {

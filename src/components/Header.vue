@@ -122,6 +122,7 @@ export default defineComponent({
 // The info field
 .info-mail {
     margin-left: auto;
+    font-size: @text;
 }
 
 // The toggle

@@ -60,6 +60,7 @@ export default defineComponent({
 .intro-image {
     margin-left: @big-padding;
     width: 50%;
+    flex: 0 0 auto;
 }
 
 @media screen and (max-width: @mobile-breakpoint) {

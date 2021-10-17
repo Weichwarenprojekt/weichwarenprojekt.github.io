@@ -27,6 +27,7 @@
   "examples": {
     "title": "Example Projects",
     "visit": "Visit Website",
+    "student": "Student Project",
     "granalyzer": {
       "title": "Granalyzer",
       "description": "This diagramming tool allows you to create and visualize graphs of elements and their relations to each other. As you can reuse elements in multiple diagrams, creating those visualizations becomes remarkably fast."
