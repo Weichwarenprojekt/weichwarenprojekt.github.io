@@ -217,7 +217,6 @@ export default defineComponent({
     .contact-form {
         background: transparent;
         padding: 0;
-        text-align: center;
 
         input,
         textarea {

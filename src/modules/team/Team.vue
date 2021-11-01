@@ -7,16 +7,14 @@
         />
 
         <!-- Electrical engineers -->
-        <h1 class="title">{{ $t("team.electrical") }}</h1>
+        <h1 class="title">{{ $t("team.members") }}</h1>
         <MemberCard
             :degree="$t('team.eeDegree')"
+            class="inner-card"
             linkedin="https://www.linkedin.com/in/karlwiesmayer/"
             name="Karl Wiesmayer"
             :quote="$t('team.karl')"
         />
-
-        <!-- Computer Scientists -->
-        <h1 class="title">{{ $t("team.computer") }}</h1>
         <MemberCard
             :degree="$t('team.csDegree')"
             class="inner-card"

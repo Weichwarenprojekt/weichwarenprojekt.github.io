@@ -61,6 +61,7 @@ export default defineComponent({
     margin-left: @big-padding;
     width: 50%;
     flex: 0 0 auto;
+    max-height: 300px;
 }
 
 @media screen and (max-width: @mobile-breakpoint) {

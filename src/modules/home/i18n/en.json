@@ -1,27 +1,27 @@
 {
   "intro": {
-    "title": "Problems with your Software?",
-    "question1": "Are you in need of capacity?",
-    "question2": "Do you have problems with new technologies?",
-    "question3": "Does the project contain too much risk?"
+    "title": "Problems during software development?",
+    "question1": "Are you currently understaffed?",
+    "question2": "Do you have problems with unknown technologies?",
+    "question3": "Does your project involve a lot of risk?"
   },
   "answer": {
     "title":"Then we are your solution!",
-    "description": "Whether it is a web client or a database adapter, our young team will help you too solve those problems."
+    "description": "Whether desktop or web application, our young team will find a suitable solution for you. We are happy to take over the entire development process."
   },
   "focus": {
     "title": "Our Focus",
     "user": {
       "title": "Customer",
-      "description": "During the development we count on continuous communication with our customer."
+      "description": "During development we count on continuous communication with our customer."
     },
     "design": {
       "title": "Design",
       "description": "We are always looking for new design trends and the best possible user experience."
     },
     "portfolio": {
-      "title": "Portfolio",
-      "description": "We are not afraid to learn new technologies for a client."
+      "title": "Innovation",
+      "description": "When implementing projects, we like to break new technical ground."
     }
   },
   "examples": {

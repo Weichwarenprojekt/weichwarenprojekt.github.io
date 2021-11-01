@@ -1,8 +1,7 @@
 {
   "title": "Das Team",
-  "description": "Wir sind eine Gruppe ambitionierter Entwickler, welche im Laufe des Studiums durch gemeinsame Interessen entstanden ist.",
-  "electrical": "Elektrotechniker",
-  "computer": "Informatiker",
+  "description": "Wir sind eine Gruppe ambitionierter Entwickler, welche sich im Laufe des Studiums durch gemeinsame Interessen gebildet hat. Nach einigen erfolgreichen Projekten fingen wir an den nächsten Schritt zu planen.",
+  "members": "Mitglieder",
   "csDegree": "Bachelor of Science Informatik an der THU",
   "eeDegree": "Bachelor of Engineering Elektrotechnik an der THU",
   "karl": "Das scheppert!",
