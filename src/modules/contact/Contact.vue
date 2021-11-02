@@ -11,21 +11,24 @@
         <h1 class="title">{{ $t("contact.submit") }}</h1>
         <form autocomplete="on" class="contact-form">
             <!-- First Name -->
-            <label for="name">{{ $t("contact.name") }}</label>
+            <label for="name">* {{ $t("contact.name") }}</label>
             <input id="name" v-model="name" name="name" type="text" />
+            <!-- Company -->
+            <label for="company">{{ $t("contact.company") }}</label>
+            <input id="company" v-model="company" name="company" type="text" />
             <!-- Email -->
-            <label for="email">{{ $t("contact.email") }}</label>
+            <label for="email">* {{ $t("contact.email") }}</label>
             <input id="email" v-model="email" name="email" type="text" />
             <!-- Message -->
-            <label>{{ $t("contact.message") }}</label>
+            <label>* {{ $t("contact.message") }}</label>
             <textarea id="message" v-model="message" />
 
             <!-- Privacy Policy -->
             <div class="checkbox-field">
                 <Checkbox v-model="privacyPolicyChecked"></Checkbox>
                 <div>
-                    {{ $t("contact.privacy.first") }}
-                    <router-link to="/data-protection"> {{ $t("contact.privacy.second") }} </router-link>
+                    * {{ $t("contact.privacy.first") }}
+                    <router-link to="/data-protection"> {{ $t("contact.privacy.second") }}</router-link>
                     {{ $t("contact.privacy.third") }}
                 </div>
             </div>
@@ -33,7 +36,7 @@
             <!-- Footer -->
             <div class="footer">
                 <!-- Send Button -->
-                <a class="btn btn-primary btn-icon" @click="sendEmail()">
+                <a :class="{ disabled: !sendAvailable }" class="btn btn-primary btn-icon" @click="sendEmail()">
                     <div v-if="loading" class="spinner">
                         <div class="spinner-bounce1"></div>
                         <div class="spinner-bounce2"></div>
@@ -69,13 +72,29 @@ export default defineComponent({
     },
     data() {
         return {
+            // Name of the user (mandatory)
             name: "",
+            // Company name (optional)
+            company: "",
+            // E-Mail (mandatory)
             email: "",
+            // The contact message
             message: "",
-            error: this.$t("contact.serviceNotAvailable"),
+            // The shown error message
+            error: "",
+            // True if the form is currently loading
             loading: false,
+            // True if the user agrees to the privacy policy
             privacyPolicyChecked: false,
         };
+    },
+    computed: {
+        /**
+         * True if the user filled the mandatory fields
+         */
+        sendAvailable(): boolean {
+            return this.privacyPolicyChecked && this.name !== "" && this.email !== "" && this.message !== "";
+        },
     },
     methods: {
         /**
@@ -84,27 +103,9 @@ export default defineComponent({
         sendEmail(): void {
             if (this.loading) return;
 
-            // Check name
-            /*if (!this.name) {
-                this.error = this.$t("contact.nameRequired");
-                return;
-            }
-
             // Check email
             if (!(this.email.includes("@") && this.email.includes("."))) {
                 this.error = this.$t("contact.emailRequired");
-                return;
-            }
-
-            // Check first name
-            if (!this.message) {
-                this.error = this.$t("contact.messageRequired");
-                return;
-            }
-
-            // Check privacy policy
-            if (!this.privacyPolicyChecked) {
-                this.error = this.$t("contact.privacyChecked");
                 return;
             }
 
@@ -119,6 +120,7 @@ export default defineComponent({
                 method: "POST",
                 body: JSON.stringify({
                     name: this.name,
+                    company: this.company,
                     email: this.email,
                     message: this.message,
                 }),
@@ -134,7 +136,7 @@ export default defineComponent({
                 .catch(() => {
                     this.error = this.$t("contact.couldNotSend");
                     this.loading = false;
-                });*/
+                });
         },
     },
 });
