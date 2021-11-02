@@ -51,7 +51,6 @@ export default defineComponent({
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.3rem;
     cursor: pointer;
     transition: all 200ms;
     margin-right: 1rem;
@@ -63,6 +62,8 @@ export default defineComponent({
 
     svg {
         fill: white;
+        width: 1.3rem;
+        height: 1.3rem;
         display: none;
     }
 }
