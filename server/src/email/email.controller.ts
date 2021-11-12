@@ -1,29 +1,33 @@
 import { Body, Controller, Post } from "@nestjs/common";
 import { EmailService } from "./email.service";
 
-type DiscordMessage = {
-    title?: string;
-    color: number;
-    description?: string;
-    fields?: { name: string; value: string }[];
-};
-
 @Controller("email")
 export class EmailController {
+    /**
+     * Constructor
+     */
     constructor(private readonly emailService: EmailService) {}
 
+    /**
+     * Sends an email to our info mail. It also sends a notification
+     * to our WP Discord server.
+     * @param name Name of the customer
+     * @param email Email address of the customer
+     * @param message The message content
+     * @param company Company the customer is working for (optional)
+     */
     @Post("send")
     async sendEmail(
-        @Body("name") name,
-        @Body("email") email,
-        @Body("message") message,
-        @Body("company") company,
+        @Body("name") name: string,
+        @Body("email") email: string,
+        @Body("message") message: string,
+        @Body("company") company?: string,
     ): Promise<void> {
-        let discordMessage = {
+        let discordMessage: unknown = {
             color: 3066993,
             title: "Neue Kontaktanfrage!",
             description: "[Take me there!](https://webmail.strato.com/appsuite/signin)",
-        } as DiscordMessage;
+        };
 
         try {
             await this.emailService.sendToCustomer(name, email);
