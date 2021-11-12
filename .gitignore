@@ -1,12 +1,16 @@
 # local env files
 .env.local
 .env.*.local
+.env
 
 # Log files
+logs
+*.log
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
+lerna-debug.log*
 
 # Editor directories and files
 .idea
@@ -18,8 +22,14 @@ pnpm-debug.log*
 *.sw?
 
 # Others
-.DS_Store
 vue/node_modules
-/dist
+dist
 /package-lock.json
-/node_modules/
+node_modules
+
+# Tests
+/coverage
+/.nyc_output
+
+# OS
+.DS_Store
