@@ -35,5 +35,10 @@
         <symbol viewBox="0 0 24 24" id="check" fill-rule="evenodd" clip-rule="evenodd">
             <path d="M9 22l-10-10.598 2.798-2.859 7.149 7.473 13.144-14.016 2.909 2.806z"/>
         </symbol>
+
+        <!-- Arrow icon -->
+        <symbol viewBox="0 0 24 24" id="arrow" fill-rule="evenodd" clip-rule="evenodd">
+            <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
+        </symbol>
     </defs>
 </svg>

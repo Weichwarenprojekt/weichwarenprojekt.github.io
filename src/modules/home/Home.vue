@@ -8,7 +8,7 @@
                 <div class="home-question2 message-box message-box-right">{{ $t("home.intro.question2") }}</div>
                 <div class="home-question3 message-box message-box-right">{{ $t("home.intro.question3") }}</div>
             </div>
-            <img src="@/assets/img/home/intro.svg" alt="Image" />
+            <img alt="Image" src="@/assets/img/home/intro.svg" />
             <div class="home-questions-mobile">
                 <div class="home-question1 message-box message-box-left">{{ $t("home.intro.question1") }}</div>
                 <div class="home-question2 message-box message-box-right">{{ $t("home.intro.question2") }}</div>
@@ -19,7 +19,7 @@
         <!-- Answer -->
         <h1 class="title">{{ $t("home.answer.title") }}</h1>
         <div class="home-answer">
-            <img src="@/assets/img/home/answer.svg" alt="Image" />
+            <img alt="Image" src="@/assets/img/home/answer.svg" />
             <div class="message-box message-box-left">{{ $t("home.answer.description") }}</div>
         </div>
 
@@ -47,13 +47,31 @@
             />
         </div>
 
+        <!-- Questions -->
+        <h1 class="title">{{ $t("home.questions.title") }}</h1>
+        <Question :question="$t('home.questions.question1')">
+            <div :innerHTML="$t('home.questions.answer1')"></div>
+            <router-link class="btn btn-primary spacing-top" to="/contact" @click="scrollToTop">
+                {{ $t("home.questions.toContact") }}
+            </router-link>
+        </Question>
+        <Question :question="$t('home.questions.question2')">
+            <div :innerHTML="$t('home.questions.answer2')"></div>
+        </Question>
+        <Question :question="$t('home.questions.question3')">
+            <div :innerHTML="$t('home.questions.answer3')"></div>
+            <router-link class="btn btn-primary spacing-top" to="/team" @click="scrollToTop">
+                {{ $t("home.questions.ourTeam") }}
+            </router-link>
+        </Question>
+
         <!-- Examples -->
         <h1 class="title">{{ $t("home.examples.title") }}</h1>
         <Showcase
-            class="home-granalyzer"
             :description="$t('home.examples.granalyzer.description')"
             :image="require('@/assets/img/home/examples/granalyzer.png')"
             :title="$t('home.examples.granalyzer.title')"
+            class="home-granalyzer"
             url="https://weichwarenprojekt.github.io/granalyzer/"
         />
         <Showcase
@@ -69,10 +87,19 @@
 import { defineComponent } from "vue";
 import Showcase from "@/modules/home/components/Showcase.vue";
 import FocusCard from "@/modules/home/components/FocusCard.vue";
+import Question from "@/modules/home/components/Question.vue";
 
 export default defineComponent({
     name: "Home",
-    components: { Showcase, FocusCard },
+    components: { Question, Showcase, FocusCard },
+    methods: {
+        /**
+         * Scroll the window to the top
+         */
+        scrollToTop() {
+            window.scrollTo(0, 0);
+        },
+    },
 });
 </script>
 
@@ -90,11 +117,12 @@ export default defineComponent({
 .message-box {
     background: @grey;
     border-radius: @border-radius;
-    padding: 1rem;
-    font-size: @h3;
+    padding: 1rem @small-padding;
+    font-size: @text;
     font-weight: 300;
     position: relative;
 }
+
 .message-box-right::after {
     content: "";
     width: 0;
@@ -107,6 +135,7 @@ export default defineComponent({
     top: 1rem;
     left: 100%;
 }
+
 .message-box-left::before {
     content: "";
     width: 0;

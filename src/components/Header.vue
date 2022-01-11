@@ -28,9 +28,9 @@
 
         <!-- The links expanded -->
         <div class="links-toggled">
-            <router-link to="/home" @click="toggled = false">{{ $t("global.home") }}</router-link>
-            <router-link to="/team" @click="toggled = false">{{ $t("global.team") }}</router-link>
-            <router-link to="/contact" @click="toggled = false">{{ $t("global.contact") }}</router-link>
+            <router-link to="/home" @click="scrollToTop">{{ $t("global.home") }}</router-link>
+            <router-link to="/team" @click="scrollToTop">{{ $t("global.team") }}</router-link>
+            <router-link to="/contact" @click="scrollToTop">{{ $t("global.contact") }}</router-link>
         </div>
     </div>
 </template>
@@ -51,6 +51,7 @@ export default defineComponent({
          */
         scrollToTop() {
             window.scrollTo(0, 0);
+            this.toggled = false;
         },
     },
 });

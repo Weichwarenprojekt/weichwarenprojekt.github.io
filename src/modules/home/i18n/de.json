@@ -6,7 +6,7 @@
     "question3": "Haben Sie aktuell Kapazitätsprobleme?"
   },
   "answer": {
-    "title":"Dann sind wir Ihre Lösung!",
+    "title": "Dann sind wir Ihre Lösung!",
     "description": "Ob Desktop- oder Webanwendung, unser junges Team findet mit Ihnen zusammen eine passende Lösung. Dabei übernehmen wir gerne den gesamten Entwicklungsprozess."
   },
   "focus": {
@@ -23,6 +23,17 @@
       "title": "Innovation",
       "description": "Bei der Umsetzung von Projekten erkunden wir gerne technisches Neuland."
     }
+  },
+  "questions": {
+    "title": "Fragen",
+    "question1": "Was bieten wir an?",
+    "answer1": " Sie suchen eine Firma die Ihnen im Thema <b>Softwareentwicklung</b> und allem was dazugehört hilft? <br /> Dann sind Sie hier auf der richtigen Website gelandet - Glückwunsch! <br /> <br /> Egal ob Sie eine komplette Entwicklung eines Produktes suchen oder Hilfe bei Ihrer Softwareentwicklung brauchen - wir helfen Ihnen gerne. Auch wenn Sie eine gute Idee haben, allerdings nicht die nötigen Ressourcen, können Sie sich gerne für eine Kooperation melden.",
+    "toContact": "Zum Kontaktforum",
+    "question2": "Was sind unsere Fähigkeiten?",
+    "answer2": "Als junge Softwareentwickler haben wir uns in den folgenden Bereichen spezialisiert: <ul> <li><b>Web</b> Development (Fullstack)</li> <li>UI/UX <b>Design</b></li> <li><b>Mobile</b> Development</li> </ul> <br /> Ihr gewünschter Fachbereich ist nicht dabei? Melden Sie sich trotzdem! Wir sind immer offen für neue Challenges.",
+    "question3": "Warum Weichwarenprojekt?",
+    "answer3": "Im Gegensatz zu vielen in unsere Branche, motivieren wir uns uns vor allem durch die/unsere <b>Leidenschaft für die Entwicklung</b> von neuer Software mit Anwendung der neusten Methoden und Standards. <br /> <br /> Im Endeffekt bedeutet das für Sie als Kunde, dass Sie erstklassige Software erhalten und nahen Kontakt zu unseren Entwicklern in Deutschland.",
+    "ourTeam": "Unser Team"
   },
   "examples": {
     "title": "Beispielprojekte",

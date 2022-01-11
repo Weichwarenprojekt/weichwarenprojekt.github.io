@@ -55,7 +55,7 @@ export default defineComponent({
     align-items: flex-start;
     background: @grey;
     border-radius: @border-radius;
-    padding: @normal-padding @big-padding;
+    padding: @normal-padding;
 
     img {
         flex: 0 0 auto;
@@ -68,7 +68,7 @@ export default defineComponent({
 .showcase-title {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: @small-padding;
     position: relative;
     cursor: default;
 
@@ -77,7 +77,7 @@ export default defineComponent({
     }
 
     svg {
-        margin-right: 1rem;
+        margin-right: 1.5rem;
         width: 2.5rem;
         height: 2.5rem;
     }
@@ -112,7 +112,7 @@ export default defineComponent({
 
 .showcase-description {
     font-weight: 300;
-    font-size: @h3;
+    font-size: @text;
     margin-right: @normal-padding;
     margin-bottom: 2rem;
 }

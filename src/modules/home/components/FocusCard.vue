@@ -46,7 +46,7 @@ export default defineComponent({
     }
 
     div {
-        font-size: @h3;
+        font-size: @text;
         font-weight: 300;
         text-align: center;
     }

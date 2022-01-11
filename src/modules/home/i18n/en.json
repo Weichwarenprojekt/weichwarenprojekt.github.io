@@ -24,6 +24,17 @@
       "description": "When implementing projects, we like to break new technical ground."
     }
   },
+  "questions":{
+    "title": "Questions",
+    "question1": "What do we offer?",
+    "answer1": "Are you looking for a company that can help you with <b>software development</b> and everything that goes with it? <br /> Congratulations! - You have arrived on the right website. <br /> <br /> Whether you are looking for a complete development of a product or need help with your software development - we are happy to help. Even if you have a good idea, but not the necessary resources, you are welcome to contact us for cooperation.",
+    "toContact": "To Contact Form",
+    "question2": "What are our skills?",
+    "answer2": "As young software developers we have specialized in the following areas: <ul> <li><b>Web</b> Development (Fullstack)</li> <li>UI/UX <b>Design</b></li> <li><b>Mobile</b> Development</li> </ul> <br /> Your desired area is not included? Contact us anyway! We are always open for new challenges.",
+    "question3": "Why Weichwarenprojekt?",
+    "answer3": "Unlike many in our industry, we are motivated primarily by/our <b>passion for developing</b> new software using the latest technologies and standards. <br /> <br /> For you as a customer this means that you receive first-class software and close contact to our developers in Germany.",
+    "ourTeam": "Our Team"
+  },
   "examples": {
     "title": "Example Projects",
     "visit": "Visit Website",
