@@ -113,7 +113,7 @@ export default defineComponent({
             // Send the email
             this.error = "";
             this.loading = true;
-            fetch("http://localhost:8000/email/send", {
+            fetch("https://api.weichwarenprojekt.de/v1/email/send", {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",

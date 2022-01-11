@@ -35,6 +35,6 @@ export class EmailController {
         }
 
         // Send a matching response
-        return this.emailService.sendDiscordNotification(discordMessage);
+        this.emailService.sendDiscordNotification(discordMessage);
     }
 }

@@ -53,15 +53,13 @@ export class EmailService {
      * Sends a notification to the WP Discord server
      * @param data The discord data
      */
-    public sendDiscordNotification(data: unknown): Promise<void> {
-        return new Promise((resolve) =>
-            this.httpService
-                .post(process.env.DISCORD_URL, {
-                    username: "Weichwaren Bot",
-                    embeds: [data],
-                })
-                .subscribe(() => resolve())
-                .unsubscribe(),
-        );
+    public sendDiscordNotification(data: unknown): void {
+        this.httpService
+            .post(process.env.DISCORD_URL, {
+                username: "Weichwaren Bot",
+                embeds: [data],
+            })
+            .subscribe()
+            .unsubscribe();
     }
 }
