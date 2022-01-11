@@ -13,7 +13,7 @@ import { HttpModule } from "@nestjs/axios";
         MailerModule.forRoot({
             transport: process.env.SMTP_STRING,
             defaults: {
-                from: `'Weichwarenprojekt' <${process.env.SENDER_ADRESS}>`,
+                from: `'Weichwarenprojekt' <${process.env.SENDER_ADDRESS}>`,
             },
             template: {
                 dir: __dirname + "/assets/templates",

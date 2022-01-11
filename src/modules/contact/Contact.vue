@@ -63,6 +63,7 @@
 import { defineComponent } from "vue";
 import IntroCard from "@/components/IntroCard.vue";
 import Checkbox from "@/components/Checkbox.vue";
+import { ContactApiModel } from "../../../server/src/common/contact.api-model";
 
 export default defineComponent({
     name: "Contact",
@@ -112,18 +113,15 @@ export default defineComponent({
             // Send the email
             this.error = "";
             this.loading = true;
-            fetch("https://api.weichwarenprojekt.de/v1/email/send", {
+            fetch("http://localhost:8000/email/send", {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
                 },
                 method: "POST",
-                body: JSON.stringify({
-                    name: this.name,
-                    company: this.company,
-                    email: this.email,
-                    message: this.message,
-                }),
+                body: JSON.stringify(
+                    new ContactApiModel(this.name, this.company, this.email, this.message, this.$i18n.locale),
+                ),
             })
                 .then((res) => {
                     if (res.status >= 300) {

@@ -1,5 +1,6 @@
 import { Body, Controller, Post } from "@nestjs/common";
 import { EmailService } from "./email.service";
+import { ContactApiModel } from "../common/contact.api-model";
 
 @Controller("email")
 export class EmailController {
@@ -11,27 +12,20 @@ export class EmailController {
     /**
      * Sends an email to our info mail. It also sends a notification
      * to our WP Discord server.
-     * @param name Name of the customer
-     * @param email Email address of the customer
-     * @param message The message content
-     * @param company Company the customer is working for (optional)
+     * @param contact The contact information
      */
     @Post("send")
-    async sendEmail(
-        @Body("name") name: string,
-        @Body("email") email: string,
-        @Body("message") message: string,
-        @Body("company") company?: string,
-    ): Promise<void> {
+    async sendEmail(@Body() contact: ContactApiModel): Promise<void> {
         let discordMessage: unknown = {
             color: 3066993,
             title: "Neue Kontaktanfrage!",
             description: "[Take me there!](https://webmail.strato.com/appsuite/signin)",
         };
 
+        // Try to send the contact submission
         try {
-            await this.emailService.sendToCustomer(name, email);
-            await this.emailService.sendContactRequest(name, email, message, company);
+            await this.emailService.replyCustomer(contact);
+            await this.emailService.forwardContactRequest(contact);
         } catch (err) {
             discordMessage = {
                 title: "Fehler bei Verarbeitung einer Kontaktanfrage!",
@@ -40,6 +34,7 @@ export class EmailController {
             };
         }
 
-        return this.emailService.sendDiscordNotification(discordMessage).subscribe().unsubscribe();
+        // Send a matching response
+        return this.emailService.sendDiscordNotification(discordMessage);
     }
 }

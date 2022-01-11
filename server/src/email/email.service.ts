@@ -1,7 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { MailerService } from "@nestjs-modules/mailer";
-import { HttpService } from "@nestjs/axios";
 import { SentMessageInfo } from "nodemailer";
+import { ContactApiModel } from "../common/contact.api-model";
+import { HttpService } from "@nestjs/axios";
 
 @Injectable()
 export class EmailService {
@@ -12,16 +13,15 @@ export class EmailService {
 
     /**
      * Send Auto-Reply email to the customer
-     * @param name Name of the customer
-     * @param address The destination email address
+     * @param contact The contact information
      */
-    public async sendToCustomer(name: string, address: string): Promise<SentMessageInfo> {
-        await this.mailerService.sendMail({
-            to: address,
-            subject: "Ihre Kontaktanfrage",
-            template: "./contactAnswer",
+    public async replyCustomer(contact: ContactApiModel): Promise<SentMessageInfo> {
+        return this.mailerService.sendMail({
+            to: contact.email,
+            subject: contact.lang === "de" ? "Ihre Kontaktanfrage" : "Your Contact Submission",
+            template: contact.lang === "de" ? "./contactAnswerDE" : "./contactAnswerEN",
             context: {
-                name,
+                name: contact.name,
             },
             attachments: [
                 { filename: "logo.png", path: `${__dirname}/assets/img/logo.png`, cid: "logo1" },
@@ -32,21 +32,15 @@ export class EmailService {
 
     /**
      * Sends a contact request via email
-     * @param name Name of the customer
-     * @param address Email address of the customer
-     * @param message The message content
-     * @param company Company the customer is working for (optional)
+     * @param contact The contact information
      */
-    public async sendContactRequest(name: string, address: string, message: string, company?: string) {
-        await this.mailerService.sendMail({
-            to: process.env.CONTACT_ADRESS || "social@weichwarenprojekt.de",
-            subject: `Neue Kontaktanfrage - ${name}`,
+    public async forwardContactRequest(contact: ContactApiModel): Promise<SentMessageInfo> {
+        return this.mailerService.sendMail({
+            to: process.env.CONTACT_ADDRESS || "social@weichwarenprojekt.de",
+            subject: `Neue Kontaktanfrage - ${contact.name}`,
             template: "./contactRequest",
             context: {
-                name,
-                email: address,
-                message,
-                company,
+                ...contact,
             },
             attachments: [
                 { filename: "logo.png", path: `${__dirname}/assets/img/logo.png`, cid: "logo1" },
@@ -59,10 +53,15 @@ export class EmailService {
      * Sends a notification to the WP Discord server
      * @param data The discord data
      */
-    public sendDiscordNotification(data: unknown) {
-        return this.httpService.post(process.env.DISCORD_URL, {
-            username: "Weichwaren Bot",
-            embeds: [data],
-        });
+    public sendDiscordNotification(data: unknown): Promise<void> {
+        return new Promise((resolve) =>
+            this.httpService
+                .post(process.env.DISCORD_URL, {
+                    username: "Weichwaren Bot",
+                    embeds: [data],
+                })
+                .subscribe(() => resolve())
+                .unsubscribe(),
+        );
     }
 }
