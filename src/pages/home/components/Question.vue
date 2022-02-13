@@ -24,19 +24,22 @@ export default defineComponent({
             default: "Question",
         },
     },
+    data() {
+        return {
+            // The window width
+            previousWidth: 0,
+            // True if the card shall be expanded
+            expanded: false,
+        };
+    },
     mounted() {
         // Collapse on resize
         window.addEventListener("resize", this.onResize);
+        this.previousWidth = window.innerWidth;
     },
     unmounted() {
         // Remove event
         window.removeEventListener("resize", this.onResize);
-    },
-    data() {
-        return {
-            // True if the card shall be expanded
-            expanded: false,
-        };
     },
     methods: {
         /**
@@ -52,6 +55,8 @@ export default defineComponent({
          * Collapse on resize
          */
         onResize() {
+            if (this.previousWidth === window.innerWidth) return;
+            this.previousWidth = window.innerWidth;
             this.toggle(false);
         },
     },
@@ -72,16 +77,11 @@ export default defineComponent({
     transition: height 300ms;
     overflow: hidden;
     height: @default-height;
-    margin-top: @small-padding;
 
     svg {
         width: 1.5rem;
         height: 1.5rem;
         transition: all 300ms;
-    }
-
-    &:first-of-type {
-        background: black;
     }
 }
 

@@ -49,18 +49,28 @@
 
         <!-- Questions -->
         <h1 class="title">{{ $t("home.questions.title") }}</h1>
-        <Question :question="$t('home.questions.question1')">
-            <div :innerHTML="$t('home.questions.answer1')"></div>
-            <router-link class="btn btn-primary spacing-top" to="/contact" @click="scrollToTop">
+        <Question class="spacing-bottom" :question="$t('home.questions.question1')">
+            <div v-html="$t('home.questions.answer1')"></div>
+            <router-link
+                class="btn btn-primary spacing-top"
+                target="_blank"
+                to="/contact"
+                @click="$event.stopPropagation()"
+            >
                 {{ $t("home.questions.toContact") }}
             </router-link>
         </Question>
-        <Question :question="$t('home.questions.question2')">
-            <div :innerHTML="$t('home.questions.answer2')"></div>
+        <Question class="spacing-bottom" :question="$t('home.questions.question2')">
+            <div v-html="$t('home.questions.answer2')"></div>
         </Question>
         <Question :question="$t('home.questions.question3')">
-            <div :innerHTML="$t('home.questions.answer3')"></div>
-            <router-link class="btn btn-primary spacing-top" to="/team" @click="scrollToTop">
+            <div v-html="$t('home.questions.answer3')"></div>
+            <router-link
+                class="btn btn-primary spacing-top"
+                target="_blank"
+                to="/team"
+                @click="$event.stopPropagation()"
+            >
                 {{ $t("home.questions.ourTeam") }}
             </router-link>
         </Question>
@@ -71,7 +81,7 @@
             :description="$t('home.examples.granalyzer.description')"
             :image="require('@/assets/img/home/examples/granalyzer.png')"
             :title="$t('home.examples.granalyzer.title')"
-            class="home-granalyzer"
+            class="spacing-bottom-big"
             url="https://weichwarenprojekt.github.io/granalyzer/"
         />
         <Showcase
@@ -85,21 +95,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Showcase from "@/modules/home/components/Showcase.vue";
-import FocusCard from "@/modules/home/components/FocusCard.vue";
-import Question from "@/modules/home/components/Question.vue";
+import Showcase from "@/pages/home/components/Showcase.vue";
+import FocusCard from "@/pages/home/components/FocusCard.vue";
+import Question from "@/pages/home/components/Question.vue";
 
 export default defineComponent({
     name: "Home",
     components: { Question, Showcase, FocusCard },
-    methods: {
-        /**
-         * Scroll the window to the top
-         */
-        scrollToTop() {
-            window.scrollTo(0, 0);
-        },
-    },
 });
 </script>
 
@@ -293,9 +295,5 @@ export default defineComponent({
         margin-top: 3rem;
         width: 100%;
     }
-}
-
-.home-granalyzer {
-    margin-bottom: @normal-padding;
 }
 </style>

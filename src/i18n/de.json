@@ -1,5 +1,14 @@
 {
   "home": "Home",
   "team": "Team",
-  "contact": "Kontakt"
+  "contact": "Kontakt",
+  "footer": {
+    "title": "Sonstiges",
+    "contact": "Kontakt",
+    "pages": "Seiten",
+    "privacyPolicy": "Datenschutzerklärung",
+    "legalNotice": "Impressum",
+    "thirdParty": "Drittanbieterlizenzen",
+    "socialMedia": "Social Media"
+  }
 }

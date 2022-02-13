@@ -12,7 +12,7 @@
             </div>
             <div class="showcase-description">{{ description }}</div>
             <div>
-                <a :href="url" class="btn btn-primary">
+                <a :href="url" class="btn btn-primary" target="_blank">
                     {{ $t("home.examples.visit") }}
                 </a>
             </div>

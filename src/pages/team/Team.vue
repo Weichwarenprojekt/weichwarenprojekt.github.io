@@ -52,7 +52,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import IntroCard from "@/components/IntroCard.vue";
-import MemberCard from "@/modules/team/components/MemberCard.vue";
+import MemberCard from "@/pages/team/components/MemberCard.vue";
 
 export default defineComponent({
     name: "Team",

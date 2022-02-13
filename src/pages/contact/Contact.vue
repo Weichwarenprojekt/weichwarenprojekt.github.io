@@ -28,7 +28,7 @@
                 <Checkbox v-model="privacyPolicyChecked"></Checkbox>
                 <div>
                     * {{ $t("contact.privacy.first") }}
-                    <router-link to="/data-protection"> {{ $t("contact.privacy.second") }}</router-link>
+                    <router-link target="_blank" to="/data-protection"> {{ $t("contact.privacy.second") }}</router-link>
                     {{ $t("contact.privacy.third") }}
                 </div>
             </div>

@@ -6,9 +6,9 @@
 
             <!-- The nav links -->
             <div class="links">
-                <router-link to="/home" @click="scrollToTop">{{ $t("global.home") }}</router-link>
-                <router-link to="/team" @click="scrollToTop">{{ $t("global.team") }}</router-link>
-                <router-link to="/contact" @click="scrollToTop">{{ $t("global.contact") }}</router-link>
+                <router-link to="/home">{{ $t("global.home") }}</router-link>
+                <router-link to="/team">{{ $t("global.team") }}</router-link>
+                <router-link to="/contact">{{ $t("global.contact") }}</router-link>
             </div>
 
             <!-- The toggle button -->
@@ -28,9 +28,9 @@
 
         <!-- The links expanded -->
         <div class="links-toggled">
-            <router-link to="/home" @click="scrollToTop">{{ $t("global.home") }}</router-link>
-            <router-link to="/team" @click="scrollToTop">{{ $t("global.team") }}</router-link>
-            <router-link to="/contact" @click="scrollToTop">{{ $t("global.contact") }}</router-link>
+            <router-link to="/home">{{ $t("global.home") }}</router-link>
+            <router-link to="/team">{{ $t("global.team") }}</router-link>
+            <router-link to="/contact">{{ $t("global.contact") }}</router-link>
         </div>
     </div>
 </template>
@@ -45,12 +45,11 @@ export default defineComponent({
             toggled: false,
         };
     },
-    methods: {
+    watch: {
         /**
-         * Scroll the window to the top
+         * Hide navigation if route changes
          */
-        scrollToTop() {
-            window.scrollTo(0, 0);
+        $route() {
             this.toggled = false;
         },
     },

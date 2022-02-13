@@ -43,7 +43,7 @@ h1 {
 h2 {
   font-size: @h2;
   margin-bottom: 1.5rem;
-  font-weight: 400
+  font-weight: 500
 }
 
 h3 {
@@ -88,7 +88,7 @@ textarea {
   background: white;
   border-radius: @border-radius;
   resize: vertical;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1rem;
   width: 100%;
 }
 
@@ -100,6 +100,14 @@ textarea {
 
 .spacing-top {
   margin-top: 1rem;
+}
+
+.spacing-bottom {
+  margin-bottom: 1rem;
+}
+
+.spacing-bottom-big {
+  margin-bottom: @normal-padding;
 }
 
 /*
@@ -152,6 +160,8 @@ textarea {
   transition: all 300ms;
   cursor: pointer;
   border-radius: @border-radius;
+  line-height: 1;
+  font-weight: 400 !important;
 }
 
 .btn-icon {

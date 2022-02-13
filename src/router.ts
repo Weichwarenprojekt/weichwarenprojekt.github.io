@@ -1,8 +1,10 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import Home from "./modules/home/Home.vue";
-import Contact from "./modules/contact/Contact.vue";
-import Team from "@/modules/team/Team.vue";
-import DataProtection from "@/modules/data-protection/DataProtection.vue";
+import Home from "./pages/home/Home.vue";
+import Contact from "./pages/contact/Contact.vue";
+import Team from "@/pages/team/Team.vue";
+import DataProtection from "@/pages/data-protection/DataProtection.vue";
+import ThirdParty from "@/pages/third-party/ThirdParty.vue";
+import LegalNotice from "@/pages/legal-notice/LegalNotice.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -29,11 +31,26 @@ const routes: Array<RouteRecordRaw> = [
         name: "Data Protection",
         component: DataProtection,
     },
+    {
+        path: "/legal-notice",
+        name: "Legal Notice",
+        component: LegalNotice,
+    },
+    {
+        path: "/third-party",
+        name: "Third Party",
+        component: ThirdParty,
+    },
 ];
 
 const router = createRouter({
     history: createWebHashHistory(process.env.BASE_URL),
     routes,
+});
+
+// Scroll to top after route change
+router.beforeEach(() => {
+    window.scrollTo(0, 0);
 });
 
 export default router;
