@@ -75,6 +75,11 @@ export default defineComponent({
         padding: @normal-padding;
     }
 
+    h2,
+    h3 {
+        text-align: start;
+    }
+
     .link {
         color: @prime-1;
     }
