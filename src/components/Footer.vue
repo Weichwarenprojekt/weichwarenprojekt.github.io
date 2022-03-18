@@ -31,7 +31,7 @@
                     <svg>
                         <use :href="`${require('@/assets/img/icons.svg')}#linkedin`"></use>
                     </svg>
-                    <a target="_blank" href="https://linkedin.com">LinkedIn</a>
+                    <a target="_blank" href="https://www.linkedin.com/company/weichwarenprojekt/">LinkedIn</a>
                 </div>
                 <div class="link-with-image">
                     <svg>
