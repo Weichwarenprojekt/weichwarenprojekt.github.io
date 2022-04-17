@@ -14,6 +14,7 @@
             linkedin="https://www.linkedin.com/in/karlwiesmayer/"
             name="Karl Wiesmayer"
             :quote="$t('team.karl')"
+            :image="require('@/assets/img/team/karl.jpg')"
         />
         <MemberCard
             :degree="$t('team.csDegree')"
@@ -22,6 +23,7 @@
             linkedin="https://www.linkedin.com/in/philipp-scheede/"
             name="Philipp Scheede"
             :quote="$t('team.philipp')"
+            :image="require('@/assets/img/team/philipp.jpg')"
         />
         <MemberCard
             :degree="$t('team.csDegree')"
@@ -30,6 +32,7 @@
             linkedin="https://www.linkedin.com/in/samuel-h%C3%BCbner-54630a1a1/"
             name="Samuel Hübner"
             :quote="$t('team.samu')"
+            :image="require('@/assets/img/team/samuel.jpg')"
         />
         <MemberCard
             :degree="$t('team.csDegree')"
@@ -38,6 +41,7 @@
             linkedin="https://www.linkedin.com/in/stefan-rink-bb8a34234/"
             name="Stefan Rink"
             :quote="$t('team.stefan')"
+            :image="require('@/assets/img/team/stefan.jpg')"
         />
         <MemberCard
             :degree="$t('team.csDegree')"
@@ -45,6 +49,7 @@
             linkedin="https://www.linkedin.com/in/tim-niederer-44992420b/"
             name="Tim Niederer"
             :quote="$t('team.tim')"
+            :image="require('@/assets/img/team/tim.jpg')"
         />
     </div>
 </template>
