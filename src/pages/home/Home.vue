@@ -1,27 +1,9 @@
 <template>
     <div class="home">
         <!-- Intro -->
-        <h1 class="title">{{ $t("home.intro.title") }}</h1>
-        <div class="home-intro">
-            <div class="home-questions">
-                <div class="home-question1 message-box message-box-right">{{ $t("home.intro.question1") }}</div>
-                <div class="home-question2 message-box message-box-right">{{ $t("home.intro.question2") }}</div>
-                <div class="home-question3 message-box message-box-right">{{ $t("home.intro.question3") }}</div>
-            </div>
-            <img alt="Image" src="@/assets/img/home/intro.svg" />
-            <div class="home-questions-mobile">
-                <div class="home-question1 message-box message-box-left">{{ $t("home.intro.question1") }}</div>
-                <div class="home-question2 message-box message-box-right">{{ $t("home.intro.question2") }}</div>
-                <div class="home-question3 message-box message-box-left">{{ $t("home.intro.question3") }}</div>
-            </div>
-        </div>
-
-        <!-- Answer -->
-        <h1 class="title">{{ $t("home.answer.title") }}</h1>
-        <div class="home-answer">
-            <img alt="Image" src="@/assets/img/home/answer.svg" />
-            <div class="message-box message-box-left">{{ $t("home.answer.description") }}</div>
-        </div>
+        <h1 class="first-title">Weichwarenprojekt</h1>
+        <h1 class="second-title">{{ $t("home.intro.subtitle") }}</h1>
+        <Intro class="intro" />
 
         <!-- Focus -->
         <h1 class="title">{{ $t("home.focus.title") }}</h1>
@@ -49,7 +31,7 @@
 
         <!-- Questions -->
         <h1 class="title">{{ $t("home.questions.title") }}</h1>
-        <Question class="spacing-bottom" :question="$t('home.questions.question1')">
+        <Question :question="$t('home.questions.question1')" class="spacing-bottom">
             <div v-html="$t('home.questions.answer1')"></div>
             <router-link
                 class="btn btn-primary spacing-top"
@@ -60,7 +42,7 @@
                 {{ $t("home.questions.toContact") }}
             </router-link>
         </Question>
-        <Question class="spacing-bottom" :question="$t('home.questions.question2')">
+        <Question :question="$t('home.questions.question2')" class="spacing-bottom">
             <div v-html="$t('home.questions.answer2')"></div>
         </Question>
         <Question :question="$t('home.questions.question3')">
@@ -95,13 +77,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Intro from "@/pages/home/components/Intro.vue";
 import Showcase from "@/pages/home/components/Showcase.vue";
 import FocusCard from "@/pages/home/components/FocusCard.vue";
 import Question from "@/pages/home/components/Question.vue";
 
 export default defineComponent({
     name: "Home",
-    components: { Question, Showcase, FocusCard },
+    components: { Intro, Question, Showcase, FocusCard },
 });
 </script>
 
@@ -116,126 +99,31 @@ export default defineComponent({
     justify-content: center;
 }
 
-.message-box {
-    background: @grey;
-    border-radius: @border-radius;
-    padding: 1rem @small-padding;
-    font-size: @text;
-    font-weight: 300;
-    position: relative;
-}
-
-.message-box-right::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 0.8rem solid @grey;
-    border-bottom: 0.6rem solid transparent;
-    border-top: 0.6rem solid transparent;
-    border-right: 0.6rem solid transparent;
-    position: absolute;
-    top: 1rem;
-    left: 100%;
-}
-
-.message-box-left::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-right: 0.8rem solid @grey;
-    border-bottom: 0.6rem solid transparent;
-    border-top: 0.6rem solid transparent;
-    border-left: 0.6rem solid transparent;
-    position: absolute;
-    top: 1rem;
-    right: 100%;
-}
-
-.home-intro {
-    display: flex;
-    align-items: center;
+.first-title {
+    margin-bottom: 0.5rem;
+    text-align: center;
     margin-top: @normal-padding;
-    margin-bottom: @big-padding;
+}
 
-    img {
-        width: 55%;
-        margin-left: 6rem;
-        flex: 0 0 auto;
+.second-title {
+    color: @prime-1;
+    font-size: @h3;
+    text-align: center;
+}
+
+@supports (-webkit-background-clip: text) {
+    .second-title {
+        background-image: @gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
 
-.home-questions-mobile {
-    display: none;
-}
-
-.home-question1 {
-    margin-left: 5rem;
-    margin-right: 2rem;
-    margin-bottom: 4rem;
-}
-
-.home-question2 {
-    margin-right: 10rem;
-}
-
-.home-question3 {
-    margin-left: 8rem;
-    margin-top: 5rem;
-}
-
-.home-answer {
-    display: flex;
-    align-items: center;
-    margin-top: @normal-padding;
-    margin-bottom: @big-padding;
-
-    img {
-        width: 55%;
-        margin-right: 6rem;
-        flex: 0 0 auto;
-    }
-}
-
-@media screen and (max-width: 750px) {
-    .home-intro {
-        flex-direction: column;
-
-        img {
-            margin-left: 0;
-            margin-bottom: 4rem;
-        }
-    }
-
-    .home-questions {
-        display: none;
-    }
-
-    .home-questions-mobile {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .home-answer {
-        flex-direction: column;
-
-        img {
-            margin-right: 0;
-            margin-bottom: 4rem;
-        }
-
-        & > div {
-            width: 20rem;
-        }
-    }
-}
-
-@media screen and (max-width: @mobile-breakpoint) {
-    .home-intro,
-    .home-answer {
-        img {
-            width: 100%;
-        }
-    }
+.intro {
+    margin-top: 2rem;
+    height: auto;
+    max-height: 65vh;
+    width: auto;
 }
 
 .home-focus {

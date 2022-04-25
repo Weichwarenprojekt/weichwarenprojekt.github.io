@@ -99,6 +99,7 @@ export default defineComponent({
     align-items: center;
     font-size: @h3;
     height: @default-height;
+    user-select: none;
 }
 
 .description {

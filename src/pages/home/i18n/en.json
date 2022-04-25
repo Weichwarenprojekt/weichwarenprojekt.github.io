@@ -1,13 +1,18 @@
 {
   "intro": {
-    "title": "Problems during software development?",
-    "question1": "Are you currently understaffed?",
-    "question2": "Do you have problems with unknown technologies?",
-    "question3": "Does your project involve a lot of risk?"
-  },
-  "answer": {
-    "title":"Then we are your solution!",
-    "description": "Whether desktop or web application, our young team will find a suitable solution for you. We are happy to take over the entire development process."
+    "subtitle": "Software Services For Modern Application Development",
+    "console": {
+      "start": "Loading solution...",
+      "mid": {
+        "0": "Arming Home Officers...",
+        "1": "Stop Procrastination...",
+        "2": "Preheating Keyboards...",
+        "3": "Exterminate Beetles..."
+      },
+      "end": "Starting WP..."
+    },
+    "slogan1": "Your Solution For",
+    "slogan2": "Modern Software"
   },
   "focus": {
     "title": "Our Focus",

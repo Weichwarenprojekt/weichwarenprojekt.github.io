@@ -1,13 +1,18 @@
 {
   "intro": {
-    "title": "Probleme bei der Softwareentwicklung?",
-    "question1": "Sie brauchen Hilfe bei der Umsetzung eines Projektes?",
-    "question2": "Gibt es Schwierigkeiten mit unbekannten Technologien?",
-    "question3": "Haben Sie aktuell Kapazitätsprobleme?"
-  },
-  "answer": {
-    "title": "Dann sind wir Ihre Lösung!",
-    "description": "Ob Desktop- oder Webanwendung, unser junges Team findet mit Ihnen zusammen eine passende Lösung. Dabei übernehmen wir gerne den gesamten Entwicklungsprozess."
+    "subtitle": "Softwaredienstleistungen für moderne Anwendungsentwicklung",
+    "console": {
+      "start": "Lade Lösung...",
+      "mid": {
+        "0": "Bewaffne Home Officers...",
+        "1": "Stoppe Prokrastination...",
+        "2": "Heize Keyboards vor...",
+        "3": "Lösche Käfer aus..."
+      },
+      "end": "Starte WP..."
+    },
+    "slogan1": "Ihre Lösung Für",
+    "slogan2": "Moderne Software"
   },
   "focus": {
     "title": "Unser Fokus",
