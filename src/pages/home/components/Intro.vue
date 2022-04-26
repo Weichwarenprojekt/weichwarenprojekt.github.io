@@ -1,5 +1,5 @@
 <template>
-    <svg fill="none" height="347" viewBox="0 0 436 347" width="436" xmlns="http://www.w3.org/2000/svg">
+    <svg fill="none" viewBox="0 0 436 347" xmlns="http://www.w3.org/2000/svg">
         <!-- WP gradient -->
         <defs>
             <linearGradient
