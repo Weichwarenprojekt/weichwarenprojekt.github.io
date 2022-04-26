@@ -109,6 +109,11 @@ const possibleLines = [
     "home.intro.console.mid.3",
 ];
 
+/**
+ * The timeline
+ */
+let timeline: gsap.core.Timeline;
+
 export default defineComponent({
     name: "Intro",
     data() {
@@ -123,60 +128,75 @@ export default defineComponent({
             ],
         };
     },
+    /**
+     * Start the timeline
+     */
     mounted() {
-        // Start the animation with 1s delay
-        const timeline = gsap.timeline({
-            delay: 1,
-        });
-
-        // Print console and hide it afterwards
-        for (let i = 0; i < this.terminalLines.length; i++) {
-            timeline.to(`#monitor-console-line-${i}`, {
-                duration: 0,
-                fillOpacity: 1,
-                stagger: 0.015,
-                delay: 0.4,
-            });
-        }
-        timeline.to("#monitor-console", {
-            duration: 0,
-            opacity: 0,
-            delay: 1,
-        });
-
-        // WP start animation
-        timeline.to("#monitor-background", {
-            fill: "#FBEAEA",
-        });
-        timeline.to("#monitor-logo", {
-            opacity: 1,
-        });
-        timeline.to("#monitor-logo", {
-            y: -34,
-            duration: 0.7,
-        });
-        timeline.to(
-            "#monitor-slogan",
-            {
-                opacity: 1,
-                duration: 0.7,
-                delay: 0.2,
-            },
-            "<",
-        );
-
-        // Start endless background animation after timeline finished
-        timeline.then(() => {
-            gsap.to("#monitor-background", {
-                duration: 5,
-                fill: "#fbf5ea",
-                yoyo: true,
-                yoyoEase: "linear",
-                repeat: -1,
-            });
-        });
+        this.startTimeline();
+    },
+    /**
+     * Stop the timeline
+     */
+    unmounted() {
+        timeline.kill();
     },
     methods: {
+        /**
+         * Start the animation
+         */
+        startTimeline(): void {
+            // Start the animation with 1s delay
+            timeline = gsap.timeline({
+                delay: 1,
+            });
+
+            // Print console and hide it afterwards
+            for (let i = 0; i < this.terminalLines.length; i++) {
+                timeline.to(`#monitor-console-line-${i}`, {
+                    duration: 0,
+                    fillOpacity: 1,
+                    stagger: 0.015,
+                    delay: 0.4,
+                });
+            }
+            timeline.to("#monitor-console", {
+                duration: 0,
+                opacity: 0,
+                delay: 1,
+            });
+
+            // WP start animation
+            timeline.to("#monitor-background", {
+                fill: "#FBEAEA",
+            });
+            timeline.to("#monitor-logo", {
+                opacity: 1,
+            });
+            timeline.to("#monitor-logo", {
+                y: -34,
+                duration: 0.7,
+            });
+            timeline.to(
+                "#monitor-slogan",
+                {
+                    opacity: 1,
+                    duration: 0.7,
+                    delay: 0.2,
+                },
+                "<",
+            );
+
+            // Start endless background animation after timeline finished
+            timeline.then(() => {
+                gsap.to("#monitor-background", {
+                    duration: 5,
+                    fill: "#fbf5ea",
+                    yoyo: true,
+                    yoyoEase: "linear",
+                    repeat: -1,
+                });
+            });
+        },
         /**
          * Toggles the screen (on or off)
          */
