@@ -138,6 +138,7 @@ export default defineComponent({
      * Stop the timeline
      */
     unmounted() {
+        timeline.getChildren(true).forEach((child) => child.kill());
         timeline.kill();
     },
     methods: {
