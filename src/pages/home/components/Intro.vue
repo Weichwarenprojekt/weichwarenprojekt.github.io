@@ -10,7 +10,7 @@
                 y1="169.326"
                 y2="111.948"
             >
-                <stop stop-color="#D62828" />
+                <stop offset="0" stop-color="#D62828" />
                 <stop offset="1" stop-color="#F77F00" />
             </linearGradient>
         </defs>
@@ -97,7 +97,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import anime from "animejs";
+import gsap from "gsap";
 
 /**
  * The possible lines from which one is picked to be shown on "pc startup"
@@ -118,90 +118,77 @@ export default defineComponent({
             // The lines shown in the terminal
             terminalLines: [
                 this.$t("home.intro.console.start"),
-                this.$t(possibleLines[anime.random(0, possibleLines.length - 1)]),
+                this.$t(possibleLines[gsap.utils.random(0, possibleLines.length - 1, 1)]),
                 this.$t("home.intro.console.end"),
             ],
         };
     },
     mounted() {
         // Start the animation with 1s delay
-        const timeline = anime.timeline({
-            easing: "easeOutExpo",
+        const timeline = gsap.timeline({
+            delay: 1,
         });
-        timeline.add({ duration: 1000 });
 
         // Print console and hide it afterwards
         for (let i = 0; i < this.terminalLines.length; i++) {
-            timeline.add(
-                {
-                    targets: `#monitor-console-line-${i}`,
-                    duration: 1,
-                    // Fill opacity necessary for Firefox...
-                    "fill-opacity": 1,
-                    delay: anime.stagger(15),
-                },
-                `+=400`,
-            );
+            timeline.to(`#monitor-console-line-${i}`, {
+                duration: 0,
+                fillOpacity: 1,
+                stagger: 0.015,
+                delay: 0.4,
+            });
         }
-        timeline.add(
-            {
-                targets: "#monitor-console",
-                duration: 1,
-                opacity: 0,
-            },
-            "+=1000",
-        );
+        timeline.to("#monitor-console", {
+            duration: 0,
+            opacity: 0,
+            delay: 1,
+        });
 
         // WP start animation
-        timeline.add({
-            targets: "#monitor-background",
+        timeline.to("#monitor-background", {
             fill: "#FBEAEA",
         });
-        timeline.add({
-            targets: "#monitor-logo",
+        timeline.to("#monitor-logo", {
             opacity: 1,
         });
-        timeline.add({
-            targets: "#monitor-logo",
-            translateY: -34,
-            duration: 700,
+        timeline.to("#monitor-logo", {
+            y: -34,
+            duration: 0.7,
         });
-        timeline.add(
+        timeline.to(
+            "#monitor-slogan",
             {
-                targets: "#monitor-slogan",
                 opacity: 1,
-                duration: 700,
+                duration: 0.7,
+                delay: 0.2,
             },
-            "-=700",
+            "<",
         );
 
         // Start endless background animation after timeline finished
-        timeline.complete = () => {
-            anime({
-                targets: "#monitor-background",
-                duration: 5000,
-                easing: "linear",
-                direction: "alternate",
-                loop: true,
+        timeline.then(() => {
+            gsap.to("#monitor-background", {
+                duration: 5,
                 fill: "#fbf5ea",
+                yoyo: true,
+                yoyoEase: "linear",
+                repeat: -1,
             });
-        };
+        });
     },
     methods: {
         /**
          * Toggles the screen (on or off)
          */
         toggleMonitor(): void {
-            anime({
-                easing: "linear",
-                targets: "#monitor-standby",
-                duration: 400,
+            gsap.to("#monitor-standby", {
+                ease: "linear",
+                duration: 0.4,
                 opacity: this.powered ? 1 : 0,
             });
-            anime({
-                easing: "linear",
-                targets: "#monitor-button-power",
-                duration: 400,
+            gsap.to("#monitor-button-power", {
+                ease: "linear",
+                duration: 0.4,
                 fill: this.powered ? "#838383" : "#FFFFFF",
             });
             this.powered = !this.powered;
@@ -228,6 +215,7 @@ svg {
 
 #monitor-button {
     cursor: pointer;
+    user-select: none;
 }
 
 #monitor-console {
@@ -242,7 +230,6 @@ svg {
 
 #monitor-logo {
     font-size: 92px;
-    fill: @gradient;
 }
 
 #monitor-slogan {
