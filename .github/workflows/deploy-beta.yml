@@ -24,7 +24,7 @@ jobs:
         run: npm i
 
       # Build website
-      - name: Install dependencies
+      - name: Build website
         run: npm run build
 
       # Push to beta website repo
