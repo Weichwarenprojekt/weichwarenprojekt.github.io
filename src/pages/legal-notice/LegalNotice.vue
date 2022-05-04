@@ -3,16 +3,6 @@
         <h1>{{ $t("legalNotice.title") }}</h1>
         <div>
             <h2>Weichwarenprojekt GbR<br /></h2>
-            <h3>{{ $t("legalNotice.postalAddress") }}</h3>
-            <p>
-                Hauptstraße 48<br />
-                89614 Öpfingen
-            </p>
-            <h3>{{ $t("legalNotice.contact") }}</h3>
-            <p>
-                {{ $t("legalNotice.phone") }}: -<br />
-                {{ $t("legalNotice.email") }}: info@weichwarenprojekt.de
-            </p>
             <h3>{{ $t("legalNotice.representedBy") }}</h3>
             <p>
                 Karl Wiesmayer <br />
@@ -21,30 +11,18 @@
                 Stefan Rink <br />
                 Tim Niederer<br />
             </p>
-            <h3>{{ $t("legalNotice.registeredOn") }}</h3>
+            <h3>{{ $t("legalNotice.postalAddress") }}</h3>
             <p>
-                -<!--registergericht--><br />
-                -<!--registernummer-->
+                Hauptstraße 48<br />
+                89614 Öpfingen
+            </p>
+            <h3>{{ $t("legalNotice.contact") }}</h3>
+            <p>
+                {{ $t("legalNotice.phone") }}: +49 171 2089964<br />
+                {{ $t("legalNotice.email") }}: info@weichwarenprojekt.de
             </p>
             <h3>{{ $t("legalNotice.salesTaxID") }}</h3>
-            <p>-</p>
-            <h3>{{ $t("legalNotice.businessID") }}</h3>
-            <p>-</p>
-            <h3>{{ $t("legalNotice.supervisoryAuthority") }}</h3>
-            <p>-</p>
-            <h3>{{ $t("legalNotice.professionalLiability") }}</h3>
-            <p>-</p>
-            <h3>{{ $t("legalNotice.scopeOfInsurance") }}</h3>
-            <p>-</p>
-            <p>
-                <em>
-                    {{ $t("legalNotice.activeMind.notice1") }}
-                    <a class="link" href="https://www.activemind.de/datenschutz/impressums-generator/">
-                        {{ $t("legalNotice.activeMind.link") }}
-                    </a>
-                    {{ $t("legalNotice.activeMind.notice2") }}
-                </em>
-            </p>
+            <p>DE 351 786229</p>
         </div>
     </div>
 </template>
@@ -73,6 +51,10 @@ export default defineComponent({
         background: @grey;
         border-radius: @border-radius;
         padding: @normal-padding;
+
+        *:last-child {
+            padding-bottom: 0;
+        }
     }
 
     h2,
