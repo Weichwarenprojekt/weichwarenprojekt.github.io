@@ -4,6 +4,7 @@
   "private": true,
   "hostname": "",
   "scripts": {
+    "postinstall": "cd client && npm i && cd ../server && npm i",
     "build": "cd client && npm run build",
     "deploy": "node scripts/deploy.js"
   },
