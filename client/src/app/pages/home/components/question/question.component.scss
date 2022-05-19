@@ -1,0 +1,61 @@
+@import "vars";
+
+$default-height: 5rem;
+
+.question {
+    padding: 0 $normal-padding;
+    border-radius: $border-radius;
+    background: $grey;
+    font-weight: 400;
+    cursor: pointer;
+    transition: height 300ms;
+    overflow: hidden;
+    height: $default-height;
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: all 300ms;
+    }
+}
+
+.expanded {
+    height: auto;
+
+    svg {
+        transform: rotateZ(180deg);
+    }
+}
+
+.question-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $h3;
+    height: $default-height;
+    user-select: none;
+}
+
+.description {
+    font-size: $text;
+    font-weight: 300;
+    transition: 500ms;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &::ng-deep {
+        * {
+            font-weight: 300;
+        }
+
+        b {
+            font-weight: 400;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+    }
+}

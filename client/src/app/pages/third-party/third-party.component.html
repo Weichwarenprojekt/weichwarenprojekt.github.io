@@ -1,0 +1,5 @@
+<h1>{{ "global.footer.thirdParty" | translate }}</h1>
+<div class="license" *ngFor="let license of this.licenses">
+    <a target="_blank" [href]="license.link">{{ license.name }}</a>
+    <pre>{{ license.license }}</pre>
+</div>

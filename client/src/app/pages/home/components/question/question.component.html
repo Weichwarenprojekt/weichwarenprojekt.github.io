@@ -1,0 +1,11 @@
+<div #questionDiv [class.expanded]="expanded" class="question" (click)="toggle(!this.expanded)">
+    <div class="question-title">
+        {{ question | translate }}
+        <svg>
+            <use xlink:href="assets/img/icons.svg#arrow"></use>
+        </svg>
+    </div>
+    <div class="description">
+        <ng-content></ng-content>
+    </div>
+</div>

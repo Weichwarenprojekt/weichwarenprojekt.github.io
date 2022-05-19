@@ -1,0 +1,22 @@
+@import "vars";
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $normal-padding;
+    background: $grey;
+    border-radius: $border-radius;
+
+    img {
+        flex: 0 0 auto;
+        height: 10rem;
+        margin-bottom: 3rem;
+    }
+
+    div {
+        font-size: $text;
+        font-weight: 300;
+        text-align: center;
+    }
+}

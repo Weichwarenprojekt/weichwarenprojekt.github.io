@@ -1,0 +1,44 @@
+@import "vars";
+
+svg {
+    overflow: auto;
+    margin-top: 2rem;
+    height: auto;
+    max-height: 65vh;
+    width: auto;
+
+    * {
+        font-family: "Press Start 2P", normal, sans-serif;
+        font-size: 8px;
+    }
+
+    .small {
+        font-size: 6px;
+    }
+}
+
+#monitor-button {
+    cursor: pointer;
+    user-select: none;
+}
+
+#monitor-console {
+    tspan {
+        font-size: 8px;
+    }
+}
+
+#monitor-standby {
+    pointer-events: none;
+}
+
+#monitor-logo {
+    font-size: 92px;
+}
+
+#monitor-slogan {
+    text {
+        fill: #000000;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,62 @@
+<!-- Intro -->
+<h1 class="first-title">Weichwarenprojekt</h1>
+<h1 class="second-title">{{ "home.intro.subtitle" | translate }}</h1>
+<app-intro class="intro"></app-intro>
+
+<!-- Focus -->
+<h1 class="title">{{ "home.focus.title" | translate }}</h1>
+<div class="home-focus">
+    <div class="home-focus-block">
+        <app-focus-card
+            description="home.focus.user.description"
+            image="assets/img/home/focus/user.svg"
+            title="home.focus.user.title"
+            class="home-focus-first"
+        ></app-focus-card>
+        <app-focus-card
+            description="home.focus.design.description"
+            image="assets/img/home/focus/design.svg"
+            title="home.focus.design.title"
+        ></app-focus-card>
+    </div>
+    <app-focus-card
+        description="home.focus.portfolio.description"
+        image="assets/img/home/focus/portfolio.svg"
+        title="home.focus.portfolio.title"
+        class="home-focus-single"
+    ></app-focus-card>
+</div>
+
+<!-- Questions -->
+<h1 class="title">{{ "home.questions.title" | translate }}</h1>
+<app-question question="home.questions.question1" class="spacing-bottom">
+    <div [innerHTML]="'home.questions.answer1' | translate"></div>
+    <a class="btn btn-primary spacing-top" target="_blank" routerLink="/contact" (click)="$event.stopPropagation()">
+        {{ "home.questions.toContact" | translate }}
+    </a>
+</app-question>
+<app-question question="home.questions.question2" class="spacing-bottom">
+    <div [innerHTML]="'home.questions.answer2' | translate"></div>
+</app-question>
+<app-question question="home.questions.question3">
+    <div [innerHTML]="'home.questions.answer3' | translate"></div>
+    <a class="btn btn-primary spacing-top" target="_blank" routerLink="/team" (click)="$event.stopPropagation()">
+        {{ "home.questions.ourTeam" | translate }}
+    </a>
+</app-question>
+
+<!-- Examples -->
+<h1 class="title">{{ "home.examples.title" | translate }}</h1>
+<app-showcase
+    description="home.examples.granalyzer.description"
+    image="assets/img/home/examples/granalyzer.png"
+    title="home.examples.granalyzer.title"
+    class="spacing-bottom-big"
+    url="https://weichwarenprojekt.github.io/granalyzer/"
+></app-showcase>
+<app-showcase
+    description="home.examples.assembus.description"
+    image="assets/img/home/examples/assembus.png"
+    title="home.examples.assembus.title"
+    url="https://weichwarenprojekt.github.io/assembus/"
+></app-showcase>

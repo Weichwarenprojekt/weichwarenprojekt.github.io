@@ -1,0 +1,75 @@
+@import "vars";
+
+$image-width: 14rem;
+
+:host {
+    padding: $normal-padding $big-padding;
+    border-radius: $border-radius;
+    background: $grey;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.member-image {
+    border: 0.2rem solid $prime-1;
+    border-radius: $image-width;
+    width: $image-width;
+    height: $image-width;
+}
+
+.member-info {
+    flex: 1 1 auto;
+    margin-left: $big-padding;
+}
+
+.member-quote {
+    font-weight: 300;
+    font-style: italic;
+    font-size: $h3;
+    margin-bottom: 3rem;
+}
+
+.member-token {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+
+    div {
+        margin-top: 0.2rem;
+    }
+
+    svg {
+        margin-right: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        flex: 0 0 auto;
+    }
+}
+
+.member-accounts {
+    display: flex;
+    margin-top: 0.7rem;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+    .member-card {
+        flex-direction: column;
+        align-items: center;
+    }
+    .member-image {
+        margin-bottom: $normal-padding;
+    }
+    .member-info {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .member-accounts {
+        justify-content: center;
+    }
+    .single-token {
+        width: 100%;
+        justify-content: center;
+    }
+}
