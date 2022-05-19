@@ -54,7 +54,7 @@ import { MemberCardComponent } from "./pages/team/components/member-card/member-
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
-                deps: [HttpClient],
+                deps: [HttpClient, LocationStrategy],
             },
         }),
         FormsModule,
