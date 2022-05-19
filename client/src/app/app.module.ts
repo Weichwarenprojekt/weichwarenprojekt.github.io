@@ -20,10 +20,10 @@ import { FocusCardComponent } from "./pages/home/components/focus-card/focus-car
 import { IntroComponent } from "./pages/home/components/intro/intro.component";
 import { QuestionComponent } from "./pages/home/components/question/question.component";
 import { ShowcaseComponent } from "./pages/home/components/showcase/showcase.component";
-import { LOCATION_INITIALIZED } from "@angular/common";
+import { LOCATION_INITIALIZED, LocationStrategy } from "@angular/common";
 import { FormsModule } from "@angular/forms";
-import { LoadingComponent } from './components/loading/loading.component';
-import { MemberCardComponent } from './pages/team/components/member-card/member-card.component';
+import { LoadingComponent } from "./components/loading/loading.component";
+import { MemberCardComponent } from "./pages/team/components/member-card/member-card.component";
 
 @NgModule({
     declarations: [
@@ -74,8 +74,10 @@ export class AppModule {}
 /**
  * Required for translations
  */
-export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http);
+export function HttpLoaderFactory(http: HttpClient, locationStrategy: LocationStrategy) {
+    const loader = new TranslateHttpLoader(http);
+    loader.prefix = `${locationStrategy.getBaseHref()}assets/i18n/`;
+    return loader;
 }
 
 /**
