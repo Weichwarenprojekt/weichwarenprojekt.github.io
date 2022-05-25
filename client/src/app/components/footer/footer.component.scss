@@ -39,6 +39,8 @@ $gap: calc(#{$normal-padding} / 2);
         flex: 0 1 auto;
         min-width: 0;
         min-height: 0;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     & > div {

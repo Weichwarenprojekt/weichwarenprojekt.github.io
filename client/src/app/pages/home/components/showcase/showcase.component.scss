@@ -68,7 +68,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .showcase {
+    :host {
         flex-direction: column;
         padding: $normal-padding;
 
