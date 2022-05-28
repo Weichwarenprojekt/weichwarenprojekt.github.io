@@ -3,11 +3,11 @@
 $image-width: 14rem;
 
 :host {
-    padding: $normal-padding $big-padding;
+    padding: $normal-padding;
     border-radius: $border-radius;
     background: $grey;
     display: flex;
-    width: 100%;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -16,11 +16,13 @@ $image-width: 14rem;
     border-radius: $image-width;
     width: $image-width;
     height: $image-width;
+    margin-bottom: $normal-padding;
 }
 
 .member-info {
     flex: 1 1 auto;
-    margin-left: $big-padding;
+    align-items: center;
+    text-align: center;
 }
 
 .member-quote {
@@ -50,26 +52,57 @@ $image-width: 14rem;
 .member-accounts {
     display: flex;
     margin-top: 0.7rem;
+    justify-content: center;
+}
+
+.single-token {
+    width: 100%;
+    justify-content: center;
+}
+
+@media screen and (max-width: $member-breakpoint) {
+    :host {
+        flex-direction: row;
+        padding: $normal-padding $big-padding;
+    }
+
+    .member-image {
+        margin-bottom: 0;
+        margin-right: $big-padding;
+    }
+
+    .member-info {
+        text-align: start;
+    }
+
+    .member-accounts,
+    .single-token {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    :host {
+        padding: $normal-padding;
+    }
 }
 
 @media screen and (max-width: $mobile-breakpoint) {
     :host {
         flex-direction: column;
-        align-items: center;
     }
+
     .member-image {
         margin-bottom: $normal-padding;
+        margin-right: 0;
     }
+
     .member-info {
-        margin-left: 0;
-        align-items: center;
         text-align: center;
     }
-    .member-accounts {
-        justify-content: center;
-    }
+
+    .member-accounts,
     .single-token {
-        width: 100%;
         justify-content: center;
     }
 }

@@ -24,7 +24,7 @@ $border-radius: 1rem;
 $header-height: 6rem;
 
 // The maximum content width
-$max-width: 1300px;
+$max-width: 1500px;
 
 // The breakpoint for mobile devices
 $mobile-breakpoint: 600px;
@@ -34,3 +34,6 @@ $outer-padding: 3rem;
 
 // The opacity for grey elements
 $opacity: 0.3;
+
+// The width at which the teammates are not longer shown in 2 columns anymore
+$member-breakpoint: 850px;

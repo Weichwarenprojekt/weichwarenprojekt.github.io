@@ -10,7 +10,7 @@
     <div class="member-quote">"{{ quote | translate }}"</div>
 
     <!-- Degree -->
-    <a class="member-token single-token" href="https://studium.hs-ulm.de/de/Seiten/Homepage.aspx">
+    <a class="member-token single-token" href="https://studium.hs-ulm.de/de/Seiten/Homepage.aspx" target="_blank">
         <svg>
             <use xlink:href="assets/img/icons.svg#academy"></use>
         </svg>
@@ -20,7 +20,7 @@
     <!-- Accounts -->
     <div class="member-accounts">
         <!-- GitHub -->
-        <a *ngIf="github" class="member-token" [href]="github">
+        <a *ngIf="github" class="member-token" [href]="github" target="_blank">
             <svg>
                 <use xlink:href="assets/img/icons.svg#github"></use>
             </svg>
@@ -28,7 +28,7 @@
         </a>
 
         <!-- LinkedIn -->
-        <a class="member-token" [href]="linkedin">
+        <a class="member-token" [href]="linkedin" target="_blank">
             <svg>
                 <use xlink:href="assets/img/icons.svg#linkedin"></use>
             </svg>

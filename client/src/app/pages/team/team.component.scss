@@ -20,3 +20,29 @@
 .inner-card {
     margin-bottom: $normal-padding;
 }
+
+$gap: calc(#{$normal-padding} / 2);
+
+.members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & > * {
+        width: calc(50% - #{$gap});
+        margin-bottom: $normal-padding;
+    }
+
+    & > *:last-of-type {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: $member-breakpoint) {
+    .members {
+        & > * {
+            width: 100%;
+        }
+    }
+}
