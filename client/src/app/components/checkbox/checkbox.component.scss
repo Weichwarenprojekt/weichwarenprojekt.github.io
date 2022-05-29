@@ -1,0 +1,39 @@
+@import "vars";
+
+.checkbox {
+    border-radius: $border-radius;
+    background: transparent;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 0.2rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 200ms;
+    margin-right: 1rem;
+    flex: 0 0 auto;
+
+    &:hover {
+        border-color: $prime-1;
+    }
+
+    svg {
+        fill: white;
+        width: 1.3rem;
+        height: 1.3rem;
+        display: none;
+    }
+}
+
+.checkbox-active {
+    background: black;
+
+    &:hover {
+        border-color: black;
+    }
+
+    svg {
+        display: block;
+    }
+}

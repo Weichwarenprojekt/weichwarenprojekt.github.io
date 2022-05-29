@@ -1,0 +1,18 @@
+<div class="showcase-info">
+    <div class="showcase-title">
+        <svg>
+            <use xlink:href="assets/img/icons.svg#academy"></use>
+        </svg>
+        <div style="position: relative">
+            <div class="showcase-title-tooltip">{{ "home.examples.student" | translate }}</div>
+            <h2>{{ title | translate }}</h2>
+        </div>
+    </div>
+    <div class="showcase-description">{{ description | translate }}</div>
+    <div>
+        <a [href]="url" class="btn btn-primary" target="_blank">
+            {{ "home.examples.visit" | translate }}
+        </a>
+    </div>
+</div>
+<img [alt]="title | translate" [src]="image" />

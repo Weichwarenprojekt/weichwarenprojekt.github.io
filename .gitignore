@@ -24,7 +24,6 @@ lerna-debug.log*
 # Others
 vue/node_modules
 dist
-/package-lock.json
 node_modules
 
 # Tests

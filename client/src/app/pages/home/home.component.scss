@@ -1,0 +1,94 @@
+@import "vars";
+
+:host {
+    padding: $big-padding $outer-padding;
+    max-width: $max-width;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.first-title {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-top: $normal-padding;
+}
+
+.second-title {
+    color: $prime-1;
+    font-size: $h3;
+    text-align: center;
+}
+
+@supports (-webkit-background-clip: text) {
+    .second-title {
+        background-image: $gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+}
+
+.home-focus {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-focus-block {
+    display: flex;
+    width: 65%;
+    flex: 0 0 auto;
+    justify-content: space-between;
+
+    & > * {
+        width: 46.24%;
+    }
+}
+
+.home-focus-single {
+    width: 30%;
+    flex: 0 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+    .home-focus {
+        align-items: center;
+    }
+
+    .home-focus-block {
+        flex-direction: column;
+        width: 46%;
+
+        & > * {
+            width: 100%;
+        }
+    }
+
+    .home-focus-first {
+        margin-bottom: 3rem;
+    }
+
+    .home-focus-single {
+        width: 46%;
+    }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+    .home-focus {
+        flex-direction: column;
+    }
+
+    .home-focus-block {
+        width: 100%;
+    }
+
+    .home-focus-single {
+        margin-top: 3rem;
+        width: 100%;
+    }
+}

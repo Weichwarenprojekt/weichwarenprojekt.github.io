@@ -1,0 +1,36 @@
+@import "vars";
+
+:host {
+    padding: $big-padding $outer-padding;
+    max-width: $max-width;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: $normal-padding;
+}
+
+.license {
+    width: 100%;
+    background: $grey;
+    border-radius: $border-radius;
+    padding: $normal-padding;
+    margin-bottom: $normal-padding;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    a {
+        color: $prime-1;
+        font-size: $h2;
+        font-weight: 500;
+    }
+
+    pre {
+        margin-top: 1.5rem;
+        font-weight: 300;
+        overflow: auto;
+        max-height: 50rem;
+    }
+}

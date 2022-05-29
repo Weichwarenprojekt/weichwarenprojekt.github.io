@@ -1,0 +1,35 @@
+<div class="header" [class.header-toggled]="toggled">
+    <div class="header-content">
+        <!-- The logo -->
+        <img alt="" src="assets/img/logo.svg" />
+
+        <!-- The nav links -->
+        <div class="links">
+            <a routerLink="/home">{{ "global.home" | translate }}</a>
+            <a routerLink="/team">{{ "global.team" | translate }}</a>
+            <a routerLink="/contact">{{ "global.contact" | translate }}</a>
+        </div>
+
+        <!-- The toggle button -->
+        <button
+            class="navbar-toggle"
+            [class.navbar-toggled]="toggled"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            (click)="toggled = !toggled"
+        >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="info-mail" href="mailto:info@weichwarenprojekt.de">info@weichwarenprojekt.de</a>
+    </div>
+
+    <!-- The links expanded -->
+    <div class="links-toggled">
+        <a routerLink="/home">{{ "global.home" | translate }}</a>
+        <a routerLink="/team">{{ "global.team" | translate }}</a>
+        <a routerLink="/contact">{{ "global.contact" | translate }}</a>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<!-- The image -->
+<img [src]="image" alt="Member Image" class="member-image" />
+
+<!-- Information -->
+<div class="member-info">
+    <!-- Name -->
+    <h2>{{ name }}</h2>
+
+    <!-- Quote -->
+    <div class="member-quote">"{{ quote | translate }}"</div>
+
+    <!-- Degree -->
+    <a class="member-token single-token" href="https://studium.hs-ulm.de/de/Seiten/Homepage.aspx" target="_blank">
+        <svg>
+            <use xlink:href="assets/img/icons.svg#academy"></use>
+        </svg>
+        <div>{{ degree | translate }}</div>
+    </a>
+
+    <!-- Accounts -->
+    <div class="member-accounts">
+        <!-- GitHub -->
+        <a *ngIf="github" class="member-token" [href]="github" target="_blank">
+            <svg>
+                <use xlink:href="assets/img/icons.svg#github"></use>
+            </svg>
+            <div>GitHub</div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="member-token" [href]="linkedin" target="_blank">
+            <svg>
+                <use xlink:href="assets/img/icons.svg#linkedin"></use>
+            </svg>
+            <div>LinkedIn</div>
+        </a>
+    </div>
+</div>

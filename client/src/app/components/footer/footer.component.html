@@ -1,0 +1,50 @@
+<h1>{{ "global.footer.title" | translate }}</h1>
+<div class="footer">
+    <div class="footer-card">
+        <img alt="Address" src="assets/img/footer/address.svg" />
+        <div>
+            <h2>{{ "global.footer.contact" | translate }}</h2>
+            <a target="_blank" href="https://goo.gl/maps/ijhgpVfHhQ71StqK7">
+                Weichwarenprojekt GbR <br />
+                Hauptstraße 48 <br />
+                89614 Öpfingen <br />
+            </a>
+            <a href="mailto:info@weichwarenprojekt.de">info@weichwarenprojekt.de</a>
+        </div>
+    </div>
+    <div class="footer-card">
+        <img alt="Address" src="assets/img/footer/pages.svg" />
+        <div>
+            <h2>{{ "global.footer.pages" | translate }}</h2>
+            <a routerLink="/contact">{{ "global.footer.contact" | translate }}<br /></a>
+            <a routerLink="/data-protection">{{ "global.footer.privacyPolicy" | translate }}<br /></a>
+            <a routerLink="/legal-notice">{{ "global.footer.legalNotice" | translate }}<br /></a>
+            <a routerLink="/third-party">{{ "global.footer.thirdParty" | translate }}</a>
+        </div>
+    </div>
+    <div class="footer-card">
+        <img alt="Address" src="assets/img/footer/social-media.svg" />
+        <div>
+            <h2>{{ "global.footer.socialMedia" | translate }}</h2>
+            <div class="link-with-image">
+                <svg>
+                    <use xlink:href="assets/img/icons.svg#linkedin"></use>
+                </svg>
+                <a target="_blank" href="https://www.linkedin.com/company/weichwarenprojekt/">LinkedIn</a>
+            </div>
+            <div class="link-with-image">
+                <svg>
+                    <use xlink:href="assets/img/icons.svg#instagram"></use>
+                </svg>
+                <a target="_blank" href="https://www.instagram.com/weichwarenprojekt/">Instagram</a>
+            </div>
+            <div class="link-with-image">
+                <svg>
+                    <use xlink:href="assets/img/icons.svg#github"></use>
+                </svg>
+                <a target="_blank" href="https://github.com/Weichwarenprojekt">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyright">© Weichwarenprojekt GbR 2022</div>

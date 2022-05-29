@@ -1,0 +1,48 @@
+@import "vars";
+
+:host {
+    padding: $big-padding $outer-padding;
+    max-width: $max-width;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: $normal-padding;
+
+    & > app-member-card {
+        margin-bottom: $normal-padding;
+    }
+    app-member-card:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.inner-card {
+    margin-bottom: $normal-padding;
+}
+
+$gap: calc(#{$normal-padding} / 2);
+
+.members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & > * {
+        width: calc(50% - #{$gap});
+        margin-bottom: $normal-padding;
+    }
+
+    & > *:last-of-type {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: $member-breakpoint) {
+    .members {
+        & > * {
+            width: 100%;
+        }
+    }
+}

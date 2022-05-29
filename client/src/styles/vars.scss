@@ -1,0 +1,39 @@
+// The colors
+$prime-1: #f77f00;
+$prime-2: #d62828;
+$grey: #f4f4f4;
+$font-color: #000;
+$gradient: linear-gradient(45deg, $prime-1, $prime-2);
+
+// Text sizes
+$h1: 2.5rem;
+$h2: 1.8rem;
+$h3: 1.3rem;
+$text: 1.1rem;
+$small: 0.8rem;
+
+// Paddings
+$big-padding: 6rem;
+$normal-padding: 3rem;
+$small-padding: 2rem;
+
+// Border radius
+$border-radius: 1rem;
+
+// Header height
+$header-height: 6rem;
+
+// The maximum content width
+$max-width: 1500px;
+
+// The breakpoint for mobile devices
+$mobile-breakpoint: 600px;
+
+// The initial outer padding
+$outer-padding: 3rem;
+
+// The opacity for grey elements
+$opacity: 0.3;
+
+// The width at which the teammates are not longer shown in 2 columns anymore
+$member-breakpoint: 850px;
