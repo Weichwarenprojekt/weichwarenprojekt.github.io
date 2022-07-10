@@ -3,6 +3,7 @@
 $gap: calc(#{$normal-padding} / 2);
 
 :host {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
