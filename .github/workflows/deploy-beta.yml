@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - "feature/*"
+      - "refactor/*"
       - "bug/*"
 jobs:
   gh-pages-deploy:
