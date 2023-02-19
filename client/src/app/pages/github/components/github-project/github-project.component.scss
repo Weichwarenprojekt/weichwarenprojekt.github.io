@@ -1,0 +1,8 @@
+@import "vars";
+
+:host {
+    border-radius: $border-radius;
+    margin-top: $big-padding;
+    width: 100%;
+    background: $grey;
+}

@@ -6,6 +6,7 @@ import { ContactComponent } from "./pages/contact/contact.component";
 import { DataProtectionComponent } from "./pages/data-protection/data-protection.component";
 import { LegalNoticeComponent } from "./pages/legal-notice/legal-notice.component";
 import { ThirdPartyComponent } from "./pages/third-party/third-party.component";
+import { GithubComponent } from "./pages/github/github.component";
 
 const routes: Routes = [
     {
@@ -19,6 +20,10 @@ const routes: Routes = [
     {
         path: "contact",
         component: ContactComponent,
+    },
+    {
+        path: "github",
+        component: GithubComponent,
     },
     {
         path: "data-protection",
