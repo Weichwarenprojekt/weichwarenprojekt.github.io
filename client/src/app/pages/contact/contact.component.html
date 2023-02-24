@@ -1,57 +1,22 @@
 <!-- Intro -->
-<app-intro-card
-    description="contact.description"
-    image="assets/img/contact/contact.svg"
-    title="contact.title"
-></app-intro-card>
-
-<!-- Contact form -->
-<h1 class="title">{{ "contact.submit" | translate }}</h1>
-<form #contactForm="ngForm" autocomplete="on" class="contact-form">
-    <!-- First Name -->
-    <label for="name">* {{ "contact.name" | translate }}</label>
-    <input id="name" [(ngModel)]="name" name="name" type="text" required />
-    <!-- Company -->
-    <label for="company">{{ "contact.company" | translate }}</label>
-    <input id="company" [(ngModel)]="company" name="company" type="text" />
-    <!-- Email -->
-    <label for="email">* {{ "contact.email" | translate }}</label>
-    <input id="email" [(ngModel)]="email" name="email" type="email" email required />
-    <!-- Message -->
-    <label>* {{ "contact.message" | translate }}</label>
-    <textarea id="message" [(ngModel)]="message" name="message" required></textarea>
-
-    <!-- Privacy Policy -->
-    <div class="checkbox-field">
-        <app-checkbox [(toggled)]="privacyPolicyChecked"></app-checkbox>
+<div class="card">
+    <div class="row">
+        <div class="intro-text">
+            <h1>{{ "contact.title" | translate }}</h1>
+            <div class="intro-description">{{ "contact.description" | translate }}</div>
+        </div>
+        <img [src]="'assets/img/contact/contact.svg'" alt="Intro Image" class="intro-image" />
+    </div>
+    <div class="row align-right">
         <div>
-            * {{ "contact.privacy.first" | translate }}
-            <a target="_blank" routerLink="/data-protection"> {{ "contact.privacy.second" | translate }}</a>
-            {{ "contact.privacy.third" | translate }}
+            <a class="btn btn-primary btn-icon" (click)="triggerLoadingAnimation()" href="javascript:void(0)">
+                <app-loading *ngIf="loading"></app-loading>
+                <svg *ngIf="!loading">
+                    <use xlink:href="assets/img/icons.svg#email"></use>
+                </svg>
+                <!-- {{ "contact.send" | translate }} -->
+                {{ "Send us an Email" }}
+            </a>
         </div>
     </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <!-- Send Button -->
-        <a
-            [class.disabled]="!contactForm.valid || !privacyPolicyChecked"
-            class="btn btn-primary btn-icon"
-            (click)="sendEmail()"
-        >
-            <app-loading *ngIf="loading"></app-loading>
-            <svg *ngIf="!loading">
-                <use xlink:href="assets/img/icons.svg#email"></use>
-            </svg>
-            {{ "contact.send" | translate }}
-        </a>
-
-        <!-- Error Text -->
-        <div class="contact-warning">
-            <svg *ngIf="error">
-                <use xlink:href="assets/img/icons.svg#error"></use>
-            </svg>
-            <div>{{ error }}</div>
-        </div>
-    </div>
-</form>
+</div>

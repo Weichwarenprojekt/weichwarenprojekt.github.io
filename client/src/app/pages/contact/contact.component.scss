@@ -10,75 +10,66 @@
     margin-top: $normal-padding;
 }
 
-.contact-form {
-    width: 100%;
-    background: $grey;
+.card {
     border-radius: $border-radius;
+    background: $grey;
     padding: $big-padding;
-
-    label {
-        margin-right: $border-radius;
-        font-size: $h3;
-    }
-
-    input,
-    textarea {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    textarea {
-        height: 20rem;
-    }
-}
-
-.checkbox-field {
     display: flex;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
 
-    div {
-        font-size: $h3;
-        text-align: start;
+    .row {
+        display: flex;
+        width: 100%;
+        padding-bottom: 2 * $small-padding;
     }
 
-    a {
-        font-size: $h3;
-        color: $prime-1;
-    }
-}
-
-.contact-warning {
-    display: flex;
-    margin-left: 2rem;
-
-    svg {
-        width: 2rem;
-        height: 2rem;
-        fill: $prime-2;
-        flex: 0 0 auto;
+    .row:last-child {
+        padding-bottom: 0;
     }
 
-    div {
-        margin-left: 1rem;
-        color: $prime-2;
-        font-size: $h3;
+    .row > * {
+        padding-left: $small-padding;
+    }
+
+    .row > :first-child {
+        padding-left: 0;
+    }
+
+    .align-right {
+        display: flex;
+        justify-content: end;
     }
 }
 
-.footer {
-    display: flex;
-    align-items: center;
+.intro-text {
+    flex: 1 1 auto;
+}
+
+.intro-description {
+    font-weight: 300;
+    font-size: $h3;
+}
+
+.intro-image {
+    margin-left: $big-padding;
+    width: 50%;
+    flex: 0 0 auto;
+    max-height: 300px;
 }
 
 @media screen and (max-width: $mobile-breakpoint) {
-    .contact-form {
-        background: transparent;
-        padding: 0;
+    .intro-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-        input,
-        textarea {
-            background: $grey;
-        }
+    .intro-image {
+        width: 100%;
+        margin-left: 0;
+        margin-top: $normal-padding;
     }
 }

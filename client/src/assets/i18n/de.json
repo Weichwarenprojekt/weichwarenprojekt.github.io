@@ -88,6 +88,7 @@
         "name": "Name",
         "company": "Firma",
         "email": "E-Mail",
+        "email.subject": "Kontaktanfrage",
         "message": "Nachricht",
         "send": "Senden",
         "emailRequired": "Geben Sie eine gültige E-Mail ein!",
