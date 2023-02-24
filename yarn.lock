@@ -3361,16 +3361,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@weichwarenprojekt/license-reporter@npm:^0.3.3":
-  version: 0.3.3
-  resolution: "@weichwarenprojekt/license-reporter@npm:0.3.3"
+"@weichwarenprojekt/license-reporter@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@weichwarenprojekt/license-reporter@npm:0.4.0"
   dependencies:
     "@weichwarenprojekt/ts-importer": ^0.1.5
+    chalk: ^4.1.2
     commander: ^9.4.1
     glob: ^8.1.0
   bin:
     license-reporter: dist/license-reporter.js
-  checksum: fb847f08ad98af9aa7775cce17835075229c056a8a22f0b3f43ce4ff9426cab29019b842835b5f5ff0ec398902e5fef8fa5d8fccf23113c09997cf1b088d1643
+  checksum: f59bb9b30f4e34bac50cbc05e3903f822442d3fb177689890e2ae43281c4538a4b8994052ad9b7ac25270ed2db806f762b7f394891afbf8f4801e8438a826f42
   languageName: node
   linkType: hard
 
@@ -4542,7 +4543,6 @@ __metadata:
     "@ngx-translate/http-loader": ^7.0.0
     "@types/jasmine": ~3.10.0
     "@types/node": ^12.11.1
-    "@weichwarenprojekt/license-reporter": ^0.3.3
     gsap: ^3.10.4
     jasmine-core: ~4.0.0
     karma: ~6.3.0
@@ -13855,6 +13855,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "weichwarenprojekt@workspace:."
   dependencies:
+    "@weichwarenprojekt/license-reporter": ^0.4.0
     execa: ^5.0.0
     prettier: ^2.2.1
   languageName: unknown

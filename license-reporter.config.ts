@@ -2,7 +2,7 @@ import { IReporterConfiguration } from "@weichwarenprojekt/license-reporter";
 
 export const configuration: Partial<IReporterConfiguration> = {
     output: "./client/src/assets/3rdpartylicenses.json",
-    ignore: [`${__dirname}/server/**`],
+    ignore: ["server", "node_modules/client"],
     overrides: [
         {
             name: "@npmcli/fs",
