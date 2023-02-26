@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@weichwarenprojekt/configuration": "^0.1.3",
-    "@weichwarenprojekt/license-reporter": "^0.4.0",
+    "@weichwarenprojekt/license-reporter": "^0.4.1",
     "prettier": "^2.2.1"
   }
 }
