@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { NpmService } from "../../../../services/npm.service";
 
 /**
  * The general information
  */
-interface IGeneralInformation {
+export interface IGeneralInformation {
     /** The name of the package */
     name: string;
     /** The description */
@@ -23,7 +24,7 @@ interface IGeneralInformation {
 /**
  * The download statistic for a given range
  */
-interface IDownloadStatistic {
+export interface IDownloadStatistic {
     /** The starting point of the range */
     from: Date;
     /** The ending point of the range */
@@ -47,42 +48,16 @@ export class GithubProjectComponent implements OnInit {
     /** The download information for the package */
     public downloads: IDownloadStatistic[] = [];
 
+    constructor(private readonly npmService: NpmService) {}
+
     /**
      * Load the data
      */
     async ngOnInit(): Promise<void> {
-        // Query the necessary information
-        const generalRes = await fetch(`https://registry.npmjs.com/${this.name}`);
-        const downloadRes = await fetch(`https://api.npmjs.org/downloads/range/last-year/${this.name}`);
-        if (generalRes.status !== 200 || downloadRes.status !== 200) return;
-        const generalInfo = await generalRes.json();
-        const downloadInfo = await downloadRes.json();
+        const { info, statistics = [] } = await this.npmService.getPackageInformation(this.name);
+        this.general = info;
+        this.downloads = statistics;
 
-        // Prepare the information for visualization
-        this.general = {
-            name: generalInfo.name,
-            description: generalInfo.description,
-            url: generalInfo.homepage,
-            license: generalInfo.license,
-            version: generalInfo["dist-tags"].latest,
-            created: new Date(generalInfo.time.created),
-            modified: new Date(generalInfo.time.modified),
-        };
-        let dayCounter = 0;
-        let downloadCounter = 0;
-        for (let i = downloadInfo.downloads.length - 1; i > 0; i--) {
-            dayCounter++;
-            downloadCounter += downloadInfo.downloads[i].downloads;
-            if (dayCounter === 7 || i === 0) {
-                this.downloads.push({
-                    downloads: downloadCounter,
-                    from: new Date(downloadInfo.downloads[i].day),
-                    to: new Date(downloadInfo.downloads[i + dayCounter - 1].day),
-                });
-                dayCounter = 0;
-                downloadCounter = 0;
-            }
-        }
         console.log(this.downloads);
     }
 }
