@@ -1,37 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { NpmService } from "../../../../services/npm.service";
-
-/**
- * The general information
- */
-export interface IGeneralInformation {
-    /** The name of the package */
-    name: string;
-    /** The description */
-    description: string;
-    /** The link to the homepage/repo */
-    url: string;
-    /** The license */
-    license: string;
-    /** The current version */
-    version: string;
-    /** The creation date */
-    created: Date;
-    /** The date when it was last modified */
-    modified: Date;
-}
-
-/**
- * The download statistic for a given range
- */
-export interface IDownloadStatistic {
-    /** The starting point of the range */
-    from: Date;
-    /** The ending point of the range */
-    to: Date;
-    /** The download count for the range */
-    downloads: number;
-}
+import { IDownloadStatistic, IGeneralInformation, NpmService } from "../../../../services/npm.service";
 
 @Component({
     selector: "app-github-project",
@@ -59,5 +27,6 @@ export class GithubProjectComponent implements OnInit {
         this.downloads = statistics;
 
         console.log(this.downloads);
+        console.log(this.general);
     }
 }

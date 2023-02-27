@@ -1,8 +1,40 @@
 import { Injectable } from "@angular/core";
-import {
-    IDownloadStatistic,
-    IGeneralInformation,
-} from "../pages/github/components/github-project/github-project.component";
+
+/**
+ * The general information
+ */
+export interface IGeneralInformation {
+    /** The name of the package */
+    name: string;
+    /** The description */
+    description: string;
+    /** The link to the homepage/repo */
+    url: string;
+    /** The license */
+    license: string;
+    /** The current version */
+    version: string;
+    /** The creation date */
+    created: Date;
+    /** The date when it was last modified */
+    modified: Date;
+    /**
+     * The keywords of the package
+     */
+    keywords: string[];
+}
+
+/**
+ * The download statistic for a given range
+ */
+export interface IDownloadStatistic {
+    /** The starting point of the range */
+    from: Date;
+    /** The ending point of the range */
+    to: Date;
+    /** The download count for the range */
+    downloads: number;
+}
 
 @Injectable({
     providedIn: "root",
@@ -36,6 +68,7 @@ export class NpmService {
             version: generalInfo["dist-tags"].latest,
             created: new Date(generalInfo.time.created),
             modified: new Date(generalInfo.time.modified),
+            keywords: generalInfo.keywords,
         };
 
         let dayCounter = 0;

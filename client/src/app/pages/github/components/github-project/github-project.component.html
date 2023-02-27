@@ -1,7 +1,14 @@
-<div *ngIf="general">
-    <div></div>
+<div *ngIf="general" class="github-card">
     <div>
-        <h3>{{general.name}}</h3>
-        <span>{{general.description}}</span>
+        <div></div>
+        <div class="information">
+            <h3>{{ general.name }}</h3>
+            <span>{{ general.description }}</span>
+            <div class="keywords">
+                <div *ngFor="let keyword of general.keywords" class="npm-keyword">
+                    {{ keyword }}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
