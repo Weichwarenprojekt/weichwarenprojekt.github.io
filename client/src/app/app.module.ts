@@ -24,8 +24,9 @@ import { LOCATION_INITIALIZED, LocationStrategy } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { LoadingComponent } from "./components/loading/loading.component";
 import { MemberCardComponent } from "./pages/team/components/member-card/member-card.component";
-import { GithubComponent } from './pages/github/github.component';
-import { GithubProjectComponent } from './pages/github/components/github-project/github-project.component';
+import { GithubComponent } from "./pages/github/github.component";
+import { GithubProjectComponent } from "./pages/github/components/github-project/github-project.component";
+import { NgChartsModule } from "ng2-charts";
 
 @NgModule({
     declarations: [
@@ -62,6 +63,7 @@ import { GithubProjectComponent } from './pages/github/components/github-project
             },
         }),
         FormsModule,
+        NgChartsModule,
     ],
     providers: [
         {

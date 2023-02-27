@@ -2215,6 +2215,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kurkle/color@npm:^0.3.0":
+  version: 0.3.2
+  resolution: "@kurkle/color@npm:0.3.2"
+  checksum: 79e97b31f8f6efb28c69d373f94b0c7480226fe8ec95221f518ac998e156444a496727ce47de6d728eb5c3369288e794cba82cae34253deb0d472d3bfe080e49
+  languageName: node
+  linkType: hard
+
 "@nestjs-modules/mailer@npm:^1.6.1":
   version: 1.8.1
   resolution: "@nestjs-modules/mailer@npm:1.8.1"
@@ -4369,6 +4376,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chart.js@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "chart.js@npm:4.2.1"
+  dependencies:
+    "@kurkle/color": ^0.3.0
+  checksum: 7319fdfd1e29812e87bbc07737e8c9072ff659bbc09ade8dd262f83424cd7e48f89afe5220e11e002c9f236883fae3f3adb8adc16acb4682b0ddcc0b661c3af9
+  languageName: node
+  linkType: hard
+
 "cheerio-select@npm:^1.5.0":
   version: 1.6.0
   resolution: "cheerio-select@npm:1.6.0"
@@ -4553,6 +4569,7 @@ __metadata:
     "@ngx-translate/http-loader": ^7.0.0
     "@types/jasmine": ~3.10.0
     "@types/node": ^12.11.1
+    chart.js: ^4.2.1
     gsap: ^3.10.4
     jasmine-core: ~4.0.0
     karma: ~6.3.0
@@ -4560,6 +4577,7 @@ __metadata:
     karma-coverage: ~2.1.0
     karma-jasmine: ~4.0.0
     karma-jasmine-html-reporter: ~1.7.0
+    ng2-charts: ^4.1.1
     rxjs: ~7.5.0
     tslib: ^2.3.0
     typescript: ~4.6.2
@@ -8861,6 +8879,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash-es@npm:^4.17.15":
+  version: 4.17.21
+  resolution: "lodash-es@npm:4.17.21"
+  checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
+  languageName: node
+  linkType: hard
+
 "lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
@@ -9900,6 +9925,22 @@ __metadata:
   version: 2.0.2
   resolution: "netmask@npm:2.0.2"
   checksum: c65cb8d3f7ea5669edddb3217e4c96910a60d0d9a4b52d9847ff6b28b2d0277cd8464eee0ef85133cdee32605c57940cacdd04a9a019079b091b6bba4cb0ec22
+  languageName: node
+  linkType: hard
+
+"ng2-charts@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "ng2-charts@npm:4.1.1"
+  dependencies:
+    lodash-es: ^4.17.15
+    tslib: ^2.3.0
+  peerDependencies:
+    "@angular/cdk": ">=14.0.0"
+    "@angular/common": ">=14.0.0"
+    "@angular/core": ">=14.0.0"
+    chart.js: ^3.4.0 || ^4.0.0
+    rxjs: ^6.5.3 || ^7.4.0
+  checksum: 0e10230e297470bd54daf0b596d87e49925172e6170450003c0c3baaf757d096f3f132a70ef544c5884116b190273b89d31d59b0dac54bd05b8b5e084245dba2
   languageName: node
   linkType: hard
 
