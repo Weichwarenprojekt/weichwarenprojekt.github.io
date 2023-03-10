@@ -1,13 +1,24 @@
 <div *ngIf="general" class="github-card">
-    <div>
-        <div></div>
-        <div class="information">
-            <h3>{{ general.name }}</h3>
-            <span>{{ general.description }}</span>
-            <div class="keywords">
-                <div *ngFor="let keyword of general.keywords" class="npm-keyword">
-                    {{ keyword }}
-                </div>
+    <div class="npm-stats">
+        <div id="downloadCount">{{ selectedDataPoint?.downloads }}</div>
+        <canvas
+            baseChart
+            width="300"
+            height="150"
+            [type]="'line'"
+            [data]="npmDownloadChartConfig"
+            [options]="npmDownloadsChartOptions"
+            [legend]="false"
+        >
+        </canvas>
+    </div>
+
+    <div class="information">
+        <h3>{{ general.name }}</h3>
+        <span>{{ general.description }}</span>
+        <div class="keywords">
+            <div *ngFor="let keyword of general.keywords" class="npm-keyword">
+                {{ keyword }}
             </div>
         </div>
     </div>

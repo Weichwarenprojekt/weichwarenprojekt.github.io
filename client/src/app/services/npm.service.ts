@@ -89,6 +89,6 @@ export class NpmService {
             }
         }
 
-        return { info, statistics: downloads };
+        return { info, statistics: downloads.reverse() };
     }
 }
