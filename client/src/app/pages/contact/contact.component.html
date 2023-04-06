@@ -3,20 +3,25 @@
     <div class="row">
         <div class="intro-text">
             <h1>{{ "contact.title" | translate }}</h1>
-            <div class="intro-description">{{ "contact.description" | translate }}</div>
+            <div class="col">
+                <div class="intro-description">{{ "contact.description" | translate }}</div>
+                <div class="row align-right" id="send-button">
+                    <div>
+                        <a
+                            class="btn btn-primary btn-icon"
+                            (click)="triggerLoadingAnimation()"
+                            href="javascript:void(0)"
+                        >
+                            <app-loading *ngIf="loading"></app-loading>
+                            <svg *ngIf="!loading">
+                                <use xlink:href="assets/img/icons.svg#email"></use>
+                            </svg>
+                            {{ "contact.send" | translate }}
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         <img [src]="'assets/img/contact/contact.svg'" alt="Intro Image" class="intro-image" />
-    </div>
-    <div class="row align-right">
-        <div>
-            <a class="btn btn-primary btn-icon" (click)="triggerLoadingAnimation()" href="javascript:void(0)">
-                <app-loading *ngIf="loading"></app-loading>
-                <svg *ngIf="!loading">
-                    <use xlink:href="assets/img/icons.svg#email"></use>
-                </svg>
-                <!-- {{ "contact.send" | translate }} -->
-                {{ "Send us an Email" }}
-            </a>
-        </div>
     </div>
 </div>

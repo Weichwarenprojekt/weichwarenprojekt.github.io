@@ -90,7 +90,7 @@
         "email": "E-Mail",
         "email.subject": "Contact request",
         "message": "Message",
-        "send": "Send",
+        "send": "Send us an E-Mail",
         "emailRequired": "Enter a valid e-mail!",
         "couldNotSend": "Could not send message!",
         "privacyChecked": "You have to agree to the privacy policy!",
