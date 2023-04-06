@@ -4,13 +4,10 @@
   "private": true,
   "hostname": "",
   "scripts": {
+    "postinstall": "cd client && npm i && cd ../server && npm i",
     "build": "cd client && npm run build",
     "deploy": "node scripts/deploy.js"
   },
-  "workspaces": [
-    "client",
-    "server"
-  ],
   "dependencies": {
     "execa": "^5.0.0"
   },
