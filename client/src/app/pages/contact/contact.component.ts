@@ -59,16 +59,19 @@ export class ContactComponent {
     }
 
     /**
-     * Trigger the loading animation
+     * Opens the mailto link
      */
-    public triggerLoadingAnimation(): void {
+    public openMailtoLink(): void {
         clearTimeout(this.loadingTimeoutId);
         this.loading = true;
         this.loadingTimeoutId = setTimeout(() => (this.loading = false), 1000);
 
+        // since some clients may have set their email program to the browser (e.g. Outlook online) we need to open the
+        // mailto link in a new tab.
         const windowRef = window.open(this.mailtoLink, "_blank");
         windowRef?.focus();
         clearTimeout(this.mailtoLinkTimeout);
+        // setting a timeout to check if the newly opened window has the focus. If not it can be closed since the user is using a non-browser mail client
         this.mailtoLinkTimeout = setTimeout(function () {
             if (!windowRef?.document.hasFocus()) {
                 windowRef?.close();

@@ -7,11 +7,7 @@
                 <div class="intro-description">{{ "contact.description" | translate }}</div>
                 <div class="row align-left" id="send-button">
                     <div>
-                        <a
-                            class="btn btn-primary btn-icon"
-                            (click)="triggerLoadingAnimation()"
-                            href="javascript:void(0)"
-                        >
+                        <a class="btn btn-primary btn-icon" (click)="openMailtoLink()" href="javascript:void(0)">
                             <app-loading *ngIf="loading"></app-loading>
                             <svg *ngIf="!loading">
                                 <use xlink:href="assets/img/icons.svg#email"></use>
