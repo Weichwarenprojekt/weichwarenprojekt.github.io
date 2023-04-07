@@ -20,12 +20,12 @@ import { FocusCardComponent } from "./pages/home/components/focus-card/focus-car
 import { IntroComponent } from "./pages/home/components/intro/intro.component";
 import { QuestionComponent } from "./pages/home/components/question/question.component";
 import { ShowcaseComponent } from "./pages/home/components/showcase/showcase.component";
-import { LOCATION_INITIALIZED, LocationStrategy } from "@angular/common";
+import { LOCATION_INITIALIZED, LocationStrategy, NgOptimizedImage } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { LoadingComponent } from "./components/loading/loading.component";
 import { MemberCardComponent } from "./pages/team/components/member-card/member-card.component";
-import { GithubComponent } from "./pages/github/github.component";
-import { GithubProjectComponent } from "./pages/github/components/github-project/github-project.component";
+import { OpenSourceComponent } from "./pages/open-source/open-source.component";
+import { OpenSourceProjectComponent } from "./pages/open-source/components/open-source-project/open-source-project.component";
 import { NgChartsModule } from "ng2-charts";
 
 @NgModule({
@@ -47,8 +47,8 @@ import { NgChartsModule } from "ng2-charts";
         ShowcaseComponent,
         LoadingComponent,
         MemberCardComponent,
-        GithubComponent,
-        GithubProjectComponent,
+        OpenSourceComponent,
+        OpenSourceProjectComponent,
     ],
     imports: [
         BrowserModule,
@@ -64,6 +64,7 @@ import { NgChartsModule } from "ng2-charts";
         }),
         FormsModule,
         NgChartsModule,
+        NgOptimizedImage,
     ],
     providers: [
         {

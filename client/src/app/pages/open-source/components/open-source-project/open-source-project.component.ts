@@ -3,11 +3,11 @@ import { IDownloadStatistic, IGeneralInformation, NpmService } from "../../../..
 import { ActiveElement, Chart, ChartConfiguration, ChartEvent, ChartOptions } from "chart.js";
 
 @Component({
-    selector: "app-github-project",
-    templateUrl: "./github-project.component.html",
-    styleUrls: ["./github-project.component.scss"],
+    selector: "app-open-source-project",
+    templateUrl: "./open-source-project.component.html",
+    styleUrls: ["./open-source-project.component.scss"],
 })
-export class GithubProjectComponent implements OnInit {
+export class OpenSourceProjectComponent implements OnInit {
     /** The name of the project */
     @Input() name: string = "";
 
