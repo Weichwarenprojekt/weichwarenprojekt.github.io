@@ -12,9 +12,6 @@
     & > app-member-card {
         margin-bottom: $normal-padding;
     }
-    app-member-card:last-child {
-        margin-bottom: 0;
-    }
 }
 
 .inner-card {
@@ -32,10 +29,6 @@ $gap: calc(#{$normal-padding} / 2);
     & > * {
         width: calc(50% - #{$gap});
         margin-bottom: $normal-padding;
-    }
-
-    & > *:last-of-type {
-        margin: auto;
     }
 }
 
