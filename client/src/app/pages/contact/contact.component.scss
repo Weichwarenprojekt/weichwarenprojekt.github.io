@@ -14,6 +14,11 @@
     padding-top: $small-padding;
 }
 
+.contact-description {
+    font-weight: 300;
+    font-size: $h3;
+}
+
 @media screen and (max-width: $mobile-breakpoint) {
     #send-button {
         display: flex;
