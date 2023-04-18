@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { IDownloadStatistic, IGeneralInformation, NpmService } from "../../../../services/npm.service";
 import { ActiveElement, Chart, ChartConfiguration, ChartEvent, ChartOptions } from "chart.js";
+import { LoadingIndicatorType } from "../../../../components/loading-indicator/loading-indicator.component";
 
 @Component({
     selector: "app-open-source-project",
@@ -28,6 +29,8 @@ export class OpenSourceProjectComponent implements OnInit {
 
     public selectedDataPoint?: IDownloadStatistic;
 
+    public isLoading = true;
+
     constructor(private readonly npmService: NpmService) {}
 
     /**
@@ -35,6 +38,7 @@ export class OpenSourceProjectComponent implements OnInit {
      */
     async ngOnInit(): Promise<void> {
         const { info, statistics = [] } = await this.npmService.getPackageInformation(this.name);
+        this.isLoading = false;
         this.general = info;
         this.downloads = statistics;
 
@@ -121,4 +125,6 @@ export class OpenSourceProjectComponent implements OnInit {
             },
         };
     }
+
+    protected readonly LoadingIndicatorType = LoadingIndicatorType;
 }

@@ -27,6 +27,7 @@ import { MemberCardComponent } from "./pages/team/components/member-card/member-
 import { OpenSourceComponent } from "./pages/open-source/open-source.component";
 import { OpenSourceProjectComponent } from "./pages/open-source/components/open-source-project/open-source-project.component";
 import { NgChartsModule } from "ng2-charts";
+import { LoadingIndicatorComponent } from "./components/loading-indicator/loading-indicator.component";
 
 @NgModule({
     declarations: [
@@ -49,6 +50,7 @@ import { NgChartsModule } from "ng2-charts";
         MemberCardComponent,
         OpenSourceComponent,
         OpenSourceProjectComponent,
+        LoadingIndicatorComponent,
     ],
     imports: [
         BrowserModule,

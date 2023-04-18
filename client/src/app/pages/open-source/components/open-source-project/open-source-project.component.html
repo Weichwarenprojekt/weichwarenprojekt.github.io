@@ -1,25 +1,31 @@
-<div *ngIf="general" class="github-card">
-    <div class="npm-stats">
-        <div id="downloadCount">{{ selectedDataPoint?.downloads }}</div>
-        <canvas
-            baseChart
-            width="300"
-            height="150"
-            [type]="'line'"
-            [data]="npmDownloadChartConfig"
-            [options]="npmDownloadsChartOptions"
-            [legend]="false"
-        >
-        </canvas>
-    </div>
+<div class="npm-stats">
+    <app-loading-indicator *ngIf="isLoading"></app-loading-indicator>
+    <div id="downloadCount" *ngIf="!isLoading">{{ selectedDataPoint?.downloads }}</div>
+    <canvas
+        baseChart
+        width="300"
+        height="150"
+        [type]="'line'"
+        [data]="npmDownloadChartConfig"
+        [options]="npmDownloadsChartOptions"
+        [legend]="false"
+        *ngIf="!isLoading"
+    >
+    </canvas>
+</div>
 
-    <div class="information">
-        <h3>{{ general.name }}</h3>
-        <span>{{ general.description }}</span>
-        <div class="keywords">
-            <div *ngFor="let keyword of general.keywords" class="npm-keyword">
-                {{ keyword }}
-            </div>
+<div class="information">
+    <h3 *ngIf="!isLoading">{{ general?.name }}</h3>
+    <app-loading-indicator *ngIf="isLoading" [indicatorType]="LoadingIndicatorType.H2"></app-loading-indicator>
+    <span *ngIf="!isLoading">{{ general?.description }}</span>
+    <app-loading-indicator
+        *ngIf="isLoading"
+        [indicatorType]="LoadingIndicatorType.TEXT"
+        [rows]="2"
+    ></app-loading-indicator>
+    <div class="keywords">
+        <div *ngFor="let keyword of general?.keywords" class="npm-keyword">
+            {{ keyword }}
         </div>
     </div>
 </div>
