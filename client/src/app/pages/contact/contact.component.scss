@@ -10,75 +10,14 @@
     margin-top: $normal-padding;
 }
 
-.contact-form {
-    width: 100%;
-    background: $grey;
-    border-radius: $border-radius;
-    padding: $big-padding;
-
-    label {
-        margin-right: $border-radius;
-        font-size: $h3;
-    }
-
-    input,
-    textarea {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    textarea {
-        height: 20rem;
-    }
-}
-
-.checkbox-field {
-    display: flex;
-    margin-bottom: 2rem;
-    align-items: center;
-
-    div {
-        font-size: $h3;
-        text-align: start;
-    }
-
-    a {
-        font-size: $h3;
-        color: $prime-1;
-    }
-}
-
-.contact-warning {
-    display: flex;
-    margin-left: 2rem;
-
-    svg {
-        width: 2rem;
-        height: 2rem;
-        fill: $prime-2;
-        flex: 0 0 auto;
-    }
-
-    div {
-        margin-left: 1rem;
-        color: $prime-2;
-        font-size: $h3;
-    }
-}
-
-.footer {
-    display: flex;
-    align-items: center;
+#send-button {
+    padding-top: $small-padding;
 }
 
 @media screen and (max-width: $mobile-breakpoint) {
-    .contact-form {
-        background: transparent;
-        padding: 0;
-
-        input,
-        textarea {
-            background: $grey;
-        }
+    #send-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

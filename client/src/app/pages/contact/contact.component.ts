@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { ContactApiModel } from "../../../../../server/src/common/contact.api-model";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
@@ -36,42 +35,47 @@ export class ContactComponent {
      * True if the user agrees to the privacy policy
      */
     public privacyPolicyChecked = false;
+    /**
+     * The mailto link
+     */
+    public mailtoLink: string;
+    /**
+     * The link timeout that closes the tab if it is empty
+     * @private
+     */
+    private mailtoLinkTimeout?: number;
 
+    /**
+     * The loading timeout id
+     * @private
+     */
+    private loadingTimeoutId?: number;
     /**
      * Constructor
      */
-    constructor(private readonly translate: TranslateService) {}
+    constructor(private readonly translate: TranslateService) {
+        const subject = translate.instant("contact.email.subject");
+        this.mailtoLink = `mailto:info@weichwarenprojekt.de?subject=${subject}`;
+    }
 
     /**
-     * Try to send an e-mail
+     * Opens the mailto link
      */
-    public sendEmail(): void {
-        if (this.loading) return;
-
-        // Send the email
-        this.error = "";
+    public openMailtoLink(): void {
+        clearTimeout(this.loadingTimeoutId);
         this.loading = true;
-        fetch("https://api.weichwarenprojekt.de/v1/email/send", {
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            method: "POST",
-            body: JSON.stringify(
-                new ContactApiModel(this.name, this.company, this.email, this.message, this.translate.currentLang),
-            ),
-        })
-            .then((res) => {
-                if (res.status >= 300) {
-                    this.error = this.translate.instant("contact.couldNotSend");
-                } else {
-                    this.message = "";
-                }
-                this.loading = false;
-            })
-            .catch(() => {
-                this.error = this.translate.instant("contact.couldNotSend");
-                this.loading = false;
-            });
+        this.loadingTimeoutId = setTimeout(() => (this.loading = false), 1000);
+
+        // since some clients may have set their email program to the browser (e.g. Outlook online) we need to open the
+        // mailto link in a new tab.
+        const windowRef = window.open(this.mailtoLink, "_blank");
+        windowRef?.focus();
+        clearTimeout(this.mailtoLinkTimeout);
+        // setting a timeout to check if the newly opened window has the focus. If not it can be closed since the user is using a non-browser mail client
+        this.mailtoLinkTimeout = setTimeout(function () {
+            if (!windowRef?.document.hasFocus()) {
+                windowRef?.close();
+            }
+        }, 500);
     }
 }
