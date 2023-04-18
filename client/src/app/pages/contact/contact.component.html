@@ -1,19 +1,11 @@
-<app-intro-card image="assets/img/contact/contact.svg">
-    <div class="intro-text">
-        <h1>{{ "contact.title" | translate }}</h1>
-        <div class="col">
-            <div class="contact-description">{{ "contact.description" | translate }}</div>
-            <div id="send-button">
-                <div>
-                    <a class="btn btn-primary btn-icon" (click)="openMailtoLink()" href="javascript:void(0)">
-                        <app-loading *ngIf="loading"></app-loading>
-                        <svg *ngIf="!loading">
-                            <use xlink:href="assets/img/icons.svg#email"></use>
-                        </svg>
-                        {{ "contact.send" | translate }}
-                    </a>
-                </div>
-            </div>
-        </div>
+<app-intro-card image="assets/img/contact/contact.svg" title="contact.title" description="contact.description">
+    <div id="send-button">
+        <a class="btn btn-primary btn-icon" (click)="openMailtoLink()" href="javascript:void(0)">
+            <app-loading *ngIf="loading"></app-loading>
+            <svg *ngIf="!loading">
+                <use xlink:href="assets/img/icons.svg#email"></use>
+            </svg>
+            {{ "contact.send" | translate }}
+        </a>
     </div>
 </app-intro-card>
