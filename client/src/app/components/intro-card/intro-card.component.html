@@ -1,7 +1,8 @@
 <div class="intro-card">
-    <div class="intro-text">
-        <h1>{{ title | translate }}</h1>
-        <div class="intro-description">{{ description | translate }}</div>
+    <div class="col-left">
+        <h1 *ngIf="title.length > 0">{{ title | translate }}</h1>
+        <div *ngIf="description.length" class="intro-description">{{ description | translate }}</div>
+        <ng-content></ng-content>
     </div>
     <img [src]="image" alt="Intro Image" class="intro-image" />
 </div>
