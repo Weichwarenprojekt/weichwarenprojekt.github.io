@@ -1,18 +1,15 @@
 import { Component, HostListener, Input, OnInit, ViewChild } from "@angular/core";
 import { IDownloadStatistic, IGeneralInformation, NpmService } from "../../../../services/npm.service";
 import {
-    ActiveElement,
     BubbleDataPoint,
     Chart,
     ChartConfiguration,
-    ChartEvent,
     ChartOptions,
     ChartTypeRegistry,
     Point,
     TooltipModel,
 } from "chart.js";
 import { LoadingIndicatorType } from "../../../../components/loading-indicator/loading-indicator.component";
-import { canvas } from "chart.js/helpers";
 import { DatePipe } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
 import { BaseChartDirective } from "ng2-charts";
