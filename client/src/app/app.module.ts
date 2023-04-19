@@ -24,6 +24,10 @@ import { LOCATION_INITIALIZED, LocationStrategy } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { LoadingComponent } from "./components/loading/loading.component";
 import { MemberCardComponent } from "./pages/team/components/member-card/member-card.component";
+import { OpenSourceComponent } from "./pages/open-source/open-source.component";
+import { OpenSourceProjectComponent } from "./pages/open-source/components/open-source-project/open-source-project.component";
+import { NgChartsModule } from "ng2-charts";
+import { LoadingIndicatorComponent } from "./components/loading-indicator/loading-indicator.component";
 
 @NgModule({
     declarations: [
@@ -44,6 +48,9 @@ import { MemberCardComponent } from "./pages/team/components/member-card/member-
         ShowcaseComponent,
         LoadingComponent,
         MemberCardComponent,
+        OpenSourceComponent,
+        OpenSourceProjectComponent,
+        LoadingIndicatorComponent,
     ],
     imports: [
         BrowserModule,
@@ -58,6 +65,7 @@ import { MemberCardComponent } from "./pages/team/components/member-card/member-
             },
         }),
         FormsModule,
+        NgChartsModule,
     ],
     providers: [
         {

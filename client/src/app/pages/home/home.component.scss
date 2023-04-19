@@ -55,6 +55,8 @@
     flex: 0 0 auto;
 }
 
+$half-normal-padding: $normal-padding / 2;
+
 @media screen and (max-width: 900px) {
     .home-focus {
         align-items: center;
@@ -62,7 +64,7 @@
 
     .home-focus-block {
         flex-direction: column;
-        width: 46%;
+        width: calc(50% - #{$half-normal-padding});
 
         & > * {
             width: 100%;
@@ -74,7 +76,7 @@
     }
 
     .home-focus-single {
-        width: 46%;
+        width: calc(50% - #{$half-normal-padding});
     }
 }
 

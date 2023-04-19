@@ -8,33 +8,9 @@ import { TranslateService } from "@ngx-translate/core";
 })
 export class ContactComponent {
     /**
-     * Name of the user (mandatory)
-     */
-    public name = "";
-    /**
-     * Company name (optional)
-     */
-    public company = "";
-    /**
-     * E-Mail (mandatory)
-     */
-    public email = "";
-    /**
-     * The contact message
-     */
-    public message = "";
-    /**
-     * The shown error message
-     */
-    public error = "";
-    /**
      * True if the form is currently loading
      */
     public loading = false;
-    /**
-     * True if the user agrees to the privacy policy
-     */
-    public privacyPolicyChecked = false;
     /**
      * The mailto link
      */
@@ -43,13 +19,12 @@ export class ContactComponent {
      * The link timeout that closes the tab if it is empty
      * @private
      */
-    private mailtoLinkTimeout?: number;
-
+    private mailtoLinkTimeout?: NodeJS.Timeout;
     /**
      * The loading timeout id
      * @private
      */
-    private loadingTimeoutId?: number;
+    private loadingTimeoutId?: NodeJS.Timeout;
     /**
      * Constructor
      */

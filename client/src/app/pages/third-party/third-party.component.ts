@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import licenses from "./rsc/licenses.json";
+import licenses from "../../../assets/3rdpartylicenses.json";
+import { IPackageInfo } from "@weichwarenprojekt/license-reporter";
 
 @Component({
     selector: "app-third-party",
@@ -10,9 +11,5 @@ export class ThirdPartyComponent {
     /**
      * The licenses
      */
-    public licenses: {
-        name: string;
-        link: string;
-        license: string;
-    }[] = licenses;
+    public licenses: IPackageInfo[] = licenses;
 }

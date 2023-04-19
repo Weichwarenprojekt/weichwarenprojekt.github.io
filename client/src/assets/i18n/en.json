@@ -3,6 +3,7 @@
         "home": "Home",
         "team": "Team",
         "contact": "Contact",
+        "openSource": "Open Source",
         "footer": {
             "title": "Other Stuff",
             "contact": "Contact",
@@ -100,6 +101,11 @@
             "second": "privacy policy",
             "third": ""
         }
+    },
+    "openSource": {
+        "title": "Open source",
+        "description": "We are proud to share our commitment to the open source community. We believe in the power of collaboration and innovation that comes with open source software, and we are also working on contributing to this community. Our team is passionate about creating high-quality open source projects that are accessible to everyone. By sharing our knowledge and skills with the community, we hope to create a more collaborative and transparent future for technology.",
+        "weeklyDownloads": "Weekly Downloads"
     },
     "legalNotice": {
         "title": "Legal Notice",

@@ -1,0 +1,77 @@
+@import "vars";
+
+:host {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-indicator {
+    flex-grow: 1;
+    position: relative;
+    background-color: rgb(232, 232, 232);
+    z-index: 44;
+    overflow: hidden;
+    border-radius: calc($border-radius / 2);
+    display: flex;
+}
+
+.loading-indicator.h2 {
+    min-height: $h2;
+    width: 60%;
+}
+
+.loading-indicator.text {
+    min-height: $text;
+    margin-bottom: calc($small-padding / 4);
+}
+
+.loading-indicator.text:first-child {
+    width: 100%;
+}
+
+.loading-indicator.text:last-child {
+    width: 80%;
+}
+
+.loading-indicator .loading-activity {
+    position: absolute;
+    left: -45%;
+    height: 100%;
+    width: 45%;
+    background-image: linear-gradient(
+        to left,
+        rgba(241, 241, 241, 0.05),
+        rgba(239, 239, 239, 0.65),
+        rgba(232, 232, 232, 0.85),
+        rgba(238, 238, 238, 0.13),
+        rgba(245, 245, 245, 0.05)
+    );
+    background-image: -moz-linear-gradient(
+        to left,
+        rgba(241, 241, 241, 0.05),
+        rgba(239, 239, 239, 0.65),
+        rgba(232, 232, 232, 0.85),
+        rgba(238, 238, 238, 0.13),
+        rgba(245, 245, 245, 0.05)
+    );
+    background-image: -webkit-linear-gradient(
+        to left,
+        rgba(241, 241, 241, 0.05),
+        rgba(239, 239, 239, 0.65),
+        rgba(232, 232, 232, 0.85),
+        rgba(238, 238, 238, 0.13),
+        rgba(245, 245, 245, 0.05)
+    );
+    animation: loading 1s infinite;
+    z-index: 45;
+}
+
+@keyframes loading {
+    0% {
+        left: -45%;
+    }
+    100% {
+        left: 100%;
+    }
+}

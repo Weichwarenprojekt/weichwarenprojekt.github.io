@@ -25,6 +25,7 @@ lerna-debug.log*
 vue/node_modules
 dist
 node_modules
+.yarn/cache
 
 # Tests
 /coverage
