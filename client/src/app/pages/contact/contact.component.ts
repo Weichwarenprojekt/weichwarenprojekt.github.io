@@ -43,13 +43,13 @@ export class ContactComponent {
      * The link timeout that closes the tab if it is empty
      * @private
      */
-    private mailtoLinkTimeout?: number;
+    private mailtoLinkTimeout?: NodeJS.Timeout;
 
     /**
      * The loading timeout id
      * @private
      */
-    private loadingTimeoutId?: number;
+    private loadingTimeoutId?: NodeJS.Timeout;
     /**
      * Constructor
      */
