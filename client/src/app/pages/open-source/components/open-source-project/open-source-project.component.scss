@@ -40,11 +40,12 @@
     position: absolute;
     height: 90%;
     top: 5% !important;
-    width: 0.2rem;
+    width: 4px;
     background-color: black;
     right: 0;
     opacity: 0;
     transition: 100ms all ease;
+    transform: translateX(-50%);
 }
 
 .information {
