@@ -1,28 +1,38 @@
 <div class="npm-stats">
     <app-loading-indicator *ngIf="isLoading"></app-loading-indicator>
-    <div id="downloadCount" *ngIf="!isLoading">{{ selectedDataPoint?.downloads }}</div>
-    <canvas
-        baseChart
-        width="300"
-        height="150"
-        [type]="'line'"
-        [data]="npmDownloadChartConfig"
-        [options]="npmDownloadsChartOptions"
-        [legend]="false"
-        *ngIf="!isLoading"
-    >
-    </canvas>
+    <div style="position: relative">
+        <div id="currentDateRange">
+            {{ currentDownloadData.date }}
+        </div>
+        <div id="downloadCount" *ngIf="!isLoading">
+            <span class="material-symbols-rounded"> download </span>
+            <span id="downloadCountText">{{ currentDownloadData.downloads }}</span>
+        </div>
+        <canvas
+            baseChart
+            width="300"
+            height="150"
+            [type]="'line'"
+            [data]="npmDownloadChartConfig"
+            [options]="npmDownloadsChartOptions"
+            [legend]="false"
+            *ngIf="!isLoading"
+        >
+        </canvas>
+        <div id="currentPos"></div>
+    </div>
 </div>
 
 <div class="information">
-    <h3 *ngIf="!isLoading">{{ general?.name }}</h3>
     <app-loading-indicator *ngIf="isLoading" [indicatorType]="LoadingIndicatorType.H2"></app-loading-indicator>
-    <span *ngIf="!isLoading">{{ general?.description }}</span>
     <app-loading-indicator
         *ngIf="isLoading"
         [indicatorType]="LoadingIndicatorType.TEXT"
         [rows]="2"
     ></app-loading-indicator>
+
+    <h3 *ngIf="!isLoading">{{ general?.name }}</h3>
+    <span *ngIf="!isLoading">{{ general?.description }}</span>
     <div class="keywords">
         <div *ngFor="let keyword of general?.keywords" class="npm-keyword">
             {{ keyword }}

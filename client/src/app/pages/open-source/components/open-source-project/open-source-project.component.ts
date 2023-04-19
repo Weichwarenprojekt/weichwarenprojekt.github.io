@@ -1,7 +1,20 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { IDownloadStatistic, IGeneralInformation, NpmService } from "../../../../services/npm.service";
-import { ActiveElement, Chart, ChartConfiguration, ChartEvent, ChartOptions } from "chart.js";
+import {
+    ActiveElement,
+    BubbleDataPoint,
+    Chart,
+    ChartConfiguration,
+    ChartEvent,
+    ChartOptions,
+    ChartTypeRegistry,
+    Point,
+    TooltipModel,
+} from "chart.js";
 import { LoadingIndicatorType } from "../../../../components/loading-indicator/loading-indicator.component";
+import { canvas } from "chart.js/helpers";
+import { DatePipe } from "@angular/common";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
     selector: "app-open-source-project",
@@ -9,15 +22,18 @@ import { LoadingIndicatorType } from "../../../../components/loading-indicator/l
     styleUrls: ["./open-source-project.component.scss"],
 })
 export class OpenSourceProjectComponent implements OnInit {
-    /** The name of the project */
+    /**
+     * The name of the project
+     */
     @Input() name: string = "";
-
-    /** The general information for the package */
+    /**
+     * The general information for the package
+     */
     public general?: IGeneralInformation;
-
-    /** The download information for the package */
+    /**
+     * The download information for the package
+     */
     public downloads: IDownloadStatistic[] = [];
-
     /**
      * The line chart data
      */
@@ -26,32 +42,62 @@ export class OpenSourceProjectComponent implements OnInit {
      * The options used for the line chart
      */
     public npmDownloadsChartOptions?: ChartOptions<"line">;
-
-    public selectedDataPoint?: IDownloadStatistic;
-
+    /**
+     * The current download count
+     */
+    public currentDownloadData = { downloads: 0, date: "" };
+    /**
+     * True if the loading animation should be shown
+     */
     public isLoading = true;
+    /**
+     * The date pipe
+     * @private
+     */
+    private datePipe: DatePipe | undefined;
+    /**
+     * The date format used for displaying dates
+     * @private
+     */
+    private readonly DATE_FORMAT = "dd-MM-YYYY";
+    /**
+     * Internal reference to the Loading Indicator Type so that it can be used in the template
+     * @protected
+     */
+    protected readonly LoadingIndicatorType = LoadingIndicatorType;
 
-    constructor(private readonly npmService: NpmService) {}
+    constructor(private readonly npmService: NpmService, private readonly translate: TranslateService) {}
 
     /**
      * Load the data
      */
     async ngOnInit(): Promise<void> {
+        this.datePipe = new DatePipe(this.translate.currentLang);
         const { info, statistics = [] } = await this.npmService.getPackageInformation(this.name);
         this.isLoading = false;
         this.general = info;
         this.downloads = statistics;
 
+        const currentDownloadData = statistics[statistics.length - 1];
+        if (currentDownloadData)
+            this.currentDownloadData = {
+                downloads: currentDownloadData.downloads,
+                date: this.getDateDisplayString(currentDownloadData.from, currentDownloadData.to),
+            };
         this.npmDownloadChartConfig = this.getChartData();
         this.npmDownloadsChartOptions = this.getChartOptions();
     }
 
+    /**
+     * Returns the chart configuration for the download chart data
+     * @private
+     */
     private getChartData(): ChartConfiguration<"line">["data"] {
         return {
-            labels: this.downloads.map((entry) => entry.from.toLocaleDateString()),
+            labels: this.downloads.map((entry) => this.getDateDisplayString(entry.from, entry.to)),
             datasets: [
                 {
-                    label: "Downloads",
+                    label: "",
                     data: this.downloads.map((entry) => entry.downloads),
                     tension: 0.4,
                     fill: "origin",
@@ -64,6 +110,10 @@ export class OpenSourceProjectComponent implements OnInit {
         };
     }
 
+    /**
+     * Returns te chart options for the line chart
+     * @private
+     */
     private getChartOptions(): ChartOptions<"line"> {
         return {
             responsive: true,
@@ -91,8 +141,8 @@ export class OpenSourceProjectComponent implements OnInit {
             elements: {
                 point: {
                     radius: 0,
-                    hitRadius: 10,
-                    hoverRadius: 6,
+                    hitRadius: 3,
+                    hoverRadius: 0,
                 },
             },
             clip: false,
@@ -106,25 +156,65 @@ export class OpenSourceProjectComponent implements OnInit {
             },
             plugins: {
                 tooltip: {
+                    enabled: false,
                     displayColors: false,
                     intersect: false,
-                    mode: "nearest",
+                    mode: "x",
+                    external: this.externalTooltipHandler.bind(this),
                 },
-            },
-            onHover: (event: ChartEvent, elements: ActiveElement[], chart: Chart) => {
-                // if (elements.length === 0) {
-                //     this.selectedDataPoint = this.downloads[this.downloads.length - 1];
-                // } else {
-                //     this.selectedDataPoint = this.downloads[elements[0].datasetIndex];
-                // }
-                // console.log("selected point", this.selectedDataPoint);
-
-                console.log(event);
-
-                // console.log(elements);
             },
         };
     }
 
-    protected readonly LoadingIndicatorType = LoadingIndicatorType;
+    /**
+     * Returns the tooltip div from the charts parent. If no div present, an error is thrown
+     * @param chart The chart reference
+     * @private
+     */
+    private getTooltip(
+        chart: Chart<keyof ChartTypeRegistry, (number | Point | [number, number] | BubbleDataPoint | null)[], unknown>,
+    ): HTMLElement {
+        const tooltip = chart.canvas.parentNode?.querySelector("#currentPos");
+        if (tooltip === null || tooltip === undefined) throw new Error("Couldn't find tooltip div");
+        return tooltip as HTMLElement;
+    }
+
+    /**
+     * Tooltip handler which updates the download count and draws the
+     * @param context
+     * @private
+     */
+    private externalTooltipHandler(context: {
+        chart: Chart<keyof ChartTypeRegistry, (number | Point | [number, number] | BubbleDataPoint | null)[], unknown>;
+        tooltip: TooltipModel<"line">;
+    }) {
+        // Tooltip Element
+        const { chart, tooltip } = context;
+        const tooltipEl = this.getTooltip(chart);
+        const downloadCount = chart.canvas.parentNode?.querySelector("#downloadCountText");
+        const downloadDateRange = chart.canvas.parentNode?.querySelector("#currentDateRange");
+
+        if (tooltip.opacity === 0) {
+            tooltipEl.style.opacity = String(0);
+            if (downloadCount) downloadCount.textContent = String(this.currentDownloadData.downloads);
+            if (downloadDateRange) downloadDateRange.textContent = String(this.currentDownloadData.date);
+            return;
+        }
+
+        if (downloadCount) downloadCount.textContent = tooltip.body[0].lines[0].toString();
+        if (downloadDateRange) downloadDateRange.textContent = tooltip.title[0];
+
+        const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+        // Display and position
+        tooltipEl.style.opacity = String(1);
+        tooltipEl.style.left = positionX + tooltip.caretX + "px";
+        tooltipEl.style.top = positionY + tooltip.caretY + "px";
+    }
+
+    private getDateDisplayString(from: Date, to: Date) {
+        return `${this.datePipe?.transform(from, this.DATE_FORMAT)} - ${this.datePipe?.transform(
+            to,
+            this.DATE_FORMAT,
+        )}`;
+    }
 }

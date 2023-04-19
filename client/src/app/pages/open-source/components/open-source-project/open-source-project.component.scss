@@ -2,7 +2,7 @@
 
 :host {
     border-radius: $border-radius;
-    margin-top: $small-padding;
+    margin-top: $normal-padding;
     width: 100%;
     min-width: 10rem;
     background: $grey;
@@ -42,5 +42,40 @@
                 padding: 0.1rem 1rem;
             }
         }
+    }
+
+    #downloadCount {
+        position: absolute;
+        bottom: -1.25rem;
+        left: 1rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #downloadCountText {
+            font-weight: bold;
+            padding-left: calc($small-padding / 4);
+        }
+    }
+
+    #currentDateRange {
+        position: absolute;
+        bottom: -1rem;
+        right: 0.5rem;
+        font-weight: 300;
+        scale: 0.8;
+    }
+
+    #currentPos {
+        pointer-events: none;
+        position: absolute;
+        height: 90%;
+        top: 5% !important;
+        width: 0.2rem;
+        background-color: black;
+        right: 0;
+        opacity: 0;
+        transition: 100ms all ease;
     }
 }

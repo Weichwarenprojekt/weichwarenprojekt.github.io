@@ -89,6 +89,7 @@ export class NpmService {
             }
         }
 
+        // reversing the downloads so that the latest download stat is located at the end of the array
         return { info, statistics: downloads.reverse() };
     }
 }
