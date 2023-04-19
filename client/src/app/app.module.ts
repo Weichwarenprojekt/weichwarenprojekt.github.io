@@ -20,7 +20,7 @@ import { FocusCardComponent } from "./pages/home/components/focus-card/focus-car
 import { IntroComponent } from "./pages/home/components/intro/intro.component";
 import { QuestionComponent } from "./pages/home/components/question/question.component";
 import { ShowcaseComponent } from "./pages/home/components/showcase/showcase.component";
-import { LOCATION_INITIALIZED, LocationStrategy, NgOptimizedImage } from "@angular/common";
+import { LOCATION_INITIALIZED, LocationStrategy } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { LoadingComponent } from "./components/loading/loading.component";
 import { MemberCardComponent } from "./pages/team/components/member-card/member-card.component";
@@ -66,7 +66,6 @@ import { LoadingIndicatorComponent } from "./components/loading-indicator/loadin
         }),
         FormsModule,
         NgChartsModule,
-        NgOptimizedImage,
     ],
     providers: [
         {
