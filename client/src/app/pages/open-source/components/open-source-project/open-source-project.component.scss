@@ -6,12 +6,12 @@
     background: $grey;
     width: 100%;
     display: flex;
-    padding: 2rem;
+    padding: $normal-padding;
 }
 
 .statistics {
     position: absolute;
-    bottom: -1.25rem;
+    bottom: -24px;
     left: 0;
     width: 100%;
     display: flex;
@@ -38,8 +38,8 @@
 #currentPos {
     pointer-events: none;
     position: absolute;
-    height: 90%;
-    top: 5% !important;
+    height: calc(100% - 8px);
+    top: 4px !important;
     width: 4px;
     background-color: black;
     right: 0;
@@ -78,7 +78,7 @@
 .npm-stats {
     min-width: 300px;
     min-height: 150px;
-    margin-right: 2rem;
+    margin-right: $normal-padding;
     display: flex;
     flex-direction: column;
 }
