@@ -153,7 +153,7 @@ export class OpenSourceProjectComponent implements OnInit {
             elements: {
                 point: {
                     radius: 0,
-                    hitRadius: 3,
+                    hitRadius: 5,
                     hoverRadius: 0,
                 },
             },
