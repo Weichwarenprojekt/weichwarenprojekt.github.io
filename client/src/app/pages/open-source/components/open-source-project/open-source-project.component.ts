@@ -82,7 +82,7 @@ export class OpenSourceProjectComponent implements OnInit {
         if (currentDownloadData)
             this.currentDownloadData = {
                 downloads: currentDownloadData.downloads,
-                date: this.getDateDisplayString(currentDownloadData.from, currentDownloadData.to),
+                date: this.translate.instant("openSource.weeklyDownloads"),
             };
         this.npmDownloadChartConfig = this.getChartData();
         this.npmDownloadsChartOptions = this.getChartOptions();

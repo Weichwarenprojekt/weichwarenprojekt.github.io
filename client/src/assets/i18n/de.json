@@ -104,7 +104,8 @@
     },
     "openSource": {
         "title": "Open-Source",
-        "description": "Wir sind stolz darauf, unser Engagement für die Open-Source-Community zu teilen. Wir glauben an die Kraft der Zusammenarbeit und Innovation, die mit Open-Source-Software einhergeht, und wir tragen aktiv zu dieser Community bei. Unser Team ist leidenschaftlich daran interessiert, hochwertige Open-Source-Projekte zu schaffen, die für alle zugänglich sind. Indem wir unser Wissen und unsere Fähigkeiten mit der Community teilen, hoffen wir, eine kollaborativere und transparentere Zukunft für die Technologie zu schaffen."
+        "description": "Wir sind stolz darauf, unser Engagement für die Open-Source-Community zu teilen. Wir glauben an die Kraft der Zusammenarbeit und Innovation, die mit Open-Source-Software einhergeht, und wir tragen aktiv zu dieser Community bei. Unser Team ist leidenschaftlich daran interessiert, hochwertige Open-Source-Projekte zu schaffen, die für alle zugänglich sind. Indem wir unser Wissen und unsere Fähigkeiten mit der Community teilen, hoffen wir, eine kollaborativere und transparentere Zukunft für die Technologie zu schaffen.",
+        "weeklyDownloads": "Wöchentliche Downloads"
     },
     "legalNotice": {
         "title": "Impressum",
