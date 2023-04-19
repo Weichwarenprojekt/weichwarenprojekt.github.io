@@ -3,52 +3,21 @@
 :host {
     border-radius: $border-radius;
     margin-top: $normal-padding;
-    width: 100%;
-    min-width: 10rem;
     background: $grey;
+    width: 100%;
     display: flex;
     padding: 2rem;
-    align-items: flex-start;
+}
 
-    .npm-stats {
-        min-width: 300px;
-        min-height: 150px;
-        margin-right: 2rem;
-        display: flex;
-        flex-direction: column;
-
-        #downloadCount {
-            transform: translateY(-5px);
-        }
-    }
-
-    .information {
-        h3 {
-            font-weight: bold;
-        }
-
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        gap: 1rem;
-
-        .keywords {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            .npm-keyword {
-                border-radius: 30px;
-                background: black;
-                color: white;
-                padding: 0.1rem 1rem;
-            }
-        }
-    }
-
+.statistics {
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     #downloadCount {
-        position: absolute;
-        bottom: -1.25rem;
-        left: 1rem;
         font-weight: bold;
         display: flex;
         justify-content: center;
@@ -61,22 +30,76 @@
     }
 
     #currentDateRange {
-        position: absolute;
-        bottom: -1rem;
-        right: 0.5rem;
         font-weight: 300;
         scale: 0.8;
     }
+}
 
-    #currentPos {
-        pointer-events: none;
-        position: absolute;
-        height: 90%;
-        top: 5% !important;
-        width: 0.2rem;
-        background-color: black;
-        right: 0;
-        opacity: 0;
-        transition: 100ms all ease;
+#currentPos {
+    pointer-events: none;
+    position: absolute;
+    height: 90%;
+    top: 5% !important;
+    width: 0.2rem;
+    background-color: black;
+    right: 0;
+    opacity: 0;
+    transition: 100ms all ease;
+}
+
+.information {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+
+    h3 {
+        font-weight: 500;
+    }
+
+    span {
+        font-weight: 300;
+    }
+
+    .keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        .npm-keyword {
+            border-radius: 30px;
+            background: black;
+            color: white;
+            padding: 0.1rem 1rem;
+        }
+    }
+}
+
+.npm-stats {
+    min-width: 300px;
+    min-height: 150px;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 660px) {
+    :host {
+        flex-direction: column;
+    }
+
+    .information {
+        padding-top: $normal-padding;
+        h3 {
+            text-align: left;
+        }
+    }
+
+    .npm-stats {
+        min-width: unset;
+        width: 100%;
+
+        canvas {
+            width: 100% !important;
+        }
     }
 }

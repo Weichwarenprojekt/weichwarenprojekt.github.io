@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, HostListener, Input, OnInit, ViewChild } from "@angular/core";
 import { IDownloadStatistic, IGeneralInformation, NpmService } from "../../../../services/npm.service";
 import {
     ActiveElement,
@@ -15,6 +15,7 @@ import { LoadingIndicatorType } from "../../../../components/loading-indicator/l
 import { canvas } from "chart.js/helpers";
 import { DatePipe } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
+import { BaseChartDirective } from "ng2-charts";
 
 @Component({
     selector: "app-open-source-project",
@@ -33,7 +34,7 @@ export class OpenSourceProjectComponent implements OnInit {
     /**
      * The download information for the package
      */
-    public downloads: IDownloadStatistic[] = [];
+    private downloads: IDownloadStatistic[] = [];
     /**
      * The line chart data
      */
@@ -65,6 +66,11 @@ export class OpenSourceProjectComponent implements OnInit {
      * @protected
      */
     protected readonly LoadingIndicatorType = LoadingIndicatorType;
+    /**
+     * The reference to the actual chart canvas
+     */
+    @ViewChild(BaseChartDirective)
+    public chart?: BaseChartDirective;
 
     constructor(private readonly npmService: NpmService, private readonly translate: TranslateService) {}
 
@@ -72,6 +78,7 @@ export class OpenSourceProjectComponent implements OnInit {
      * Load the data
      */
     async ngOnInit(): Promise<void> {
+        // init date pipe with the current locale
         this.datePipe = new DatePipe(this.translate.currentLang);
         const { info, statistics = [] } = await this.npmService.getPackageInformation(this.name);
         this.isLoading = false;
@@ -86,6 +93,14 @@ export class OpenSourceProjectComponent implements OnInit {
             };
         this.npmDownloadChartConfig = this.getChartData();
         this.npmDownloadsChartOptions = this.getChartOptions();
+    }
+
+    /**
+     * When resizing the window we need to redraw the chart to avoid scaling issues
+     */
+    @HostListener("window:resize", ["$event"])
+    public onResize() {
+        this.chart?.chart?.resize();
     }
 
     /**
