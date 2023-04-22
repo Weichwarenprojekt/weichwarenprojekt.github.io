@@ -86,7 +86,8 @@
 .package-title {
     cursor: pointer;
     width: fit-content;
-    tab-index: 0;
+    font-weight: 500;
+    font-size: $h3;
 }
 
 .package-title:focus,
