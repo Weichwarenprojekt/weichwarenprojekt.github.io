@@ -34,7 +34,7 @@
 
     <!-- actual content -->
     <h3 *ngIf="!isLoading">{{ general?.name }}</h3>
-    <span *ngIf="!isLoading">{{ general?.description }}</span>
+    <span *ngIf="!isLoading">"{{ general?.description }}"</span>
     <div class="keywords">
         <div *ngFor="let keyword of general?.keywords" class="npm-keyword">
             {{ keyword }}
