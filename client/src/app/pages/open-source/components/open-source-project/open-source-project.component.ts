@@ -101,6 +101,14 @@ export class OpenSourceProjectComponent implements OnInit {
     }
 
     /**
+     * Opens the package url in a new tab
+     * @param packageUrl
+     */
+    public onClickPackage(packageUrl: string) {
+        window.open(packageUrl, "_blank");
+    }
+
+    /**
      * Returns the chart configuration for the download chart data
      * @private
      */
