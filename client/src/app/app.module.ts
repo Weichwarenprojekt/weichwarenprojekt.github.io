@@ -20,7 +20,7 @@ import { FocusCardComponent } from "./pages/home/components/focus-card/focus-car
 import { IntroComponent } from "./pages/home/components/intro/intro.component";
 import { QuestionComponent } from "./pages/home/components/question/question.component";
 import { ShowcaseComponent } from "./pages/home/components/showcase/showcase.component";
-import { LOCATION_INITIALIZED, LocationStrategy } from "@angular/common";
+import { LOCATION_INITIALIZED, LocationStrategy, registerLocaleData } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { LoadingComponent } from "./components/loading/loading.component";
 import { MemberCardComponent } from "./pages/team/components/member-card/member-card.component";
@@ -28,6 +28,16 @@ import { OpenSourceComponent } from "./pages/open-source/open-source.component";
 import { OpenSourceProjectComponent } from "./pages/open-source/components/open-source-project/open-source-project.component";
 import { NgChartsModule } from "ng2-charts";
 import { LoadingIndicatorComponent } from "./components/loading-indicator/loading-indicator.component";
+
+import localeDe from "@angular/common/locales/de";
+
+// Register additional languages (required for angular pipes, e.g. date pipe)
+registerLocaleData(localeDe);
+
+// Get the current browser language
+const availableLanguages = ["de", "en"];
+let browserLanguage = navigator.language.split("-")[0];
+if (!availableLanguages.includes(browserLanguage)) browserLanguage = "en";
 
 @NgModule({
     declarations: [
@@ -77,7 +87,15 @@ import { LoadingIndicatorComponent } from "./components/loading-indicator/loadin
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+    /**
+     * Constructor
+     */
+    constructor(private translate: TranslateService) {
+        translate.setDefaultLang("en");
+        translate.use(browserLanguage);
+    }
+}
 
 /**
  * Required for translations
