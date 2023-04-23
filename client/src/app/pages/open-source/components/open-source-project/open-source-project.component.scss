@@ -83,6 +83,18 @@
     flex-direction: column;
 }
 
+.package-title {
+    cursor: pointer;
+    width: fit-content;
+    font-weight: 500;
+    font-size: $h3;
+}
+
+.package-title:focus,
+.package-title:hover {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 660px) {
     :host {
         flex-direction: column;

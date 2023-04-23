@@ -33,8 +33,10 @@
     ></app-loading-indicator>
 
     <!-- actual content -->
-    <h3 *ngIf="!isLoading">{{ general?.name }}</h3>
-    <span *ngIf="!isLoading">{{ general?.description }}</span>
+    <a *ngIf="!isLoading" class="package-title" [href]="general?.url" target="_blank">
+        {{ general?.name }}
+    </a>
+    <span *ngIf="!isLoading">"{{ general?.description }}"</span>
     <div class="keywords">
         <div *ngFor="let keyword of general?.keywords" class="npm-keyword">
             {{ keyword }}
