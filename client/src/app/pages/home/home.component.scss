@@ -55,7 +55,7 @@
     flex: 0 0 auto;
 }
 
-$half-normal-padding: $normal-padding / 2;
+$half-normal-padding: calc($normal-padding / 2);
 
 @media screen and (max-width: 900px) {
     .home-focus {
