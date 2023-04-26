@@ -34,11 +34,6 @@ import localeDe from "@angular/common/locales/de";
 // Register additional languages (required for angular pipes, e.g. date pipe)
 registerLocaleData(localeDe);
 
-// Get the current browser language
-const availableLanguages = ["de", "en"];
-let browserLanguage = navigator.language.split("-")[0];
-if (!availableLanguages.includes(browserLanguage)) browserLanguage = "en";
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -87,15 +82,7 @@ if (!availableLanguages.includes(browserLanguage)) browserLanguage = "en";
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule {
-    /**
-     * Constructor
-     */
-    constructor(private translate: TranslateService) {
-        translate.setDefaultLang("en");
-        translate.use(browserLanguage);
-    }
-}
+export class AppModule {}
 
 /**
  * Required for translations
@@ -114,7 +101,9 @@ export function AppInitializerFactory(translate: TranslateService, injector: Inj
         new Promise<any>((resolve: any) => {
             const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));
             locationInitialized.then(() => {
-                const language = navigator.language.split("-")[0];
+                const availableLanguages = ["de", "en"];
+                let language = navigator.language.split("-")[0];
+                if (!availableLanguages.includes(language)) language = "en";
                 translate.setDefaultLang("en");
                 translate.use(language).subscribe({
                     complete: () => resolve(),
