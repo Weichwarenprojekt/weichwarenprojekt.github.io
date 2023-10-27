@@ -115,15 +115,7 @@
         "email": "E-Mail",
         "representedBy": "Verteten durch",
         "registeredOn": "Eingetragen am",
-        "salesTaxID": "Umsatzsteuer-Identifikationsnummer",
-        "businessID": "Wirtschafts-Identifikationsnummer",
-        "supervisoryAuthority": "Aufsichtsbehörde",
-        "professionalLiability": "Die Berufshaftpflichtversicherung wurde abgeschlossen bei",
-        "scopeOfInsurance": "Geltungsbereich des Versicherungsschutzes",
-        "activeMind": {
-            "notice1": "Das Impressum wurde mit dem",
-            "link": "Impressums-Generator der activeMind AG",
-            "notice2": "erstellt."
-        }
+        "commercialRegister": "Handelsregister",
+        "boardOfDirectors": "Geschäftsführer"
     }
 }

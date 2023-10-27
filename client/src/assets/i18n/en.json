@@ -115,15 +115,7 @@
         "email": "E-Mail",
         "representedBy": "Represented by",
         "registeredOn": "Registered on",
-        "salesTaxID": "Sales Tax Identification Number",
-        "businessID": "Business Identification Number",
-        "supervisoryAuthority": "Supervisory Authority",
-        "professionalLiability": "Professional liability insurance has been taken out with",
-        "scopeOfInsurance": "Scope of the insurance cover",
-        "activeMind": {
-            "notice1": "The legal notice was created with the",
-            "link": "legal notice generator of the activeMind AG.",
-            "notice2": ""
-        }
+        "commercialRegister": "Commercial Register",
+        "boardOfDirectors": "Board of Directors"
     }
 }
