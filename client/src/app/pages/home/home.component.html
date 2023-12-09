@@ -48,15 +48,24 @@
 <!-- Examples -->
 <h1 class="title">{{ "home.examples.title" | translate }}</h1>
 <app-showcase
+    description="home.examples.vollkit.description"
+    image="assets/img/home/examples/vollkit.png"
+    title="home.examples.vollkit.title"
+    class="spacing-bottom-big"
+    url="https://volllkit.com/"
+></app-showcase>
+<app-showcase
     description="home.examples.granalyzer.description"
     image="assets/img/home/examples/granalyzer.png"
     title="home.examples.granalyzer.title"
     class="spacing-bottom-big"
     url="https://weichwarenprojekt-students.github.io/granalyzer/"
+    [isStudentProject]="true"
 ></app-showcase>
 <app-showcase
     description="home.examples.assembus.description"
     image="assets/img/home/examples/assembus.png"
     title="home.examples.assembus.title"
     url="https://weichwarenprojekt-students.github.io/assembus/"
+    [isStudentProject]="true"
 ></app-showcase>

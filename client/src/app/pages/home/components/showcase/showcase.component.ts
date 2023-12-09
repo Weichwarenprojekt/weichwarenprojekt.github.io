@@ -22,4 +22,8 @@ export class ShowcaseComponent {
      * The link to the showcase website
      */
     @Input() url = "";
+    /**
+     * True if the project is a student projecgt
+     */
+    @Input() isStudentProject = false;
 }

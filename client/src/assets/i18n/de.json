@@ -60,6 +60,10 @@
             "title": "Beispielprojekte",
             "visit": "Website besuchen",
             "student": "Studentenprojekt",
+            "vollkit": {
+                "title": "Vollkit",
+                "description": "Vollkit ist ein E-Bike Kit, welches dein normales Fahrrad in ein smartes E-Bike verwandelt. Mit der Mobile-App kannst du dich mit deinem Fahrrad verbinden, es kontrollieren und deine Fahrstatistiken einsehen. In diesem Projekt sind wir für die Entwicklung der App und der Firmware verantwortlich."
+            },
             "granalyzer": {
                 "title": "Granalyzer",
                 "description": "Das Diagrammtool erlaubt es auf bestehenden Datensätzen aufzusetzen und daraus Diagramme zu machen. Beziehungen zwischen den Daten helfen hierbei den Gestaltungsprozess erheblich zu beschleunigen."

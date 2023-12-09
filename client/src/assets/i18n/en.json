@@ -60,6 +60,10 @@
             "title": "Example Projects",
             "visit": "Visit Website",
             "student": "Student Project",
+            "vollkit": {
+                "title": "Vollkit",
+                "description": "Vollkit is an e-bike kit that converts your regular bike to a smart e-bike. With the mobile app you can connect to your bike, control it and get helpful insights with the ride statistics. On this project we are responsible for developing the mobile app and the firmware."
+            },
             "granalyzer": {
                 "title": "Granalyzer",
                 "description": "This diagramming tool allows you to create and visualize graphs of elements and their relations to each other. As you can reuse elements in multiple diagrams, creating those visualizations becomes remarkably fast."
