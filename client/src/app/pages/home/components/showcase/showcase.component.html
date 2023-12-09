@@ -1,10 +1,10 @@
 <div class="showcase-info">
     <div class="showcase-title">
-        <svg>
+        <svg *ngIf="isStudentProject">
             <use xlink:href="assets/img/icons.svg#academy"></use>
         </svg>
         <div style="position: relative">
-            <div class="showcase-title-tooltip">{{ "home.examples.student" | translate }}</div>
+            <div *ngIf="isStudentProject" class="showcase-title-tooltip">{{ "home.examples.student" | translate }}</div>
             <h2>{{ title | translate }}</h2>
         </div>
     </div>
