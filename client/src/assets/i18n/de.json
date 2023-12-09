@@ -56,6 +56,9 @@
             "answer3": "Im Gegensatz zu vielen in unserer Branche, motivieren wir uns vor allem durch die/unsere <b>Leidenschaft für die Entwicklung</b> von neuer Software mit Anwendung der neusten Methoden und Standards. <br /> <br /> Im Endeffekt bedeutet das für Sie als Kunde, dass Sie erstklassige Software erhalten und nahen Kontakt zu unseren Entwicklern in Deutschland.",
             "ourTeam": "Unser Team"
         },
+        "references": {
+            "title": "Referenzkunden"
+        },
         "examples": {
             "title": "Beispielprojekte",
             "visit": "Website besuchen",

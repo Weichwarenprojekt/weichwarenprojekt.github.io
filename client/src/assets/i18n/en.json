@@ -56,6 +56,9 @@
             "answer3": "Unlike many in our industry, we are motivated primarily by/our <b>passion for developing</b> new software using the latest technologies and standards. <br /> <br /> For you as a customer this means that you receive first-class software and close contact to our developers in Germany.",
             "ourTeam": "Our Team"
         },
+        "references": {
+            "title": "Reference Customers"
+        },
         "examples": {
             "title": "Example Projects",
             "visit": "Visit Website",

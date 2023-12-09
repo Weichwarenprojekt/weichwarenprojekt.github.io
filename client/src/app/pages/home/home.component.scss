@@ -55,6 +55,25 @@
     flex: 0 0 auto;
 }
 
+.references {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    a {
+        flex: 1 1 auto;
+        max-width: 25rem;
+        min-width: 0;
+    }
+
+    img {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
 $half-normal-padding: calc($normal-padding / 2);
 
 @media screen and (max-width: 900px) {
