@@ -15,7 +15,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v1
         with:
-          node-version: '16.14.2'
+          node-version: '20.10.0'
 
       # Checkout branch
       - name: Checkout branch
