@@ -49,7 +49,7 @@
     </g>
 
     <!-- Monitor Display -->
-    <g id="monitor-display">
+    <g id="monitor-display" *ngIf="rendersInBrowser()">
         <rect id="monitor-background" fill="#000000" height="231" width="404" x="16" y="16" />
         <g id="monitor-console" opacity="1">
             <text

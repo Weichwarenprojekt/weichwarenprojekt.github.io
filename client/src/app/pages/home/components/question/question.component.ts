@@ -1,4 +1,5 @@
-import { Component, ElementRef, Input, OnDestroy, ViewChild } from "@angular/core";
+import {Component, ElementRef, Inject, Input, OnDestroy, PLATFORM_ID, ViewChild} from "@angular/core";
+import {isPlatformBrowser} from "@angular/common";
 
 @Component({
     selector: "app-question",
@@ -26,17 +27,21 @@ export class QuestionComponent implements OnDestroy {
     /**
      * Constructor
      */
-    constructor() {
-        // Collapse on resize
-        window.addEventListener("resize", this.onResize);
-        this.previousWidth = window.innerWidth;
+    constructor(@Inject(PLATFORM_ID) private readonly platformId: Object) {
+        if (isPlatformBrowser(platformId)) {
+            // Collapse on resize
+            window.addEventListener("resize", this.onResize);
+            this.previousWidth = window.innerWidth;
+        }
     }
 
     /**
      * Remove resize listener
      */
     ngOnDestroy(): void {
-        window.removeEventListener("resize", this.onResize);
+        if (isPlatformBrowser(this.platformId)) {
+            window.removeEventListener("resize", this.onResize);
+        }
     }
 
     /**

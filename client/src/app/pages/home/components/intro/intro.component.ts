@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnDestroy } from "@angular/core";
+import {AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID} from "@angular/core";
 import gsap from "gsap";
 import { TranslateService } from "@ngx-translate/core";
+import {isPlatformBrowser} from "@angular/common";
 
 /**
  * The possible lines
@@ -38,7 +39,7 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
     /**
      * Constructor
      */
-    constructor(private readonly translate: TranslateService) {}
+    constructor(private readonly translate: TranslateService, @Inject(PLATFORM_ID) private readonly platformId: Object) {}
 
     /**
      * Stop the timeline
@@ -51,6 +52,8 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
      * Start the animation
      */
     ngAfterViewInit(): void {
+        if (!this.rendersInBrowser()) return;
+
         // Start the animation with 1s delay
         this.timeline = gsap.timeline({
             delay: 1,
@@ -119,5 +122,9 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
             fill: this.powered ? "#838383" : "#FFFFFF",
         });
         this.powered = !this.powered;
+    }
+
+    public rendersInBrowser() {
+        return isPlatformBrowser(this.platformId)
     }
 }
