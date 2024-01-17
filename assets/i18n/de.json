@@ -1,0 +1,128 @@
+{
+    "global": {
+        "home": "Home",
+        "team": "Team",
+        "contact": "Kontakt",
+        "openSource": "Open Source",
+        "footer": {
+            "title": "Sonstiges",
+            "contact": "Kontakt",
+            "pages": "Seiten",
+            "privacyPolicy": "Datenschutzerklärung",
+            "legalNotice": "Impressum",
+            "thirdParty": "Drittanbieterlizenzen",
+            "socialMedia": "Social Media"
+        }
+    },
+    "home": {
+        "intro": {
+            "subtitle": "Softwaredienstleistungen für moderne Anwendungsentwicklung",
+            "console": {
+                "start": "Lade Lösung...",
+                "mid": {
+                    "0": "Bewaffne Home Officers...",
+                    "1": "Stoppe Prokrastination...",
+                    "2": "Heize Keyboards vor...",
+                    "3": "Lösche Käfer aus..."
+                },
+                "end": "Starte WP..."
+            },
+            "slogan1": "Ihre Lösung Für",
+            "slogan2": "Moderne Software"
+        },
+        "focus": {
+            "title": "Unser Fokus",
+            "user": {
+                "title": "Kunde",
+                "description": "Bei dem Entwicklungsprozess wird auf ständigen Kundenkontakt gesetzt."
+            },
+            "design": {
+                "title": "Design",
+                "description": "Wir sind immer auf der Suche nach neuen Design-Trends und bester User Experience."
+            },
+            "portfolio": {
+                "title": "Innovation",
+                "description": "Bei der Umsetzung von Projekten erkunden wir gerne technisches Neuland."
+            }
+        },
+        "questions": {
+            "title": "Fragen",
+            "question1": "Was bieten wir an?",
+            "answer1": " Sie suchen eine Firma die Ihnen im Thema <b>Softwareentwicklung</b> und allem was dazugehört hilft? <br /> Dann sind Sie hier auf der richtigen Website gelandet - Glückwunsch! <br /> <br /> Egal ob Sie eine komplette Entwicklung eines Produktes suchen oder Hilfe bei Ihrer Softwareentwicklung brauchen - wir helfen Ihnen gerne. Auch wenn Sie eine gute Idee haben, allerdings nicht die nötigen Ressourcen, können Sie sich gerne für eine Kooperation melden.",
+            "toContact": "Zum Kontaktforum",
+            "question2": "Was sind unsere Fähigkeiten?",
+            "answer2": "Als junge Softwareentwickler haben wir uns in den folgenden Bereichen spezialisiert: <ul> <li><b>Web</b> Development (Fullstack)</li> <li>UI/UX <b>Design</b></li> <li><b>Mobile</b> Development</li> </ul> <br /> Ihr gewünschter Fachbereich ist nicht dabei? Melden Sie sich trotzdem! Wir sind immer offen für neue Challenges.",
+            "question3": "Warum Weichwarenprojekt?",
+            "answer3": "Im Gegensatz zu vielen in unserer Branche, motivieren wir uns vor allem durch die/unsere <b>Leidenschaft für die Entwicklung</b> von neuer Software mit Anwendung der neusten Methoden und Standards. <br /> <br /> Im Endeffekt bedeutet das für Sie als Kunde, dass Sie erstklassige Software erhalten und nahen Kontakt zu unseren Entwicklern in Deutschland.",
+            "ourTeam": "Unser Team"
+        },
+        "references": {
+            "title": "Referenzkunden"
+        },
+        "examples": {
+            "title": "Beispielprojekte",
+            "visit": "Website besuchen",
+            "student": "Studentenprojekt",
+            "vollkit": {
+                "title": "Vollkit",
+                "description": "Vollkit ist ein E-Bike Kit, welches dein normales Fahrrad in ein smartes E-Bike verwandelt. Mit der Mobile-App kannst du dich mit deinem Fahrrad verbinden, es kontrollieren und deine Fahrstatistiken einsehen. In diesem Projekt sind wir für die Entwicklung der App und der Firmware verantwortlich."
+            },
+            "granalyzer": {
+                "title": "Granalyzer",
+                "description": "Das Diagrammtool erlaubt es auf bestehenden Datensätzen aufzusetzen und daraus Diagramme zu machen. Beziehungen zwischen den Daten helfen hierbei den Gestaltungsprozess erheblich zu beschleunigen."
+            },
+            "assembus": {
+                "title": "Assembus",
+                "description": "Mit Assembus kann man komplexe Produkte und deren Fertigungsreihenfolge in 3D darstellen. Dafür bietet Ihnen das Tool die Möglichkeit, die Einzelteile in Stationen aufzuteilen, um diese dann über den Cinema-Mode bewerten zu lassen."
+            }
+        }
+    },
+    "team": {
+        "title": "Das Team",
+        "description": "Wir sind eine Gruppe ambitionierter Entwickler, welche sich im Laufe des Studiums durch gemeinsame Interessen gebildet hat. Nach einigen erfolgreichen Projekten fingen wir an den nächsten Schritt zu planen.",
+        "members": "Mitglieder",
+        "csDegree": "Bachelor in Informatik",
+        "eeDegree": "Bachelor in Elektrotechnik",
+        "karl": "Engineering at its finest!",
+        "philipp": "Python ist die beste Sprache, aber nicht immer.",
+        "samu": "Das Problem hatte ich doch schon einmal!",
+        "stefan": "Ist der Bug von dir? - Nein ich hab nur refactored",
+        "tim": "Das ist schnell fertig!"
+    },
+    "contact": {
+        "title": "Kontakt",
+        "description": "Haben wir Ihr Interesse geweckt? Kontaktieren Sie uns einfach per E-Mail! Die Technologie ist egal. Wir freuen uns immer Neues zu lernen!",
+        "submit": "E-Mail verfassen",
+        "name": "Name",
+        "company": "Firma",
+        "email": "E-Mail",
+        "email.subject": "Kontaktanfrage",
+        "message": "Nachricht",
+        "send": "Schreibe uns",
+        "emailRequired": "Geben Sie eine gültige E-Mail ein!",
+        "couldNotSend": "Nachricht konnte nicht geschickt werden!",
+        "privacyChecked": "Sie müssen der Datenschutzerklärung zustimmen!",
+        "serviceNotAvailable": "Dieser Service ist aktuell nicht verfügbar!",
+        "privacy": {
+            "first": "Ich stimme der",
+            "second": "Datenschutzerklärung",
+            "third": "zu"
+        }
+    },
+    "openSource": {
+        "title": "Open-Source",
+        "description": "Wir sind stolz darauf, unser Engagement für die Open-Source-Community zu teilen. Wir glauben an die Kraft der Zusammenarbeit und Innovation, die mit Open-Source-Software einhergeht, und wir arbeiten daran diese Community mit unseren Projekten zu erweitern. Unser Team ist leidenschaftlich daran interessiert, hochwertige Open-Source-Projekte zu schaffen, die für alle zugänglich sind. Indem wir unser Wissen und unsere Fähigkeiten mit der Community teilen, hoffen wir, eine kollaborativere und transparentere Zukunft für die Technologie zu schaffen.",
+        "weeklyDownloads": "Wöchentliche Downloads"
+    },
+    "legalNotice": {
+        "title": "Impressum",
+        "postalAddress": "Postanschrift",
+        "contact": "Kontakt",
+        "phone": "Telefon",
+        "email": "E-Mail",
+        "representedBy": "Verteten durch",
+        "registeredOn": "Eingetragen am",
+        "commercialRegister": "Handelsregister",
+        "boardOfDirectors": "Geschäftsführer"
+    }
+}

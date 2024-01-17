@@ -1,0 +1,128 @@
+{
+    "global": {
+        "home": "Home",
+        "team": "Team",
+        "contact": "Contact",
+        "openSource": "Open Source",
+        "footer": {
+            "title": "Other Stuff",
+            "contact": "Contact",
+            "pages": "Pages",
+            "privacyPolicy": "Privacy Policy",
+            "legalNotice": "Legal Notice",
+            "thirdParty": "Third Party Licenses",
+            "socialMedia": "Social Media"
+        }
+    },
+    "home": {
+        "intro": {
+            "subtitle": "Software Services For Modern Application Development",
+            "console": {
+                "start": "Loading Solution...",
+                "mid": {
+                    "0": "Arming Home Officers...",
+                    "1": "Stop Procrastination...",
+                    "2": "Preheating Keyboards...",
+                    "3": "Exterminate Beetles..."
+                },
+                "end": "Starting WP..."
+            },
+            "slogan1": "Your Solution For",
+            "slogan2": "Modern Software"
+        },
+        "focus": {
+            "title": "Our Focus",
+            "user": {
+                "title": "Customer",
+                "description": "During development we count on continuous communication with our customer."
+            },
+            "design": {
+                "title": "Design",
+                "description": "We are always looking for new design trends and the best possible user experience."
+            },
+            "portfolio": {
+                "title": "Innovation",
+                "description": "When implementing projects, we like to break new technical ground."
+            }
+        },
+        "questions": {
+            "title": "Questions",
+            "question1": "What do we offer?",
+            "answer1": "Are you looking for a company that can help you with <b>software development</b> and everything that goes with it? <br /> Congratulations! - You have arrived on the right website. <br /> <br /> Whether you are looking for a complete development of a product or need help with your software development - we are happy to help. Even if you have a good idea, but not the necessary resources, you are welcome to contact us for cooperation.",
+            "toContact": "To Contact Form",
+            "question2": "What are our skills?",
+            "answer2": "As young software developers we have specialized in the following areas: <ul> <li><b>Web</b> Development (Fullstack)</li> <li>UI/UX <b>Design</b></li> <li><b>Mobile</b> Development</li> </ul> <br /> Your desired area is not included? Contact us anyway! We are always open for new challenges.",
+            "question3": "Why Weichwarenprojekt?",
+            "answer3": "Unlike many in our industry, we are motivated primarily by/our <b>passion for developing</b> new software using the latest technologies and standards. <br /> <br /> For you as a customer this means that you receive first-class software and close contact to our developers in Germany.",
+            "ourTeam": "Our Team"
+        },
+        "references": {
+            "title": "Reference Customers"
+        },
+        "examples": {
+            "title": "Example Projects",
+            "visit": "Visit Website",
+            "student": "Student Project",
+            "vollkit": {
+                "title": "Vollkit",
+                "description": "Vollkit is an e-bike kit that converts your regular bike to a smart e-bike. With the mobile app you can connect to your bike, control it and get helpful insights with the ride statistics. On this project we are responsible for developing the mobile app and the firmware."
+            },
+            "granalyzer": {
+                "title": "Granalyzer",
+                "description": "This diagramming tool allows you to create and visualize graphs of elements and their relations to each other. As you can reuse elements in multiple diagrams, creating those visualizations becomes remarkably fast."
+            },
+            "assembus": {
+                "title": "Assembus",
+                "description": "Optimize and plan your manufacturing line. With Assembus you get an extensive tool to visualize the assembly process of complex products in 3D. Therefore, you can spread the individual steps over different stations and in the end, pass the whole process in review with the Cinema Mode."
+            }
+        }
+    },
+    "team": {
+        "title": "The Team",
+        "description": "We are a group of ambitious developers formed by common interests during our studies. After some successful projects we started to plan the next step.",
+        "members": "Members",
+        "csDegree": "Bachelor in Computer Science",
+        "eeDegree": "Bachelor in Electrical Engineering",
+        "karl": "Engineering at its finest!",
+        "philipp": "Python ist die beste Sprache, aber nicht immer.",
+        "samu": "Das Problem hatte ich doch schon einmal!",
+        "stefan": "Ist der Bug von dir? - Nein ich hab nur refactored",
+        "tim": "Das ist schnell fertig!"
+    },
+    "contact": {
+        "title": "Contact",
+        "description": "Have we sparked your interest? Just contact us by e-mail! The technology doesn't matter. We are always happy to learn something new!",
+        "submit": "Submit E-Mail",
+        "name": "Name",
+        "company": "Company",
+        "email": "E-Mail",
+        "email.subject": "Contact request",
+        "message": "Message",
+        "send": "E-Mail us",
+        "emailRequired": "Enter a valid e-mail!",
+        "couldNotSend": "Could not send message!",
+        "privacyChecked": "You have to agree to the privacy policy!",
+        "serviceNotAvailable": "This service is currently not available!",
+        "privacy": {
+            "first": "I agree to the",
+            "second": "privacy policy",
+            "third": ""
+        }
+    },
+    "openSource": {
+        "title": "Open source",
+        "description": "We are proud to share our commitment to the open source community. We believe in the power of collaboration and innovation that comes with open source software, and we are also working on contributing to this community. Our team is passionate about creating high-quality open source projects that are accessible to everyone. By sharing our knowledge and skills with the community, we hope to create a more collaborative and transparent future for technology.",
+        "weeklyDownloads": "Weekly Downloads"
+    },
+    "legalNotice": {
+        "title": "Legal Notice",
+        "postalAddress": "Postal Address",
+        "contact": "Contact",
+        "phone": "Phone",
+        "email": "E-Mail",
+        "representedBy": "Represented by",
+        "registeredOn": "Registered on",
+        "commercialRegister": "Commercial Register",
+        "boardOfDirectors": "Board of Directors"
+    }
+}
