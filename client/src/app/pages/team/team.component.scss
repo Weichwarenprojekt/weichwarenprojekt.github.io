@@ -25,10 +25,11 @@ $gap: calc(#{$normal-padding} / 2);
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
 
     & > * {
-        width: calc(50% - #{$gap});
-        margin-bottom: $normal-padding;
+        width: calc(50% - (3rem/2));
     }
 }
 

@@ -3,7 +3,7 @@
 $image-width: 14rem;
 
 :host {
-    padding: $normal-padding;
+    padding: $normal-padding 0;
     border-radius: $border-radius;
     background: $grey;
     display: flex;
