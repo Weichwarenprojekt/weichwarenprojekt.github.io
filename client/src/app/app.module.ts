@@ -1,4 +1,4 @@
-import {APP_INITIALIZER, Inject, Injector, NgModule, PLATFORM_ID} from "@angular/core";
+import {APP_INITIALIZER, Injector, NgModule, PLATFORM_ID} from "@angular/core";
 import { BrowserModule, provideClientHydration } from "@angular/platform-browser";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -20,7 +20,13 @@ import { FocusCardComponent } from "./pages/home/components/focus-card/focus-car
 import { IntroComponent } from "./pages/home/components/intro/intro.component";
 import { QuestionComponent } from "./pages/home/components/question/question.component";
 import { ShowcaseComponent } from "./pages/home/components/showcase/showcase.component";
-import {isPlatformBrowser, LOCATION_INITIALIZED, LocationStrategy, registerLocaleData} from "@angular/common";
+import {
+    isPlatformBrowser,
+    LOCATION_INITIALIZED,
+    LocationStrategy,
+    NgOptimizedImage,
+    registerLocaleData
+} from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { LoadingComponent } from "./components/loading/loading.component";
 import { MemberCardComponent } from "./pages/team/components/member-card/member-card.component";
@@ -30,7 +36,6 @@ import { NgChartsModule } from "ng2-charts";
 import { LoadingIndicatorComponent } from "./components/loading-indicator/loading-indicator.component";
 
 import localeDe from "@angular/common/locales/de";
-import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
 // Register additional languages (required for angular pipes, e.g. date pipe)
 registerLocaleData(localeDe);
@@ -72,6 +77,7 @@ registerLocaleData(localeDe);
         }),
         FormsModule,
         NgChartsModule,
+        NgOptimizedImage,
     ],
     providers: [
         {
@@ -99,7 +105,7 @@ export function HttpLoaderFactory(http: HttpClient, locationStrategy: LocationSt
 /**
  * Wait for the application to load the translations first
  */
-export function AppInitializerFactory(translate: TranslateService, injector: Injector, platformId: Object) {
+export function AppInitializerFactory(translate: TranslateService, injector: Injector) {
     return () =>
         new Promise<any>((resolve: any) => {
             const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));
